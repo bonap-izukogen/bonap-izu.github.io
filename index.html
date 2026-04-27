@@ -75,24 +75,28 @@
         min-height: 520px;
         padding-bottom: 0;
       }
-      .hero-logo {
-        padding: 40px 40px 40px 0;
-        order: 2;
+      .hero-left {
+        padding: 60px 40px 60px 60px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
       }
       .hero-title-block {
-        padding: 60px 0 40px 60px;
+        padding: 0;
         text-align: left;
-        order: 1;
       }
       .hero-title-block .divider { justify-content: flex-start; }
       h1.hero-heading { font-size: 26px; }
       .cta-btn {
         width: auto;
-        margin: 20px 0 0 60px;
+        margin: 24px 0 0 0;
         display: inline-block;
         padding: 16px 40px;
       }
-      .hours-note { text-align: left; padding-left: 60px; margin-top: 12px; }
+      .hours-note { text-align: left; margin-top: 12px; padding-left: 0; }
+      .hero-logo {
+        padding: 40px 60px 40px 20px;
+      }
 
       /* Concept: 左テキスト広め */
       .concept { padding: 80px 60px; }
@@ -727,33 +731,35 @@
 
   <!-- HERO -->
   <section class="hero fade-in">
+    <div class="hero-left">
+      <div class="hero-title-block">
+        <p class="label-sm">— Izu Kogen · French Italian Deli —</p>
+        <div class="divider">
+          <div class="divider-line"></div>
+          <div class="divider-diamond"></div>
+          <div class="divider-line"></div>
+        </div>
+        <h1 class="hero-heading">
+          <span lang="ja">ここでしか出会えない<br />極上のフレンチイタリアン</span>
+          <span lang="en">Exceptional French-Italian<br />cuisine, only here.</span>
+        </h1>
+        <p class="hero-sub">
+          <span lang="ja">伊豆高原 テイクアウト専門店<br />地元の厳選素材をめしあがれ</span>
+          <span lang="en">Take-away specialist in Izu Kogen<br />Crafted from locally sourced ingredients</span>
+        </p>
+      </div>
+      <a href="#menu" class="cta-btn">
+        <span lang="ja">看 板 メ ニ ュ ー を 見 る</span>
+        <span lang="en">SEE OUR MENU</span>
+      </a>
+      <p class="hours-note">
+        <span lang="ja">OPEN · 水〜日 · 11:00—19:00（日曜は〜15:00）</span>
+        <span lang="en">OPEN · WED—SUN · 11:00—19:00 (SUN until 15:00)</span>
+      </p>
+    </div>
     <div class="hero-logo">
       <img src="bonap-logo.png" alt="Bon'Ap ボナップ" />
     </div>
-    <div class="hero-title-block">
-      <p class="label-sm">— Izu Kogen · French Italian Deli —</p>
-      <div class="divider">
-        <div class="divider-line"></div>
-        <div class="divider-diamond"></div>
-        <div class="divider-line"></div>
-      </div>
-      <h1 class="hero-heading">
-        <span lang="ja">ここでしか出会えない<br />極上のフレンチイタリアン</span>
-        <span lang="en">Exceptional French-Italian<br />cuisine, only here.</span>
-      </h1>
-      <p class="hero-sub">
-        <span lang="ja">伊豆高原 テイクアウト専門店<br />地元の厳選素材をめしあがれ</span>
-        <span lang="en">Take-away specialist in Izu Kogen<br />Crafted from locally sourced ingredients</span>
-      </p>
-    </div>
-    <a href="#menu" class="cta-btn">
-      <span lang="ja">看 板 メ ニ ュ ー を 見 る</span>
-      <span lang="en">SEE OUR MENU</span>
-    </a>
-    <p class="hours-note">
-      <span lang="ja">OPEN · 水〜日 · 11:00—19:00（日曜は〜15:00）</span>
-      <span lang="en">OPEN · WED—SUN · 11:00—19:00 (SUN until 15:00)</span>
-    </p>
   </section>
 
   <!-- CONCEPT -->
@@ -786,7 +792,7 @@
         <span class="menu-no">N° 01</span>
       </div>
       <div class="menu-img">
-        <img src="menu-pate.png" alt="Pâté de Campagne" />
+        <img src="assets/menu-pate.png" alt="Pâté de Campagne" />
       </div>
       <p class="menu-name-fr">Pâté de Campagne</p>
       <p class="menu-name-jp">パテ・ド・カンパーニュ</p>
@@ -801,7 +807,7 @@
         <span class="menu-no">N° 02</span>
       </div>
       <div class="menu-img">
-        <img src="menu-chicken.png" alt="Poulet Rôti" />
+        <img src="assets/menu-chicken.png" alt="Poulet Rôti" />
       </div>
       <p class="menu-name-fr">Poulet Rôti</p>
       <p class="menu-name-jp">ローストチキン</p>
@@ -816,7 +822,7 @@
         <span class="menu-no">N° 03</span>
       </div>
       <div class="menu-img">
-        <img src="menu-quiche.png" alt="Quiche" />
+        <img src="assets/menu-quiche.png" alt="Quiche" />
       </div>
       <p class="menu-name-fr">Quiche</p>
       <p class="menu-name-jp">キッシュ</p>
@@ -831,7 +837,7 @@
         <span class="menu-no">N° 04</span>
       </div>
       <div class="menu-img">
-        <img src="menu-moelleux.png" alt="Moelleux au Chocolat" />
+        <img src="assets/menu-moelleux.png" alt="Moelleux au Chocolat" />
       </div>
       <p class="menu-name-fr">Moelleux au Chocolat</p>
       <p class="menu-name-jp">モエルショコラ</p>
@@ -959,7 +965,7 @@
   <!-- ACCESS -->
   <section class="access-section fade-in" id="access">
     <div class="access-layout">
-    <img class="storefront-img" src="bonap-storefront.png" alt="Bon'Ap 店舗外観" />
+    <img class="storefront-img" src="assets/bonap-storefront.png" alt="Bon'Ap 店舗外観" />
     <div class="access-right">
     <div class="access-inner">
       <p class="section-label">· 06 · Accès</p>
