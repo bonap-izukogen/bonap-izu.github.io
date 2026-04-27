@@ -79,15 +79,15 @@
         padding: 60px 40px 60px 60px;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         justify-content: center;
       }
       .hero-title-block {
         padding: 0;
-        text-align: left;
+        text-align: center;
       }
       .hero-title-block .label-sm { display: block; margin-bottom: 16px; }
-      .hero-title-block .divider { justify-content: flex-start; margin: 0 0 20px; }
+      .hero-title-block .divider { justify-content: center; margin: 0 0 20px; }
       h1.hero-heading { font-size: 26px; }
       .cta-btn {
         width: auto;
@@ -102,7 +102,8 @@
 
       /* Concept: 左テキスト広め */
       .concept { padding: 80px 60px; }
-      .concept .section-heading { font-size: 28px; }
+      .concept .section-heading { font-size: 28px; white-space: nowrap; }
+      .concept .section-heading br { display: none; }
 
       /* Menu: 2カラム */
       .menu-section { padding-top: 80px; }
