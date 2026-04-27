@@ -34,9 +34,138 @@
       color: var(--ink);
       font-family: 'Noto Sans JP', sans-serif;
       -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── MOBILE wrapper ── */
+    .site-wrapper {
       max-width: 480px;
       margin: 0 auto;
     }
+
+    /* ── PC LAYOUT ── */
+    @media (min-width: 768px) {
+      body {
+        background: var(--cream);
+      }
+
+      .site-wrapper {
+        max-width: 1100px;
+        margin: 0 auto;
+        background: var(--ivory);
+        box-shadow: 0 0 60px rgba(43,38,34,0.08);
+      }
+
+      /* PC: 2カラムグリッド */
+      .pc-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+      }
+      .pc-grid-3 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 0;
+      }
+
+      /* Hero: 左テキスト、右ロゴ */
+      .hero {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        min-height: 520px;
+        padding-bottom: 0;
+      }
+      .hero-logo {
+        padding: 40px 40px 40px 0;
+        order: 2;
+      }
+      .hero-title-block {
+        padding: 60px 0 40px 60px;
+        text-align: left;
+        order: 1;
+      }
+      .hero-title-block .divider { justify-content: flex-start; }
+      h1.hero-heading { font-size: 26px; }
+      .cta-btn {
+        width: auto;
+        margin: 20px 0 0 60px;
+        display: inline-block;
+        padding: 16px 40px;
+      }
+      .hours-note { text-align: left; padding-left: 60px; margin-top: 12px; }
+
+      /* Concept: 左テキスト広め */
+      .concept { padding: 80px 60px; }
+      .concept .section-heading { font-size: 28px; }
+
+      /* Menu: 2カラム */
+      .menu-section { padding-top: 80px; }
+      .menu-header { padding: 0 60px 40px; }
+      .menu-cards-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      .menu-card { padding: 28px 40px 36px; }
+      .menu-footer { padding: 32px 60px 64px; }
+
+      /* Order flow */
+      .order-flow { padding: 80px 60px 72px; }
+      .order-steps-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0;
+      }
+      .order-step {
+        flex-direction: column;
+        padding: 28px 24px;
+        border-top: 0.5px solid rgba(245,239,228,0.25);
+        border-bottom: none;
+        border-right: 0.5px solid rgba(245,239,228,0.15);
+      }
+      .order-step:last-child { border-right: none; }
+      .order-step:first-of-type { border-top: 0.5px solid rgba(245,239,228,0.25); }
+      .line-btn { max-width: 400px; margin: 40px auto 0; display: block; }
+      .tel-note { margin-top: 16px; }
+
+      /* Chef: 左写真、右テキスト */
+      .chef-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 0;
+        align-items: start;
+      }
+      .chef-photo {
+        aspect-ratio: 3 / 4;
+        margin-bottom: 0;
+        height: 100%;
+      }
+      .chef-text {
+        padding: 60px 60px 60px 48px;
+      }
+
+      /* Instagram */
+      .instagram-section { padding: 80px 60px; }
+
+      /* Access: 左画像、右テーブル */
+      .access-section { padding: 0; }
+      .access-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+      }
+      .storefront-img { max-height: 100%; height: 100%; object-fit: cover; }
+      .access-right { padding: 60px 60px 0 48px; }
+      .access-table { padding: 0 0 48px 0; }
+      .call-big { margin: 24px 0 0 0; }
+
+      /* Nav */
+      .topbar { padding: 16px 60px; }
+      .lang-bar { padding: 12px 60px; }
+
+      /* Footer */
+      .footer { padding: 56px 60px 48px; }
+    }
+    
 
     /* ── LANG TOGGLE ── */
     .lang-bar {
@@ -577,6 +706,7 @@
 </head>
 
 <body>
+<div class="site-wrapper">
 
   <!-- LANG TOGGLE -->
   <div class="lang-bar">
@@ -598,7 +728,7 @@
   <!-- HERO -->
   <section class="hero fade-in">
     <div class="hero-logo">
-      <img src="assets/bonap-logo.png" alt="Bon'Ap ボナップ" />
+      <img src="bonap-logo.png" alt="Bon'Ap ボナップ" />
     </div>
     <div class="hero-title-block">
       <p class="label-sm">— Izu Kogen · French Italian Deli —</p>
@@ -650,12 +780,13 @@
       </p>
     </div>
 
+    <div class="menu-cards-grid">
     <div class="menu-card fade-in">
       <div class="menu-card-meta">
         <span class="menu-no">N° 01</span>
       </div>
       <div class="menu-img">
-        <img src="assets/menu-pate.png" alt="Pâté de Campagne" />
+        <img src="menu-pate.png" alt="Pâté de Campagne" />
       </div>
       <p class="menu-name-fr">Pâté de Campagne</p>
       <p class="menu-name-jp">パテ・ド・カンパーニュ</p>
@@ -670,7 +801,7 @@
         <span class="menu-no">N° 02</span>
       </div>
       <div class="menu-img">
-        <img src="assets/menu-chicken.png" alt="Poulet Rôti" />
+        <img src="menu-chicken.png" alt="Poulet Rôti" />
       </div>
       <p class="menu-name-fr">Poulet Rôti</p>
       <p class="menu-name-jp">ローストチキン</p>
@@ -685,7 +816,7 @@
         <span class="menu-no">N° 03</span>
       </div>
       <div class="menu-img">
-        <img src="assets/menu-quiche.png" alt="Quiche" />
+        <img src="menu-quiche.png" alt="Quiche" />
       </div>
       <p class="menu-name-fr">Quiche</p>
       <p class="menu-name-jp">キッシュ</p>
@@ -700,7 +831,7 @@
         <span class="menu-no">N° 04</span>
       </div>
       <div class="menu-img">
-        <img src="assets/menu-moelleux.png" alt="Moelleux au Chocolat" />
+        <img src="menu-moelleux.png" alt="Moelleux au Chocolat" />
       </div>
       <p class="menu-name-fr">Moelleux au Chocolat</p>
       <p class="menu-name-jp">モエルショコラ</p>
@@ -709,6 +840,8 @@
         <span lang="en">Made with 70% BIO cacao from France. Rich, deep, and unmistakably French.</span>
       </p>
     </div>
+
+    </div><!-- /menu-cards-grid -->
 
     <div class="menu-footer fade-in">
       <p>
@@ -725,8 +858,8 @@
       <span lang="ja">ご注文の流れ</span>
       <span lang="en">How to Order</span>
     </h2>
+    <div class="order-steps-grid">
     <div class="order-step">
-      <div class="step-no">01</div>
       <div>
         <p class="step-fr">Commander</p>
         <p class="step-jp"><span lang="ja">ご注文</span><span lang="en">Place Your Order</span></p>
@@ -758,6 +891,7 @@
         </p>
       </div>
     </div>
+    </div><!-- /order-steps-grid -->
     <a href="https://line.me/R/ti/p/" class="line-btn" target="_blank" rel="noopener">
       <span lang="ja">L I N E で 注 文 す る</span>
       <span lang="en">ORDER VIA LINE</span>
@@ -767,16 +901,17 @@
 
   <!-- CHEF -->
   <section class="chef-section fade-in" id="chef">
-    <p class="section-label">· 04 · le Chef</p>
-    <h2 class="section-heading">
-      <span lang="ja">シェフについて</span>
-      <span lang="en">About the Chef</span>
-    </h2>
     <div class="chef-photo">
       <div class="chef-photo-placeholder">
         <span style="font-family:ui-monospace,monospace;font-size:10px;letter-spacing:2px;color:rgba(43,38,34,0.4);background:rgba(245,239,228,0.75);padding:4px 10px">[ CHEF PHOTO ]</span>
       </div>
     </div>
+    <div class="chef-text">
+    <p class="section-label">· 04 · le Chef</p>
+    <h2 class="section-heading">
+      <span lang="ja">シェフについて</span>
+      <span lang="en">About the Chef</span>
+    </h2>
     <p class="chef-name-fr">André</p>
     <p class="chef-name-jp">
       <span lang="ja">シェフ・アンドレ</span>
@@ -793,6 +928,7 @@
       <span lang="ja">パリで修業を積み、伊豆高原の風土と食材に惹かれ移住。地元の農家、漁師、生産者と対話しながら、その日いちばん良いものを料理に込めます。</span>
       <span lang="en">Trained in Paris, drawn to the landscape and ingredients of Izu Kogen. André works closely with local farmers and fishermen to bring the best of each day into every dish.</span>
     </p>
+    </div>
   </section>
 
   <!-- INSTAGRAM -->
@@ -822,6 +958,9 @@
 
   <!-- ACCESS -->
   <section class="access-section fade-in" id="access">
+    <div class="access-layout">
+    <img class="storefront-img" src="bonap-storefront.png" alt="Bon'Ap 店舗外観" />
+    <div class="access-right">
     <div class="access-inner">
       <p class="section-label">· 06 · Accès</p>
       <h2 class="section-heading">
@@ -829,7 +968,6 @@
         <span lang="en">Visit Us</span>
       </h2>
     </div>
-    <img class="storefront-img" src="assets/bonap-storefront.png" alt="Bon'Ap 店舗外観" />
     <div class="access-table">
       <div class="access-row">
         <span class="access-key"><span lang="ja">住 所</span><span lang="en">Address</span></span>
@@ -872,6 +1010,8 @@
       <span lang="en">TAP TO CALL</span>
     </a>
     <div style="height:32px"></div>
+    </div><!-- /access-right -->
+    </div><!-- /access-layout -->
   </section>
 
   <!-- FOOTER -->
@@ -891,6 +1031,8 @@
     </div>
     <p class="footer-copy">© 2026 BON'AP · SINCE DEC 2023 · ALL RIGHTS RESERVED</p>
   </footer>
+
+</div><!-- /site-wrapper -->
 
   <script>
     // ── LANGUAGE TOGGLE ──
