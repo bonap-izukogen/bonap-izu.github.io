@@ -130,19 +130,44 @@
       /* Order flow */
       .order-flow { padding: 80px 60px 72px; }
       .order-steps-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 0;
+        display: block;
+        max-width: 700px;
+        margin: 0 auto;
       }
       .order-step {
-        flex-direction: column;
-        padding: 28px 24px;
+        display: grid;
+        grid-template-columns: 60px 140px 1fr;
+        align-items: center;
+        padding: 24px 48px;
         border-top: 0.5px solid rgba(245,239,228,0.25);
         border-bottom: none;
-        border-right: 0.5px solid rgba(245,239,228,0.15);
+        border-right: none;
+        gap: 0;
+      }
+      .order-step:last-child {
+        border-bottom: 0.5px solid rgba(245,239,228,0.25);
       }
       .order-step:last-child { border-right: none; }
       .order-step:first-of-type { border-top: 0.5px solid rgba(245,239,228,0.25); }
+      .order-step .step-no {
+        font-size: 28px;
+        line-height: 1;
+        display: flex;
+        align-items: center;
+      }
+      .order-step > div { display: contents; }
+      .order-step .step-fr { display: none; }
+      .order-step .step-jp {
+        font-family: 'Shippori Mincho', serif;
+        font-size: 15px;
+        letter-spacing: 1px;
+        color: var(--ivory);
+      }
+      .order-step .step-desc {
+        white-space: nowrap;
+        font-size: 13px;
+        color: rgba(245,239,228,0.75);
+      }
       .line-btn { max-width: 400px; margin: 40px auto 0; display: block; }
       .tel-note { margin-top: 16px; }
 
@@ -515,6 +540,7 @@
       font-size: 12px;
       line-height: 1.8;
       color: rgba(245,239,228,0.75);
+      max-width: 160px;
     }
     .line-btn {
       display: block;
@@ -732,7 +758,8 @@
 
     /* ── COURSE INFO ── */
     .course-info {
-      margin: 32px 0 40px;
+      margin: 32px auto 40px;
+      max-width: 600px;
       border: 0.5px solid rgba(245,239,228,0.2);
       padding: 24px;
     }
@@ -1113,7 +1140,7 @@
         <p class="step-jp"><span lang="ja">ご予約</span><span lang="en">Reserve</span></p>
         <p class="step-desc">
           <span lang="ja">受取希望日の3営業日前までにご予約ください。</span>
-          <span lang="en">Please reserve via the form at least 3 business days before your pick-up date.</span>
+          <span lang="en">Reserve at least 3 business days before your pick-up date.</span>
         </p>
       </div>
     </div>
@@ -1124,7 +1151,7 @@
         <p class="step-jp"><span lang="ja">ご確認</span><span lang="en">Confirmation</span></p>
         <p class="step-desc">
           <span lang="ja">担当者よりお電話にて事前確認をさせていただきます。</span>
-          <span lang="en">Our team will contact you by phone to confirm your order details.</span>
+          <span lang="en">Our team will contact you by phone to confirm your details.</span>
         </p>
       </div>
     </div>
@@ -1134,8 +1161,8 @@
         <p class="step-fr">Récupérer</p>
         <p class="step-jp"><span lang="ja">お受け取り</span><span lang="en">Pick Up</span></p>
         <p class="step-desc">
-          <span lang="ja">受け取り希望日時に店頭までおこしください。</span>
-          <span lang="en">Please come to the shop at your chosen date and time.</span>
+          <span lang="ja">ご希望の日時に店頭までお越しください。</span>
+          <span lang="en">Come to the shop at your chosen date and time.</span>
         </p>
       </div>
     </div>
