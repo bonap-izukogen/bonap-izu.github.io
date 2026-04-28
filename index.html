@@ -715,7 +715,149 @@
       letter-spacing: 1.5px;
     }
 
-    /* ── FADE IN ── */
+    /* ── COURSE INFO ── */
+    .course-info {
+      margin: 32px 0 40px;
+      border: 0.5px solid rgba(245,239,228,0.2);
+      padding: 24px;
+    }
+    .course-info-text {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 13px;
+      color: rgba(245,239,228,0.85);
+      line-height: 1.9;
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
+    }
+    .course-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    .course-table tr {
+      border-bottom: 0.5px solid rgba(245,239,228,0.15);
+    }
+    .course-table td {
+      padding: 12px 8px;
+      font-family: 'Shippori Mincho', serif;
+      font-size: 13px;
+      color: rgba(245,239,228,0.85);
+      vertical-align: top;
+      line-height: 1.8;
+    }
+    .course-table td:first-child {
+      white-space: nowrap;
+      color: var(--terracotta);
+      letter-spacing: 1px;
+      width: 80px;
+    }
+    .course-table small {
+      font-size: 11px;
+      color: rgba(245,239,228,0.55);
+    }
+    .course-info-note {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 12px;
+      color: rgba(245,239,228,0.65);
+      letter-spacing: 0.5px;
+    }
+
+    /* ── RESERVATION FORM ── */
+    .reservation-form {
+      margin-top: 40px;
+      background: rgba(245,239,228,0.08);
+      border: 0.5px solid rgba(245,239,228,0.2);
+      padding: 28px 24px 32px;
+    }
+    .form-notice {
+      font-size: 11px;
+      line-height: 1.8;
+      color: rgba(245,239,228,0.65);
+      border-left: 2px solid var(--terracotta);
+      padding-left: 12px;
+      margin-bottom: 28px;
+      letter-spacing: 0.3px;
+    }
+    .form-row {
+      margin-bottom: 20px;
+    }
+    .form-row label {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .form-row-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .form-row-2col label {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .form-label {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 12px;
+      color: rgba(245,239,228,0.85);
+      letter-spacing: 1px;
+    }
+    .required { color: var(--terracotta); }
+    .reservation-form input,
+    .reservation-form select,
+    .reservation-form textarea {
+      background: rgba(245,239,228,0.08);
+      border: 0.5px solid rgba(245,239,228,0.3);
+      color: var(--ivory);
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 13px;
+      padding: 10px 12px;
+      width: 100%;
+      outline: none;
+      transition: border-color 0.2s;
+      -webkit-appearance: none;
+    }
+    .reservation-form input::placeholder,
+    .reservation-form textarea::placeholder {
+      color: rgba(245,239,228,0.3);
+    }
+    .reservation-form input:focus,
+    .reservation-form select:focus,
+    .reservation-form textarea:focus {
+      border-color: rgba(245,239,228,0.7);
+    }
+    .reservation-form select option {
+      background: var(--forest);
+      color: var(--ivory);
+    }
+    .form-footer-note {
+      font-size: 11px;
+      color: rgba(245,239,228,0.55);
+      line-height: 1.8;
+      margin-bottom: 20px;
+      letter-spacing: 0.3px;
+    }
+    .form-submit {
+      display: block;
+      width: 100%;
+      background: var(--terracotta);
+      color: var(--ivory);
+      border: none;
+      padding: 16px 0;
+      font-family: 'Shippori Mincho', serif;
+      font-size: 14px;
+      letter-spacing: 4px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .form-submit:hover { background: #8B4520; }
+
+    /* PC用フォーム */
+    @media (min-width: 768px) {
+      .reservation-form { padding: 40px 48px 48px; margin-top: 48px; }
+      .form-notice { font-size: 12px; }
+    }
     .fade-in {
       opacity: 0;
       transform: translateY(16px);
@@ -911,29 +1053,63 @@
   <section class="order-flow fade-in" id="order">
     <p class="section-label" style="text-align:center;color:rgba(245,239,228,0.65)">· 04 · Commande</p>
     <h2 class="order-heading">
-      <span lang="ja">ご注文の流れ</span>
-      <span lang="en">How to Order</span>
+      <span lang="ja">コース料理のご予約について</span>
+      <span lang="en">Course Meal Reservations</span>
     </h2>
+
+    <div class="course-info">
+      <p class="course-info-text">
+        <span lang="ja">あらかじめ、コース形式でお料理をご予約いただくことが可能です。</span>
+        <span lang="en">You are welcome to reserve a course meal in advance.</span>
+      </p>
+      <table class="course-table">
+        <tr>
+          <td lang="ja">1名様</td>
+          <td lang="en">Per person</td>
+          <td>
+            <span lang="ja">¥10,000（税込）<br /><small>※お子様用のメニューはございません</small></span>
+            <span lang="en">¥10,000 (tax incl.)<br /><small>*No children's menu available</small></span>
+          </td>
+        </tr>
+        <tr>
+          <td lang="ja">受取日</td>
+          <td lang="en">Pick-up date</td>
+          <td>
+            <span lang="ja">営業日3日前までご予約ください。</span>
+            <span lang="en">Please reserve at least 3 business days in advance.</span>
+          </td>
+        </tr>
+        <tr>
+          <td lang="ja">受取時間</td>
+          <td lang="en">Pick-up time</td>
+          <td>15:00〜18:30</td>
+        </tr>
+      </table>
+      <p class="course-info-note">
+        <span lang="ja">ご予約に当たっては、最大10名様まで承ります。</span>
+        <span lang="en">We accept reservations for up to 10 guests.</span>
+      </p>
+    </div>
     <div class="order-steps-grid">
     <div class="order-step">
       <div class="step-no">01</div>
       <div>
         <p class="step-fr">Commander</p>
-        <p class="step-jp"><span lang="ja">ご注文</span><span lang="en">Place Your Order</span></p>
+        <p class="step-jp"><span lang="ja">ご予約</span><span lang="en">Reserve</span></p>
         <p class="step-desc">
-          <span lang="ja">LINE またはお電話で、前日までに。</span>
-          <span lang="en">Via LINE or phone, by the day before.</span>
+          <span lang="ja">フォームより、受け取り希望日の3営業日前までに。</span>
+          <span lang="en">Via the form below, at least 3 business days before your pick-up date.</span>
         </p>
       </div>
     </div>
     <div class="order-step">
       <div class="step-no">02</div>
       <div>
-        <p class="step-fr">Préparer</p>
-        <p class="step-jp"><span lang="ja">お仕込み</span><span lang="en">We Prepare</span></p>
+        <p class="step-fr">Confirmer</p>
+        <p class="step-jp"><span lang="ja">ご確認</span><span lang="en">Confirmation</span></p>
         <p class="step-desc">
-          <span lang="ja">シェフが当日の朝から、一つずつ。</span>
-          <span lang="en">The chef begins preparation fresh each morning.</span>
+          <span lang="ja">担当者よりお電話にて、アレルギーや食材のご希望を確認します。</span>
+          <span lang="en">Our team will call to confirm allergies and any food preferences.</span>
         </p>
       </div>
     </div>
@@ -949,9 +1125,10 @@
       </div>
     </div>
     </div><!-- /order-steps-grid -->
-    <a href="https://line.me/R/ti/p/" class="line-btn" target="_blank" rel="noopener">
-      <span lang="ja">L I N E で 注 文 す る</span>
-      <span lang="en">ORDER VIA LINE</span>
+
+    <a href="reservation.html" class="line-btn">
+      <span lang="ja">ご 予 約 フ ォ ー ム へ</span>
+      <span lang="en">GO TO RESERVATION FORM</span>
     </a>
     <p class="tel-note">TEL · 070-2219-2694</p>
   </section>
