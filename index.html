@@ -104,6 +104,18 @@
       .concept { padding: 80px 60px; }
       .concept .section-heading { font-size: 28px; white-space: nowrap; }
       .concept .section-heading br { display: none; }
+      .concept-text-ja {
+        display: block;
+      }
+      .concept-text-ja::after {
+        content: none;
+      }
+      /* PC用テキスト改行を疑似的に再現 */
+      @media (min-width: 768px) {
+        .concept-text-ja {
+          white-space: pre-line;
+        }
+      }
 
       /* Menu: 2カラム */
       .menu-section { padding-top: 80px; }
@@ -931,11 +943,11 @@
   <!-- CONCEPT -->
   <section class="concept fade-in">
     <p class="section-label" style="text-align:center">· 01 · Notre Concept</p>
-    <div style="text-align:center;margin:24px 0 16px;">
+    <div style="text-align:center;margin:24px 0 8px;">
       <img src="assets/izucomeizugo.png" alt="Izu come, Izu go" style="max-width:560px;width:85%;display:inline-block;" />
     </div>
-    <p class="body-text" style="text-align:center">
-      <span lang="ja">伊豆の厳選食材とフランスのエスプリを重ねた本格の味を、気軽なデリとしても、とっておきのディナーにも。あなたの好きなところに連れ出してください。</span>
+    <p class="body-text" style="text-align:center;padding:0 20px;">
+      <span lang="ja" class="concept-text-ja">伊豆の厳選食材とフランスのエスプリを重ねた本格の味を、&#10;気軽なデリとしても、とっておきのディナーにも。&#10;あなたの好きなところに連れ出してください。</span>
       <span lang="en">The finest ingredients from Izu, layered with the spirit of France.<br />As a casual deli or a special dinner —<br />take it wherever you like.</span>
     </p>
   </section>
