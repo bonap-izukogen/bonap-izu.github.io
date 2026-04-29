@@ -261,7 +261,7 @@
         <label>
           <span class="form-label" lang="ja">お名前 <span class="required">*</span></span>
           <span class="form-label" lang="en">Name <span class="required">*</span></span>
-          <input type="text" name="name" required placeholder="山田 太郎" />
+          <input type="text" name="name" required placeholder="山田 太郎" id="nameField" />
         </label>
       </div>
 
@@ -277,7 +277,7 @@
         <label>
           <span class="form-label" lang="ja">メールアドレス または Instagramアカウント <span class="required">*</span></span>
           <span class="form-label" lang="en">Email or Instagram account <span class="required">*</span></span>
-          <input type="text" name="contact" required placeholder="example@email.com または @instagram_id" />
+          <input type="text" name="contact" required placeholder="example@email.com または @instagram_id" id="contactField" />
         </label>
       </div>
 
@@ -290,7 +290,7 @@
         <label>
           <span class="form-label" lang="ja">ご希望受け取り時間 <span class="required">*</span></span>
           <span class="form-label" lang="en">Pick-up Time <span class="required">*</span></span>
-          <select name="time" required>
+          <select name="time" required id="timeSelect">
             <option value="">-- 選択 --</option>
             <option value="15:00">15:00</option>
             <option value="15:30">15:30</option>
@@ -308,7 +308,7 @@
         <label>
           <span class="form-label" lang="ja">人数 <span class="required">*</span></span>
           <span class="form-label" lang="en">Number of guests <span class="required">*</span></span>
-          <select name="guests" required>
+          <select name="guests" required id="guestsSelect">
             <option value="">-- 選択 --</option>
             <option value="1">1名　¥10,000</option>
             <option value="2">2名　¥20,000</option>
@@ -328,7 +328,7 @@
         <label>
           <span class="form-label" lang="ja">アレルギー・食材のご希望</span>
           <span class="form-label" lang="en">Allergies / dietary requirements</span>
-          <textarea name="allergy" rows="3" placeholder="例：甲殻類アレルギー、魚介類不可など"></textarea>
+          <textarea name="allergy" rows="3" placeholder="例：甲殻類アレルギー、魚介類不可など" id="allergyField"></textarea>
         </label>
       </div>
 
@@ -356,13 +356,19 @@
 </div>
 
 <script>
+  function setLang(isEn) {
+    document.getElementById('nameField').placeholder = isEn ? 'Yamada Taro' : '山田 太郎';
+    document.getElementById('contactField').placeholder = isEn ? 'example@email.com or @instagram_id' : 'example@email.com または @instagram_id';
+    document.getElementById('allergyField').placeholder = isEn ? 'e.g. shellfish allergy, no fish, etc.' : '例：甲殻類アレルギー、魚介類不可など';
+    document.getElementById('timeSelect').options[0].text = isEn ? '-- Select --' : '-- 選択 --';
+    document.getElementById('guestsSelect').options[0].text = isEn ? '-- Select --' : '-- 選択 --';
+  }
+
   function toggleLang() {
     const btn = document.getElementById('langToggle');
-    if (document.body.classList.toggle('en')) {
-      btn.textContent = 'JA';
-    } else {
-      btn.textContent = 'EN';
-    }
+    const isEn = document.body.classList.toggle('en');
+    btn.textContent = isEn ? 'JA' : 'EN';
+    setLang(isEn);
   }
 
   // URLパラメータで言語を自動切替
@@ -371,6 +377,7 @@
     if (params.get('lang') === 'en') {
       document.body.classList.add('en');
       document.getElementById('langToggle').textContent = 'JA';
+      setLang(true);
     }
   });
 </script>
