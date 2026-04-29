@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ご予約ありがとうございます — Bon'Ap</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Shippori+Mincho:wght@400;500&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HKZ4VN4VW4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HKZ4VN4VW4');
+  </script>
+
+  <style>
+    :root {
+      --ivory:      #F5EFE4;
+      --cream:      #EDE5D6;
+      --ink:        #2B2622;
+      --ink-soft:   #6B5E54;
+      --terracotta: #A0522D;
+      --forest:     #2D3B2E;
+      --sage:       #7A8C72;
+      --hairline:   rgba(43,38,34,0.15);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--ivory);
+      color: var(--ink);
+      font-family: 'Noto Sans JP', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .site-wrapper {
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 768px) {
+      body { background: var(--cream); }
+      .site-wrapper {
+        max-width: 800px;
+        background: var(--ivory);
+        box-shadow: 0 0 60px rgba(43,38,34,0.08);
+      }
+    }
+
+    /* ── LANG TOGGLE ── */
+    .lang-bar {
+      display: flex;
+      justify-content: flex-end;
+      padding: 10px 20px;
+    }
+    .lang-btn {
+      background: none;
+      border: 0.5px solid var(--hairline);
+      font-family: ui-monospace, monospace;
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: var(--ink-soft);
+      padding: 5px 10px;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .lang-btn:hover { background: var(--ink); color: var(--ivory); }
+
+    /* ── NAV ── */
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 20px 14px;
+      border-bottom: 0.5px solid var(--hairline);
+    }
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 500;
+      font-style: italic;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    @media (min-width: 768px) {
+      .topbar { padding: 16px 60px; }
+      .lang-bar { padding: 12px 60px; }
+    }
+
+    /* ── THANKS ── */
+    .thanks-section {
+      padding: 64px 28px 80px;
+      text-align: center;
+    }
+
+    @media (min-width: 768px) {
+      .thanks-section { padding: 80px 80px 100px; }
+    }
+
+    .thanks-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 12px;
+      font-style: italic;
+      color: var(--sage);
+      letter-spacing: 2px;
+      margin-bottom: 24px;
+    }
+
+    .thanks-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      font-style: italic;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+
+    .thanks-heading-jp {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 16px;
+      color: var(--ink-soft);
+      letter-spacing: 3px;
+      margin-bottom: 48px;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      justify-content: center;
+      margin: 0 auto 48px;
+      max-width: 160px;
+    }
+    .divider-line { flex: 1; height: 0.5px; background: var(--hairline); }
+    .divider-diamond { width: 5px; height: 5px; background: var(--terracotta); transform: rotate(45deg); }
+
+    .thanks-body {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 15px;
+      line-height: 2.2;
+      color: var(--ink-soft);
+      letter-spacing: 0.5px;
+      margin-bottom: 48px;
+    }
+
+    .thanks-note {
+      font-size: 12px;
+      line-height: 2;
+      color: var(--ink-soft);
+      border: 0.5px solid var(--hairline);
+      padding: 20px 24px;
+      margin-bottom: 48px;
+      text-align: left;
+    }
+
+    .back-btn {
+      display: inline-block;
+      background: var(--terracotta);
+      color: var(--ivory);
+      text-decoration: none;
+      padding: 16px 40px;
+      font-family: 'Shippori Mincho', serif;
+      font-size: 13px;
+      letter-spacing: 4px;
+    }
+    .back-btn:hover { background: #8B4520; }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: var(--ink);
+      color: var(--ivory);
+      padding: 48px 28px 40px;
+      text-align: center;
+    }
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 40px;
+      font-style: italic;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+    .footer-sub {
+      font-family: ui-monospace, monospace;
+      font-size: 10px;
+      color: rgba(245,239,228,0.55);
+      letter-spacing: 2px;
+      margin-top: 10px;
+    }
+    .footer-copy {
+      margin-top: 36px;
+      font-family: ui-monospace, monospace;
+      font-size: 9px;
+      color: rgba(245,239,228,0.35);
+      letter-spacing: 1.5px;
+    }
+
+    /* ── LANG ── */
+    [lang="en"] { display: none; }
+    body.en [lang="ja"] { display: none; }
+    body.en [lang="en"] { display: revert; }
+  </style>
+</head>
+
+<body>
+<div class="site-wrapper">
+
+  <div class="lang-bar">
+    <button class="lang-btn" id="langToggle" onclick="toggleLang()">EN</button>
+  </div>
+
+  <nav class="topbar">
+    <a href="https://bonap-izukogen.com/" class="logo">Bon'Ap</a>
+  </nav>
+
+  <section class="thanks-section">
+    <p class="thanks-label">· Merci ·</p>
+    <h1 class="thanks-heading">Merci !</h1>
+    <p class="thanks-heading-jp">
+      <span lang="ja">ありがとうございます</span>
+      <span lang="en">Thank you</span>
+    </p>
+
+    <div class="divider">
+      <div class="divider-line"></div>
+      <div class="divider-diamond"></div>
+      <div class="divider-line"></div>
+    </div>
+
+    <p class="thanks-body">
+      <span lang="ja">ご予約のお申し込みを受け付けました。<br />担当者より改めてご連絡いたします。</span>
+      <span lang="en">Your reservation request has been received.<br />Our team will be in touch shortly.</span>
+    </p>
+
+    <div class="thanks-note">
+      <p>
+        <span lang="ja">・担当者よりお電話にて事前確認のご連絡をいたします。<br />・営業時間外のご予約は翌営業日以降にご連絡します。<br />・ご不明な点はお電話（070-2219-2694）にてお問い合わせください。</span>
+        <span lang="en">・Our team will call to confirm your reservation details.<br />・Reservations submitted outside business hours will be followed up from the next business day.<br />・For enquiries, please call us at 070-2219-2694.</span>
+      </p>
+    </div>
+
+    <a href="https://bonap-izukogen.com/" class="back-btn">
+      <span lang="ja">ト ッ プ へ 戻 る</span>
+      <span lang="en">BACK TO HOME</span>
+    </a>
+  </section>
+
+  <footer class="footer">
+    <p class="footer-logo">Bon'Ap</p>
+    <p class="footer-sub">TAKE-AWAY · IZU KOGEN · SHIZUOKA</p>
+    <p class="footer-copy">© 2026 BON'AP · SINCE DEC 2023 · ALL RIGHTS RESERVED</p>
+  </footer>
+
+</div>
+
+<script>
+  function toggleLang() {
+    const btn = document.getElementById('langToggle');
+    if (document.body.classList.toggle('en')) {
+      btn.textContent = 'JA';
+    } else {
+      btn.textContent = 'EN';
+    }
+  }
+
+  // URLパラメータで言語を自動切替
+  window.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('lang') === 'en') {
+      document.body.classList.add('en');
+      document.getElementById('langToggle').textContent = 'JA';
+    }
+  });
+</script>
+
+</body>
+</html>
