@@ -345,7 +345,7 @@
         <span lang="en">After your reservation is received, our team will be in touch. Reservations submitted outside business hours will be followed up from the next business day.</span>
       </p>
 
-      <button type="submit" class="form-submit" disabled style="background:rgba(43,38,34,0.2);color:rgba(43,38,34,0.4);cursor:not-allowed;">
+      <button type="submit" class="form-submit" disabled style="background:rgba(43,38,34,0.2);color:rgba(43,38,34,0.4);cursor:not-allowed;" onclick="gtag('event', 'reservation_submit', {'event_category': 'reservation', 'event_label': 'course_meal'})">
         <span lang="ja">予 約 受 付 準 備 中</span>
         <span lang="en">RESERVATIONS COMING SOON</span>
       </button>
