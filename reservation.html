@@ -364,6 +364,15 @@
       btn.textContent = 'EN';
     }
   }
+
+  // URLパラメータで言語を自動切替
+  window.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('lang') === 'en') {
+      document.body.classList.add('en');
+      document.getElementById('langToggle').textContent = 'JA';
+    }
+  });
 </script>
 
 </body>

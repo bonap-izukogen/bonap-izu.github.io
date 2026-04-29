@@ -1179,7 +1179,7 @@
     </div>
     </div><!-- /order-steps-grid -->
 
-    <a href="reservation.html" class="line-btn">
+    <a href="reservation.html" id="reservationBtn" class="line-btn">
       <span lang="ja">ご 予 約 フ ォ ー ム へ</span>
       <span lang="en">GO TO RESERVATION FORM</span>
     </a>
@@ -1308,8 +1308,10 @@
       const btn = document.getElementById('langToggle');
       if (document.body.classList.toggle('en')) {
         btn.textContent = 'JA';
+        document.getElementById('reservationBtn').href = 'reservation.html?lang=en';
       } else {
         btn.textContent = 'EN';
+        document.getElementById('reservationBtn').href = 'reservation.html';
       }
     }
 
