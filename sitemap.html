@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>サイトマップ — Bon'Ap</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Shippori+Mincho:wght@400;500&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HKZ4VN4VW4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HKZ4VN4VW4');
+  </script>
+
+  <style>
+    :root {
+      --ivory:      #F5EFE4;
+      --cream:      #EDE5D6;
+      --ink:        #2B2622;
+      --ink-soft:   #6B5E54;
+      --terracotta: #A0522D;
+      --forest:     #2D3B2E;
+      --sage:       #7A8C72;
+      --hairline:   rgba(43,38,34,0.15);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--ivory);
+      color: var(--ink);
+      font-family: 'Noto Sans JP', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .site-wrapper {
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 768px) {
+      body { background: var(--cream); }
+      .site-wrapper {
+        max-width: 800px;
+        background: var(--ivory);
+        box-shadow: 0 0 60px rgba(43,38,34,0.08);
+      }
+    }
+
+    /* ── LANG TOGGLE ── */
+    .lang-bar {
+      display: flex;
+      justify-content: flex-end;
+      padding: 10px 20px;
+    }
+    .lang-btn {
+      background: none;
+      border: 0.5px solid var(--hairline);
+      font-family: ui-monospace, monospace;
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: var(--ink-soft);
+      padding: 5px 10px;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .lang-btn:hover { background: var(--ink); color: var(--ivory); }
+
+    /* ── NAV ── */
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 20px 14px;
+      border-bottom: 0.5px solid var(--hairline);
+    }
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 500;
+      font-style: italic;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .back-btn {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: var(--ink-soft);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .back-btn:hover { color: var(--ink); }
+
+    @media (min-width: 768px) {
+      .topbar { padding: 16px 60px; }
+      .lang-bar { padding: 12px 60px; }
+    }
+
+    /* ── SITEMAP ── */
+    .sitemap-section {
+      padding: 48px 28px 64px;
+    }
+
+    @media (min-width: 768px) {
+      .sitemap-section { padding: 60px 80px 80px; }
+    }
+
+    .section-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 12px;
+      font-style: italic;
+      color: var(--sage);
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    .section-heading {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 20px;
+      color: var(--ink);
+      font-weight: 500;
+      letter-spacing: 2px;
+      margin-bottom: 40px;
+    }
+
+    .sitemap-group {
+      margin-bottom: 40px;
+    }
+
+    .sitemap-group-title {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: var(--terracotta);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 0.5px solid var(--hairline);
+    }
+
+    .sitemap-list {
+      list-style: none;
+    }
+
+    .sitemap-list li {
+      padding: 12px 0;
+      border-bottom: 0.5px solid var(--hairline);
+    }
+
+    .sitemap-list li:last-child {
+      border-bottom: none;
+    }
+
+    .sitemap-link {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      text-decoration: none;
+      color: var(--ink);
+      transition: color 0.2s;
+    }
+
+    .sitemap-link:hover { color: var(--terracotta); }
+
+    .sitemap-link-name {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 15px;
+      letter-spacing: 1px;
+    }
+
+    .sitemap-link-desc {
+      font-size: 12px;
+      color: var(--ink-soft);
+      letter-spacing: 0.3px;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: var(--ink);
+      color: var(--ivory);
+      padding: 48px 28px 40px;
+      text-align: center;
+    }
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 40px;
+      font-style: italic;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+    .footer-sub {
+      font-family: ui-monospace, monospace;
+      font-size: 10px;
+      color: rgba(245,239,228,0.55);
+      letter-spacing: 2px;
+      margin-top: 10px;
+    }
+    .footer-copy {
+      margin-top: 36px;
+      font-family: ui-monospace, monospace;
+      font-size: 9px;
+      color: rgba(245,239,228,0.35);
+      letter-spacing: 1.5px;
+    }
+
+    /* ── LANG ── */
+    [lang="en"] { display: none; }
+    body.en [lang="ja"] { display: none; }
+    body.en [lang="en"] { display: revert; }
+  </style>
+</head>
+
+<body>
+<div class="site-wrapper">
+
+  <div class="lang-bar">
+    <button class="lang-btn" id="langToggle" onclick="toggleLang()">EN</button>
+  </div>
+
+  <nav class="topbar">
+    <a href="index.html" class="logo">Bon'Ap</a>
+    <a href="index.html" class="back-btn">
+      ← <span lang="ja">トップへ戻る</span><span lang="en">Back</span>
+    </a>
+  </nav>
+
+  <section class="sitemap-section">
+    <p class="section-label">· Sitemap</p>
+    <h1 class="section-heading">
+      <span lang="ja">サイトマップ</span>
+      <span lang="en">Sitemap</span>
+    </h1>
+
+    <div class="sitemap-group">
+      <p class="sitemap-group-title">
+        <span lang="ja">メインページ</span>
+        <span lang="en">MAIN PAGES</span>
+      </p>
+      <ul class="sitemap-list">
+        <li>
+          <a href="index.html" class="sitemap-link">
+            <span class="sitemap-link-name">
+              <span lang="ja">トップページ</span>
+              <span lang="en">Home</span>
+            </span>
+            <span class="sitemap-link-desc">
+              <span lang="ja">コンセプト・メニュー・シェフ・アクセス</span>
+              <span lang="en">Concept · Menu · Chef · Access</span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="reservation.html" class="sitemap-link">
+            <span class="sitemap-link-name">
+              <span lang="ja">ご予約フォーム</span>
+              <span lang="en">Reservation</span>
+            </span>
+            <span class="sitemap-link-desc">
+              <span lang="ja">コース料理（テイクアウト）のご予約</span>
+              <span lang="en">Course meal take-away reservation</span>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </section>
+
+  <footer class="footer">
+    <p class="footer-logo">Bon'Ap</p>
+    <p class="footer-sub">TAKE-AWAY · IZU KOGEN · SHIZUOKA</p>
+    <p class="footer-copy">© 2026 BON'AP · SINCE DEC 2023 · ALL RIGHTS RESERVED</p>
+  </footer>
+
+</div>
+
+<script>
+  function toggleLang() {
+    const btn = document.getElementById('langToggle');
+    if (document.body.classList.toggle('en')) {
+      btn.textContent = 'JA';
+    } else {
+      btn.textContent = 'EN';
+    }
+  }
+</script>
+
+</body>
+</html>
