@@ -489,6 +489,10 @@
       letter-spacing: 2px;
       margin-top: 10px;
     }
+    .footer-pc-only { display: none; }
+    @media (min-width: 768px) {
+      .footer-pc-only { display: revert; }
+    }
     .footer-links {
       display: flex;
       justify-content: center;
@@ -701,18 +705,26 @@
     <p class="footer-logo">Bon' Ap</p>
     <p class="footer-sub">TAKE-AWAY · IZU KOGEN · SHIZUOKA</p>
     <div class="footer-links">
-      <a href="https://www.instagram.com/bon_bonap/" target="_blank" rel="noopener">Instagram</a>
-      <span class="footer-sep">·</span>
-      <a href="tel:07022192694">
+      <a href="https://www.instagram.com/bon_bonap/" target="_blank" rel="noopener" class="footer-pc-only">Instagram</a>
+      <span class="footer-sep footer-pc-only">·</span>
+      <a href="tel:07022192694" class="footer-pc-only">
         <span lang="ja">電話</span><span lang="en">Call</span>
       </a>
-      <span class="footer-sep">·</span>
-      <a href="index.html#access">
+      <span class="footer-sep footer-pc-only">·</span>
+      <a href="index.html#access" class="footer-pc-only">
         <span lang="ja">アクセス</span><span lang="en">Access</span>
       </a>
-      <span class="footer-sep">·</span>
-      <a href="sitemap.html">
+      <span class="footer-sep footer-pc-only">·</span>
+      <a href="sitemap.html" id="sitemapLink">
         <span lang="ja">サイトマップ</span><span lang="en">Sitemap</span>
+      </a>
+      <span class="footer-sep">·</span>
+      <a href="privacy.html" id="privacyLink">
+        <span lang="ja">プライバシーポリシー</span><span lang="en">Privacy Policy</span>
+      </a>
+      <span class="footer-sep">·</span>
+      <a href="tokushoho.html" id="tokushohoLink">
+        <span lang="ja">特定商取引法</span><span lang="en">Legal Notice</span>
       </a>
     </div>
     <p class="footer-copy">© 2026 BON'AP · SINCE DEC 2023 · ALL RIGHTS RESERVED</p>
@@ -754,6 +766,9 @@
     const s = isEn ? '?lang=en' : '';
     document.getElementById('backBtn').href = 'index.html' + s;
     document.getElementById('ctaReservationBtn').href = 'reservation.html' + s;
+    document.getElementById('sitemapLink').href = 'sitemap.html' + s;
+    document.getElementById('privacyLink').href = 'privacy.html' + s;
+    document.getElementById('tokushohoLink').href = 'tokushoho.html' + s;
   }
   function toggleLang() {
     const isEn = document.body.classList.toggle('en');
