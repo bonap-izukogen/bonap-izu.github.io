@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>プライバシーポリシー — Bon' Ap</title>
+  <title>特定商取引法に基づく表記 — Bon' Ap</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
@@ -143,50 +143,60 @@
       margin-top: 12px;
     }
 
-    .policy-list {
-      margin: 12px 0 0 1em;
-      padding: 0;
-    }
-    .policy-list li {
-      font-size: 14px;
-      line-height: 2.2;
-      color: var(--ink-soft);
-      letter-spacing: 0.3px;
-      list-style: none;
-      padding-left: 1em;
-      position: relative;
-    }
-    .policy-list li::before {
-      content: '·';
-      position: absolute;
-      left: 0;
-      color: var(--terracotta);
-    }
-
-    .operator-table {
+    .info-table {
       width: 100%;
-      margin-top: 16px;
+      margin-top: 8px;
     }
-    .operator-table tr {
+    .info-table tr {
       border-bottom: 0.5px solid var(--hairline);
     }
-    .operator-table tr:first-child {
+    .info-table tr:first-child {
       border-top: 0.5px solid var(--hairline);
     }
-    .operator-table td {
-      padding: 14px 8px;
+    .info-table td {
+      padding: 16px 8px;
       font-size: 13px;
-      line-height: 1.8;
+      line-height: 1.9;
       color: var(--ink-soft);
       vertical-align: top;
     }
-    .operator-table td:first-child {
+    .info-table td:first-child {
       font-family: 'Shippori Mincho', serif;
       color: var(--terracotta);
       letter-spacing: 1px;
       white-space: nowrap;
-      width: 100px;
+      width: 120px;
       padding-right: 16px;
+    }
+
+    /* キャンセルポリシー表 */
+    .cancel-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+    }
+    .cancel-table th {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--ivory);
+      background: var(--forest);
+      padding: 12px 16px;
+      text-align: left;
+      letter-spacing: 1px;
+    }
+    .cancel-table td {
+      font-size: 13px;
+      color: var(--ink-soft);
+      padding: 14px 16px;
+      border-bottom: 0.5px solid var(--hairline);
+      line-height: 1.8;
+    }
+    .cancel-table tr:last-child td {
+      border-bottom: none;
+    }
+    .cancel-table tr:nth-child(even) td {
+      background: var(--cream);
     }
 
     /* ── FOOTER ── */
@@ -245,16 +255,16 @@
 
   <!-- CONTENT -->
   <section class="policy-section">
-    <p class="section-label">· Politique de confidentialité</p>
-    <h1 class="page-heading">プライバシーポリシー</h1>
+    <p class="section-label">· Mentions légales</p>
+    <h1 class="page-heading">特定商取引法に基づく表記</h1>
     <p class="page-date">制定日 · 2026年5月</p>
 
-    <!-- 1 -->
+    <!-- 事業者情報 -->
     <div class="policy-block">
-      <p class="policy-title">1. 事業者情報</p>
-      <table class="operator-table">
+      <p class="policy-title">事業者情報</p>
+      <table class="info-table">
         <tr>
-          <td>事業者名</td>
+          <td>販売事業者</td>
           <td>Bon' Ap</td>
         </tr>
         <tr>
@@ -267,75 +277,99 @@
         </tr>
         <tr>
           <td>電話番号</td>
-          <td>070-2219-2694</td>
+          <td><a href="tel:07022192694" style="color:var(--terracotta);">070-2219-2694</a><br />
+          <span style="font-size:12px;">受付時間：営業時間内（水〜土 11:00–19:00 / 日 11:00–15:00）</span></td>
         </tr>
       </table>
     </div>
 
-    <!-- 2 -->
+    <!-- 販売内容 -->
     <div class="policy-block">
-      <p class="policy-title">2. 取得する個人情報</p>
-      <p class="policy-text">当店では、コース料理のご予約受付に際して、以下の情報をご提供いただきます。</p>
-      <ul class="policy-list">
-        <li>お名前</li>
-        <li>電話番号</li>
-        <li>メールアドレス または Instagramアカウント</li>
-        <li>ご希望の受け取り日・時間・人数</li>
-        <li>アレルギー・食材に関するご要望</li>
-        <li>その他ご要望（任意）</li>
-      </ul>
-    </div>
-
-    <!-- 3 -->
-    <div class="policy-block">
-      <p class="policy-title">3. 利用目的</p>
-      <p class="policy-text">取得した個人情報は、以下の目的にのみ使用します。</p>
-      <ul class="policy-list">
-        <li>ご予約内容の確認・ご連絡</li>
-        <li>ご予約に関するお問い合わせへの対応</li>
-      </ul>
-    </div>
-
-    <!-- 4 -->
-    <div class="policy-block">
-      <p class="policy-title">4. 第三者提供</p>
-      <p class="policy-text">当店は、法令に基づく場合を除き、お客様の個人情報を第三者に提供・開示することはありません。</p>
-      <p class="policy-text">なお、予約フォームの送信にはFormspree（<a href="https://formspree.io" target="_blank" rel="noopener" style="color:var(--terracotta);">formspree.io</a>）を利用しています。送信データはFormspreeのサーバーを経由しますが、当店以外の目的に使用されることはありません。</p>
-    </div>
-
-    <!-- 5 -->
-    <div class="policy-block">
-      <p class="policy-title">5. アクセス解析ツールについて</p>
-      <p class="policy-text">当サイトでは、Googleアナリティクスを使用してアクセス状況を分析しています。Googleアナリティクスは、Cookieを使用してお客様の情報を収集しますが、個人を特定する情報は含まれません。</p>
-      <p class="policy-text">Cookieの収集を望まれない場合は、ブラウザの設定からCookieを無効にするか、<a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener" style="color:var(--terracotta);">Googleアナリティクス オプトアウトアドオン</a>をご利用ください。</p>
-    </div>
-
-    <!-- 6 -->
-    <div class="policy-block">
-      <p class="policy-title">6. 保管・管理</p>
-      <p class="policy-text">取得した個人情報は、予約対応が完了した後、適切な期間が経過した時点で削除します。不正アクセス・紛失・改ざん等を防ぐため、適切な管理を行います。</p>
-    </div>
-
-    <!-- 7 -->
-    <div class="policy-block">
-      <p class="policy-title">7. お問い合わせ</p>
-      <p class="policy-text">個人情報の開示・訂正・削除に関するお問い合わせは、以下までご連絡ください。</p>
-      <table class="operator-table" style="margin-top:16px;">
+      <p class="policy-title">販売内容</p>
+      <table class="info-table">
         <tr>
-          <td>電話</td>
-          <td><a href="tel:07022192694" style="color:var(--terracotta);">070-2219-2694</a></td>
+          <td>商品・サービス</td>
+          <td>フレンチイタリアン テイクアウトコース料理（事前予約制）</td>
         </tr>
         <tr>
-          <td>受付時間</td>
-          <td>営業時間内（水〜土 11:00–19:00 / 日 11:00–15:00）</td>
+          <td>販売価格</td>
+          <td>お一人様 ¥10,000（税込）</td>
+        </tr>
+        <tr>
+          <td>追加費用</td>
+          <td>送料・配送料は発生しません（店頭お受け取りのみ）</td>
         </tr>
       </table>
     </div>
 
-    <!-- 8 -->
+    <!-- 注文・支払方法 -->
     <div class="policy-block">
-      <p class="policy-title">8. ポリシーの変更</p>
-      <p class="policy-text">本ポリシーは、必要に応じて内容を変更することがあります。変更後のポリシーは、当ページに掲載した時点から効力を生じるものとします。</p>
+      <p class="policy-title">ご注文・お支払い方法</p>
+      <table class="info-table">
+        <tr>
+          <td>注文方法</td>
+          <td>当サイトの予約フォームより、受け取り希望日の3営業日前までにお申し込みください。</td>
+        </tr>
+        <tr>
+          <td>支払方法</td>
+          <td>現金／銀行振込<br />
+          <span style="font-size:12px;">※銀行振込の場合、振込先口座は予約確認時にご案内いたします。</span></td>
+        </tr>
+        <tr>
+          <td>支払時期</td>
+          <td>現金：お受け取り時<br />銀行振込：予約確認後、受け取り日の前日までにお振込みください。</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- 引き渡し時期 -->
+    <div class="policy-block">
+      <p class="policy-title">商品の引き渡し時期</p>
+      <table class="info-table">
+        <tr>
+          <td>受け取り方法</td>
+          <td>店頭お受け取りのみ（配送は承っておりません）</td>
+        </tr>
+        <tr>
+          <td>受け取り時間</td>
+          <td>15:00〜18:30（予約時にご指定ください）</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- キャンセルポリシー -->
+    <div class="policy-block">
+      <p class="policy-title">キャンセルポリシー</p>
+      <p class="policy-text">コース料理は食材を事前に仕入れる性質上、以下のキャンセル料を申し受けます。</p>
+      <table class="cancel-table">
+        <thead>
+          <tr>
+            <th>キャンセル時期</th>
+            <th>キャンセル料</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>受け取り日の3日前まで</td>
+            <td>無料</td>
+          </tr>
+          <tr>
+            <td>受け取り日の2日前・前日</td>
+            <td>ご注文金額の50%</td>
+          </tr>
+          <tr>
+            <td>当日・無連絡キャンセル</td>
+            <td>ご注文金額の100%</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="policy-text" style="margin-top:16px;">キャンセルのご連絡は、お電話（070-2219-2694）にてお願いいたします。</p>
+    </div>
+
+    <!-- 返品・交換 -->
+    <div class="policy-block">
+      <p class="policy-title">返品・交換について</p>
+      <p class="policy-text">食品の性質上、お受け取り後の返品・交換はお断りしております。ただし、商品に問題がある場合はお受け取り当日中にお電話にてご連絡ください。</p>
     </div>
 
   </section>
@@ -351,9 +385,7 @@
       <span class="footer-sep">·</span>
       <a href="index.html#access">アクセス</a>
       <span class="footer-sep">·</span>
-      <a href="sitemap.html">サイトマップ</a>
-      <span class="footer-sep">·</span>
-      <a href="tokushoho.html">特定商取引法</a>
+      <a href="privacy.html">プライバシーポリシー</a>
     </div>
     <p class="footer-copy">© 2026 BON'AP · SINCE DEC 2023 · ALL RIGHTS RESERVED</p>
   </footer>
