@@ -168,6 +168,45 @@
     body.en [lang="ja"] { display: none; }
     body.en [lang="en"] { display: revert; }
 
+    /* ── FIXED CTA ── */
+    .fixed-cta { display: none; }
+    @media (max-width: 767px) {
+      .fixed-cta {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        background: var(--terracotta);
+        border-top: 0.5px solid rgba(245,239,228,0.2);
+        max-width: 480px;
+        margin: 0 auto;
+      }
+      .fixed-cta-btn {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        padding: 10px 0 12px;
+        text-decoration: none;
+        color: rgba(245,239,228,0.85);
+        border-right: 0.5px solid rgba(245,239,228,0.2);
+        transition: background 0.2s;
+      }
+      .fixed-cta-btn:last-child { border-right: none; }
+      .fixed-cta-btn:hover { background: rgba(245,239,228,0.1); }
+      .fixed-cta-btn svg { flex-shrink: 0; }
+      .fixed-cta-label {
+        font-family: 'Shippori Mincho', serif;
+        font-size: 10px;
+        letter-spacing: 1.5px;
+      }
+      .footer { padding-bottom: 160px; }
+    }
+
     /* ══════════════════════════════
        OPENING HERO
     ══════════════════════════════ */
@@ -681,22 +720,56 @@
 
 </div><!-- /site-wrapper -->
 
+  <!-- FIXED CTA (SP only) -->
+  <div class="fixed-cta">
+    <a class="fixed-cta-btn" href="https://www.instagram.com/bon_bonap/" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+      </svg>
+      <span class="fixed-cta-label">Instagram</span>
+    </a>
+    <a class="fixed-cta-btn" href="tel:07022192694" onclick="gtag('event', 'phone_call', {'event_category': 'contact', 'event_label': 'fixed_cta_chef'})">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.12 1.01.36 2 .71 2.96a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.12-1.17a2 2 0 012.11-.45c.96.35 1.95.59 2.96.71A2 2 0 0122 14.92z"/>
+      </svg>
+      <span class="fixed-cta-label" lang="ja">電 話</span>
+      <span class="fixed-cta-label" lang="en">CALL</span>
+    </a>
+    <a class="fixed-cta-btn" href="reservation.html" id="ctaReservationBtn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/>
+        <rect x="9" y="3" width="6" height="4" rx="1"/>
+        <path d="M9 12h6M9 16h4"/>
+      </svg>
+      <span class="fixed-cta-label" lang="ja">ご予約</span>
+      <span class="fixed-cta-label" lang="en">RESERVE</span>
+    </a>
+  </div>
+
 <script>
   // ── LANGUAGE TOGGLE ──
+  function updateLinks(isEn) {
+    const s = isEn ? '?lang=en' : '';
+    document.getElementById('backBtn').href = 'index.html' + s;
+    document.getElementById('ctaReservationBtn').href = 'reservation.html' + s;
+  }
   function toggleLang() {
-    const btn = document.getElementById('langToggle');
-    if (document.body.classList.toggle('en')) {
-      btn.textContent = 'JA';
-    } else {
-      btn.textContent = 'EN';
-    }
+    const isEn = document.body.classList.toggle('en');
+    document.getElementById('langToggle').textContent = isEn ? 'JA' : 'EN';
+    updateLinks(isEn);
   }
 
   // URLパラメータで英語起動
-  if (new URLSearchParams(window.location.search).get('lang') === 'en') {
-    document.body.classList.add('en');
-    document.getElementById('langToggle').textContent = 'JA';
-  }
+  window.addEventListener('DOMContentLoaded', () => {
+    const isEn = new URLSearchParams(window.location.search).get('lang') === 'en';
+    if (isEn) {
+      document.body.classList.add('en');
+      document.getElementById('langToggle').textContent = 'JA';
+      updateLinks(true);
+    }
+  });
 
   // ── SCROLL FADE IN ──
   const observer = new IntersectionObserver((entries) => {
