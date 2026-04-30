@@ -238,7 +238,7 @@
 
   <nav class="topbar">
     <a href="https://bonap-izukogen.com/" class="logo">Bon' Ap</a>
-    <a href="https://bonap-izukogen.com/" class="back-btn">
+    <a href="https://bonap-izukogen.com/" class="back-btn" id="backBtn">
       ← <span lang="ja">トップへ戻る</span><span lang="en">Back</span>
     </a>
   </nav>
@@ -258,6 +258,7 @@
     <form action="https://formspree.io/f/mnjlkzew" method="POST">
       <input type="hidden" name="_next" value="https://bonap-izukogen.com/thanks.html" />
       <input type="hidden" name="_subject" value="【Bon' Ap】新しいご予約が届きました" />
+      <input type="text" name="_gotcha" style="display:none" />
       <div class="form-row">
         <label>
           <span class="form-label" lang="ja">お名前 <span class="required">*</span></span>
@@ -373,6 +374,7 @@
     btn.textContent = isEn ? 'JA' : 'EN';
     setLang(isEn);
     const s = isEn ? '?lang=en' : '';
+    document.getElementById('backBtn').href = 'https://bonap-izukogen.com/' + s;
     document.getElementById('cancelLink').href = 'tokushoho.html' + s;
     document.getElementById('cancelLinkEn').href = 'tokushoho.html' + s;
   }
@@ -384,6 +386,7 @@
       document.body.classList.add('en');
       document.getElementById('langToggle').textContent = 'JA';
       setLang(true);
+      document.getElementById('backBtn').href = 'https://bonap-izukogen.com/?lang=en';
       document.getElementById('cancelLink').href = 'tokushoho.html?lang=en';
       document.getElementById('cancelLinkEn').href = 'tokushoho.html?lang=en';
     }

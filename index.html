@@ -1295,15 +1295,15 @@
         <span lang="ja">アクセス</span><span lang="en">Access</span>
       </a>
       <span class="footer-sep">·</span>
-      <a href="sitemap.html">
+      <a href="sitemap.html" id="sitemapLink">
         <span lang="ja">サイトマップ</span><span lang="en">Sitemap</span>
       </a>
       <span class="footer-sep">·</span>
-      <a href="privacy.html">
+      <a href="privacy.html" id="privacyLink">
         <span lang="ja">プライバシーポリシー</span><span lang="en">Privacy Policy</span>
       </a>
       <span class="footer-sep">·</span>
-      <a href="tokushoho.html">
+      <a href="tokushoho.html" id="tokushohoLink">
         <span lang="ja">特定商取引法</span><span lang="en">Legal Notice</span>
       </a>
     </div>
@@ -1314,15 +1314,17 @@
 
   <script>
     // ── LANGUAGE TOGGLE ──
+    function updateLinks(isEn) {
+      const s = isEn ? '?lang=en' : '';
+      document.getElementById('reservationBtn').href = 'reservation.html' + s;
+      document.getElementById('sitemapLink').href = 'sitemap.html' + s;
+      document.getElementById('privacyLink').href = 'privacy.html' + s;
+      document.getElementById('tokushohoLink').href = 'tokushoho.html' + s;
+    }
     function toggleLang() {
-      const btn = document.getElementById('langToggle');
-      if (document.body.classList.toggle('en')) {
-        btn.textContent = 'JA';
-        document.getElementById('reservationBtn').href = 'reservation.html?lang=en';
-      } else {
-        btn.textContent = 'EN';
-        document.getElementById('reservationBtn').href = 'reservation.html';
-      }
+      const isEn = document.body.classList.toggle('en');
+      document.getElementById('langToggle').textContent = isEn ? 'JA' : 'EN';
+      updateLinks(isEn);
     }
 
     // ── SCROLL FADE IN ──
