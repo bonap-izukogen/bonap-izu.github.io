@@ -223,6 +223,51 @@
     }
     .form-submit:hover { background: #8B4520; }
 
+    /* ── AGREEMENT CHECKBOXES ── */
+    .agreement-section {
+      margin-bottom: 28px;
+      border-top: 0.5px solid var(--hairline);
+      padding-top: 20px;
+    }
+    .agreement-title {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 12px;
+      color: var(--ink);
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+    }
+    .agreement-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .agreement-item input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      min-width: 16px;
+      border: 1px solid var(--ink-soft);
+      border-bottom: 1px solid var(--ink-soft);
+      background: var(--ivory);
+      cursor: pointer;
+      margin-top: 2px;
+      padding: 0;
+      accent-color: var(--terracotta);
+    }
+    .agreement-item label {
+      font-size: 12px;
+      line-height: 1.8;
+      color: var(--ink-soft);
+      letter-spacing: 0.3px;
+      cursor: pointer;
+      flex-direction: row;
+      gap: 0;
+    }
+    .agreement-item label a {
+      color: var(--terracotta);
+      text-underline-offset: 3px;
+    }
+
     /* ── LANG ── */
     [lang="en"] { display: none; }
     body.en [lang="ja"] { display: none; }
@@ -290,6 +335,11 @@
     <p class="form-notice">
       <span lang="ja">このフォームはコース料理（テイクアウト）のご予約専用です。<br />大切なお客様のご予約を見落とさないために、<br />営業・セールスでのフォーム送信は固くお断りいたします。</span>
       <span lang="en">This form is exclusively for course meal (take-away) reservations. To avoid missing genuine reservations, we strictly decline all sales and marketing submissions.</span>
+    </p>
+
+    <p class="form-notice" style="margin-top:-20px;">
+      <span lang="ja">このフォームへの送信はリクエストです。<br />担当者からのお電話、またはご予約を確約するメールをもって、予約確定となります。</span>
+      <span lang="en">Submitting this form is a reservation request only.<br />Your reservation is confirmed upon receipt of a phone call or confirmation email from our team.</span>
     </p>
 
     <form action="https://formspree.io/f/mnjlkzew" method="POST">
@@ -386,6 +436,45 @@
         Please review our <a href="tokushoho.html" id="cancelLinkEn" style="color:var(--terracotta);text-underline-offset:3px;">cancellation policy</a> before submitting.</span>
       </p>
 
+      <div class="agreement-section">
+        <p class="agreement-title">
+          <span lang="ja">ご予約の前にご確認ください <span class="required">*</span></span>
+          <span lang="en">Please confirm before submitting <span class="required">*</span></span>
+        </p>
+
+        <div class="agreement-item">
+          <input type="checkbox" id="agree1" required />
+          <label for="agree1">
+            <span lang="ja">受取希望日は、ご予約日を含まず営業日3日目以降をお選びください。</span>
+            <span lang="en">Please select a pick-up date at least 3 business days after your order date (not including today).</span>
+          </label>
+        </div>
+
+        <div class="agreement-item">
+          <input type="checkbox" id="agree2" required />
+          <label for="agree2">
+            <span lang="ja">事前振込をお願いする場合があります。</span>
+            <span lang="en">We may ask for advance payment after confirmation.</span>
+          </label>
+        </div>
+
+        <div class="agreement-item">
+          <input type="checkbox" id="agree3" required />
+          <label for="agree3">
+            <span lang="ja">ご予約の前に<a href="tokushoho.html" id="agreeCancel">キャンセルポリシー</a>をご確認ください。</span>
+            <span lang="en">Please review our <a href="tokushoho.html" id="agreeCancelEn">cancellation policy</a> before reserving.</span>
+          </label>
+        </div>
+
+        <div class="agreement-item">
+          <input type="checkbox" id="agree4" required />
+          <label for="agree4">
+            <span lang="ja">仕入れ状況により、食材のご希望に添えない場合があります。</span>
+            <span lang="en">Due to sourcing conditions, we may not be able to accommodate all ingredient requests.</span>
+          </label>
+        </div>
+      </div>
+
       <button type="submit" class="form-submit" disabled style="background:rgba(43,38,34,0.2);color:rgba(43,38,34,0.4);cursor:not-allowed;">
         <span lang="ja">予 約 受 付 準 備 中</span>
         <span lang="en">RESERVATIONS COMING SOON</span>
@@ -414,6 +503,8 @@
     document.getElementById('backBtn').href = 'https://bonap-izukogen.com/' + s;
     document.getElementById('cancelLink').href = 'tokushoho.html' + s;
     document.getElementById('cancelLinkEn').href = 'tokushoho.html' + s;
+    document.getElementById('agreeCancel').href = 'tokushoho.html' + s;
+    document.getElementById('agreeCancelEn').href = 'tokushoho.html' + s;
   }
 
   // URLパラメータで言語を自動切替
@@ -426,6 +517,8 @@
       document.getElementById('backBtn').href = 'https://bonap-izukogen.com/?lang=en';
       document.getElementById('cancelLink').href = 'tokushoho.html?lang=en';
       document.getElementById('cancelLinkEn').href = 'tokushoho.html?lang=en';
+      document.getElementById('agreeCancel').href = 'tokushoho.html?lang=en';
+      document.getElementById('agreeCancelEn').href = 'tokushoho.html?lang=en';
     }
   });
 </script>
