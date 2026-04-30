@@ -342,8 +342,10 @@
       </div>
 
       <p class="form-footer-note">
-        <span lang="ja">ご予約受付後、担当者よりご連絡いたします。営業時間外にいただいたご予約は翌営業日以降にご連絡します。</span>
-        <span lang="en">After your reservation is received, our team will be in touch. Reservations submitted outside business hours will be followed up from the next business day.</span>
+        <span lang="ja">ご予約受付後、担当者よりご連絡いたします。営業時間外にいただいたご予約は翌営業日以降にご連絡します。<br /><br />
+        キャンセルポリシーについては<a href="tokushoho.html" id="cancelLink" style="color:var(--terracotta);text-underline-offset:3px;">特定商取引法に基づく表記</a>をご確認ください。</span>
+        <span lang="en">After your reservation is received, our team will be in touch. Reservations submitted outside business hours will be followed up from the next business day.<br /><br />
+        Please review our <a href="tokushoho.html" id="cancelLinkEn" style="color:var(--terracotta);text-underline-offset:3px;">cancellation policy</a> before submitting.</span>
       </p>
 
       <button type="submit" class="form-submit" disabled style="background:rgba(43,38,34,0.2);color:rgba(43,38,34,0.4);cursor:not-allowed;">
@@ -370,6 +372,9 @@
     const isEn = document.body.classList.toggle('en');
     btn.textContent = isEn ? 'JA' : 'EN';
     setLang(isEn);
+    const s = isEn ? '?lang=en' : '';
+    document.getElementById('cancelLink').href = 'tokushoho.html' + s;
+    document.getElementById('cancelLinkEn').href = 'tokushoho.html' + s;
   }
 
   // URLパラメータで言語を自動切替
@@ -379,6 +384,8 @@
       document.body.classList.add('en');
       document.getElementById('langToggle').textContent = 'JA';
       setLang(true);
+      document.getElementById('cancelLink').href = 'tokushoho.html?lang=en';
+      document.getElementById('cancelLinkEn').href = 'tokushoho.html?lang=en';
     }
   });
 </script>
