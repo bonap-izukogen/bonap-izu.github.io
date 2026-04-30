@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>André — le Chef | Bon' AP 伊豆高原</title>
+  <title>André — le Chef | Bon' Ap 伊豆高原</title>
   <meta name="description" content="パリで生まれ、世界を渡り、伊豆高原に辿り着いたシェフ、アンドレの軌跡。" />
 
   <!-- Google tag (gtag.js) -->
@@ -54,6 +54,659 @@
         background: var(--ivory);
         box-shadow: 0 0 60px rgba(43,38,34,0.08);
       }
+      .topbar { padding: 16px 60px; }
+      .lang-bar { padding: 12px 60px; }
+      .footer { padding: 56px 60px 48px; }
+    }
+
+    /* ── LANG TOGGLE ── */
+    .lang-bar {
+      display: flex;
+      justify-content: flex-end;
+      padding: 10px 20px;
+      background: var(--ivory);
+    }
+    .lang-btn {
+      background: none;
+      border: 0.5px solid var(--hairline);
+      font-family: ui-monospace, monospace;
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: var(--ink-soft);
+      padding: 5px 10px;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .lang-btn:hover { background: var(--ink); color: var(--ivory); }
+
+    /* ── NAV ── */
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 20px 14px;
+      background: var(--ivory);
+    }
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 500;
+      font-style: italic;
+      color: var(--ink);
+      letter-spacing: 0.5px;
+      text-decoration: none;
+    }
+    .tel-btn {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--terracotta);
+      color: var(--ivory);
+      border: none;
+      padding: 9px 16px;
+      font-family: 'Shippori Mincho', serif;
+      font-size: 12px;
+      letter-spacing: 2px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .tel-btn svg { flex-shrink: 0; }
+
+    /* ── SHARED UTIL ── */
+    .section-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 12px;
+      font-style: italic;
+      color: var(--sage);
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+    .section-heading {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 22px;
+      line-height: 1.8;
+      color: var(--ink);
+      font-weight: 500;
+      letter-spacing: 1px;
+      margin-bottom: 28px;
+    }
+    .body-text {
+      font-size: 15px;
+      line-height: 2.1;
+      color: var(--ink-soft);
+      letter-spacing: 0.5px;
+    }
+    .label-sm {
+      font-family: ui-monospace, monospace;
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: var(--terracotta);
+      text-transform: uppercase;
+    }
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      justify-content: center;
+      margin: 20px 0;
+    }
+    .divider-line { flex: 1; height: 0.5px; background: var(--hairline); max-width: 60px; }
+    .divider-diamond { width: 5px; height: 5px; background: var(--terracotta); transform: rotate(45deg); }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ── ENGLISH HIDDEN BY DEFAULT ── */
+    [lang="en"] { display: none; }
+    body.en [lang="ja"] { display: none; }
+    body.en [lang="en"] { display: revert; }
+
+    /* ══════════════════════════════
+       OPENING HERO
+    ══════════════════════════════ */
+    .chef-hero {
+      background: var(--cream);
+      padding: 56px 28px 48px;
+      text-align: center;
+    }
+    .chef-hero-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 64px;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--ink);
+      line-height: 1;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+    .chef-hero-title {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 12px;
+      color: var(--ink-soft);
+      letter-spacing: 4px;
+      margin-bottom: 32px;
+    }
+    .chef-hero-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      font-style: italic;
+      line-height: 1.6;
+      color: var(--ink);
+      border-left: 2px solid var(--terracotta);
+      padding-left: 20px;
+      text-align: left;
+      max-width: 480px;
+      margin: 0 auto 12px;
+    }
+    .chef-hero-quote-jp {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 13px;
+      color: var(--ink-soft);
+      letter-spacing: 1px;
+      line-height: 2;
+      max-width: 480px;
+      margin: 0 auto;
+      text-align: left;
+      padding-left: 22px;
+    }
+
+    @media (min-width: 768px) {
+      .chef-hero { padding: 80px 60px 72px; }
+      .chef-hero-name { font-size: 96px; }
+      .chef-hero-quote { font-size: 28px; }
+    }
+
+    /* ══════════════════════════════
+       TIMELINE
+    ══════════════════════════════ */
+    .timeline-section {
+      background: var(--ivory);
+      padding: 60px 0 48px;
+    }
+    .timeline-header {
+      padding: 0 28px 40px;
+      text-align: center;
+    }
+
+    .timeline-item {
+      padding: 0 0 56px;
+      border-left: 0.5px solid var(--hairline);
+      margin-left: 28px;
+      padding-left: 32px;
+      position: relative;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -4px;
+      top: 4px;
+      width: 7px;
+      height: 7px;
+      background: var(--terracotta);
+      transform: rotate(45deg);
+    }
+    .timeline-era {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 11px;
+      font-style: italic;
+      color: var(--terracotta);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .timeline-place {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      font-style: italic;
+      color: var(--ink);
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .timeline-photo {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: var(--cream);
+      border: 3px solid var(--ivory);
+      outline: 0.5px solid var(--hairline);
+      margin-bottom: 0;
+      flex-shrink: 0;
+    }
+    .timeline-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+    .timeline-photo.large {
+      width: 200px;
+      height: 200px;
+    }
+
+    /* モバイル：写真＋テキストを横並び */
+    .timeline-item-inner {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+    .timeline-item-inner.text-only {
+      display: block;
+    }
+
+    @media (min-width: 768px) {
+      .timeline-header { padding: 0 60px 48px; }
+
+      .timeline-item {
+        margin-left: 60px;
+        padding-left: 48px;
+        padding-right: 60px;
+        max-width: 860px;
+      }
+
+      .timeline-photo {
+        width: 220px;
+        height: 220px;
+      }
+      .timeline-photo.large {
+        width: 280px;
+        height: 280px;
+      }
+
+      .timeline-item-inner {
+        display: flex;
+        gap: 48px;
+        align-items: center;
+      }
+      .timeline-item-inner.text-only {
+        display: block;
+        max-width: 600px;
+      }
+      .timeline-item-inner.dummy {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+      }
+      .timeline-photo {
+        margin-bottom: 0;
+        aspect-ratio: 3 / 4;
+        max-width: none;
+      }
+      .timeline-place { font-size: 40px; }
+    }
+
+    /* ══════════════════════════════
+       PHILOSOPHY セクション
+    ══════════════════════════════ */
+    .philosophy-section {
+      background: var(--forest);
+      color: var(--ivory);
+      padding: 64px 28px 60px;
+    }
+    .philosophy-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 12px;
+      font-style: italic;
+      color: rgba(245,239,228,0.55);
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .philosophy-heading {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 20px;
+      line-height: 1.9;
+      color: var(--ivory);
+      font-weight: 500;
+      letter-spacing: 1px;
+      margin-bottom: 36px;
+      text-align: center;
+    }
+    .philosophy-block {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .philosophy-text {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 15px;
+      line-height: 2.4;
+      color: rgba(245,239,228,0.88);
+      letter-spacing: 0.5px;
+      margin-bottom: 24px;
+    }
+    .philosophy-placeholder {
+      border: 0.5px dashed rgba(245,239,228,0.2);
+      padding: 32px 24px;
+      text-align: center;
+    }
+    .philosophy-placeholder p {
+      font-family: ui-monospace, monospace;
+      font-size: 10px;
+      color: rgba(245,239,228,0.3);
+      letter-spacing: 2px;
+      line-height: 2;
+    }
+
+    @media (min-width: 768px) {
+      .philosophy-section { padding: 80px 60px 72px; }
+      .philosophy-heading { font-size: 24px; }
+    }
+
+    /* ══════════════════════════════
+       BACK TO TOP ボタン
+    ══════════════════════════════ */
+    .back-section {
+      background: var(--cream);
+      padding: 48px 28px;
+      text-align: center;
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: none;
+      border: 0.5px solid var(--ink);
+      color: var(--ink);
+      text-decoration: none;
+      padding: 14px 32px;
+      font-family: 'Shippori Mincho', serif;
+      font-size: 13px;
+      letter-spacing: 3px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .back-btn:hover { background: var(--ink); color: var(--ivory); }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: var(--ink);
+      color: var(--ivory);
+      padding: 48px 28px 40px;
+      text-align: center;
+    }
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 40px;
+      font-style: italic;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+    .footer-sub {
+      font-family: ui-monospace, monospace;
+      font-size: 10px;
+      color: rgba(245,239,228,0.55);
+      letter-spacing: 2px;
+      margin-top: 10px;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 24px;
+      font-family: 'Shippori Mincho', serif;
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+    .footer-links a { color: rgba(245,239,228,0.75); text-decoration: none; }
+    .footer-links a:hover { color: var(--ivory); }
+    .footer-sep { opacity: 0.3; }
+    .footer-copy {
+      margin-top: 36px;
+      font-family: ui-monospace, monospace;
+      font-size: 9px;
+      color: rgba(245,239,228,0.35);
+      letter-spacing: 1.5px;
+    }
+  </style>
+</head>
+
+<body>
+<div class="site-wrapper">
+
+  <!-- LANG TOGGLE -->
+  <div class="lang-bar">
+    <button class="lang-btn" id="langToggle" onclick="toggleLang()">EN</button>
+  </div>
+
+  <!-- NAV -->
+  <nav class="topbar">
+    <a href="index.html" class="logo">Bon' Ap</a>
+    <a class="tel-btn" href="tel:07022192694" onclick="gtag('event', 'phone_call', {'event_category': 'contact', 'event_label': 'header'})">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.12 1.01.36 2 .71 2.96a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.12-1.17a2 2 0 012.11-.45c.96.35 1.95.59 2.96.71A2 2 0 0122 14.92z"/>
+      </svg>
+      <span lang="ja">電 話 す る</span>
+      <span lang="en">CALL US</span>
+    </a>
+  </nav>
+
+  <!-- OPENING HERO -->
+  <section class="chef-hero fade-in">
+    <p class="label-sm">· le Chef ·</p>
+    <div class="divider">
+      <div class="divider-line"></div>
+      <div class="divider-diamond"></div>
+      <div class="divider-line"></div>
+    </div>
+    <h1 class="chef-hero-name">André</h1>
+    <p class="chef-hero-title">
+      <span lang="ja">Chef · Bon' Ap · 伊豆高原</span>
+      <span lang="en">Chef · Bon' Ap · Izu Kogen</span>
+    </p>
+    <blockquote class="chef-hero-quote">
+      « la cuisine, c'est honnête. »
+    </blockquote>
+    <p class="chef-hero-quote-jp">
+      <span lang="ja">料理は、誠実であるべきだ。</span>
+      <span lang="en">Cooking must be honest.</span>
+    </p>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="timeline-section">
+    <div class="timeline-header fade-in">
+      <p class="section-label" style="text-align:center">· La Trajectoire ·</p>
+      <h2 class="section-heading" style="text-align:center">
+        <span lang="ja">アンドレの軌跡</span>
+        <span lang="en">The Journey of a Chef</span>
+      </h2>
+    </div>
+
+    <!-- PARIS -->
+    <div class="timeline-item fade-in">
+      <p class="timeline-era">1980s</p>
+      <p class="timeline-place">Paris</p>
+      <div class="timeline-item-inner text-only">
+        <div>
+          <p class="body-text">
+            <span lang="ja">パリ生まれ。14歳でキッチンに立ち、ミシュランの星を持つシェフのもとで修業を積む。若き日のアンドレがそこで学んだのは、技術だけではなく、食材への誠実さと料理に込める意志だった。<br /><br />22歳にして、パリのレストランでシェフに就任。</span>
+            <span lang="en">Born in Paris, André entered the kitchen at 14, training under a Michelin-starred chef. What he learned there was more than technique — it was honesty toward ingredients, and the will to put oneself fully into every dish.<br /><br />At just 22, he became head chef at a Parisian restaurant.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- LE MONDE (1395 + 1396) -->
+    <div class="timeline-item fade-in">
+      <p class="timeline-era">1990s — 2000s</p>
+      <p class="timeline-place">Le Monde</p>
+      <div class="timeline-item-inner">
+        <div>
+          <p class="body-text">
+            <span lang="ja">フランスにとどまらず、イタリア、シチリア、ボラボラ島、ニューカレドニア、オーストラリアへ。それぞれの土地の食材、文化、気候がアンドレの料理を深め、広げていった。</span>
+            <span lang="en">From France, André moved outward — Italy, Sicily, Bora Bora, New Caledonia, Australia. Each land, its ingredients, culture, and climate, deepened and widened his cuisine.</span>
+          </p>
+        </div>
+        <div class="timeline-photo">
+          <img src="assets/IMG_1395.jpeg" alt="André — Le Monde" style="object-position: center 85%;" />
+        </div>
+      </div>
+    </div>
+
+    <!-- LE MONDE 2 (1396) -->
+    <div class="timeline-item fade-in">
+      <p class="timeline-era">— en cuisine</p>
+      <p class="timeline-place">現場にて</p>
+      <div class="timeline-item-inner">
+        <div class="timeline-photo">
+          <img src="assets/IMG_1396.jpeg" alt="André en cuisine" style="object-position: center 20%;" />
+        </div>
+        <p class="body-text">
+          <span lang="ja">どの土地でも、アンドレはキッチンの中にいた。</span>
+          <span lang="en">Wherever he went, André was in the kitchen.</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- TOKYO 1 (1397) -->
+    <div class="timeline-item fade-in">
+      <p class="timeline-era">c. 2005 — Tokyo</p>
+      <p class="timeline-place">神楽坂・銀座</p>
+      <div class="timeline-item-inner">
+        <div>
+          <p class="body-text">
+            <span lang="ja">東京へ。神楽坂、そして銀座で14年間、第一線のキッチンに立ち続けた。「俺のフレンチ」の立ち上げにも尽力し、東京のフレンチシーンに足跡を刻んだ。</span>
+            <span lang="en">Tokyo. For 14 years, André stood at the forefront of the city's dining scene — in Kagurazaka, then Ginza. He played a key role in launching "Oreno French," leaving his mark on Tokyo's French culinary world.</span>
+          </p>
+        </div>
+        <div class="timeline-photo">
+          <img src="assets/IMG_1397.jpeg" alt="André — portrait officiel" style="object-position: center 55%;" />
+        </div>
+      </div>
+    </div>
+
+    <!-- TOKYO 3 (1398) -->
+    <div class="timeline-item fade-in">
+      <p class="timeline-era">Tokyo — 神楽坂</p>
+      <p class="timeline-place">神楽坂の店</p>
+      <div class="timeline-item-inner">
+        <div>
+          <p class="body-text">
+            <span lang="ja">小さな店の静かな夜。カウンター越しに、今日の一皿が生まれる。</span>
+            <span lang="en">A quiet evening in a small restaurant. Across the counter, tonight's dish takes shape.</span>
+          </p>
+        </div>
+        <div class="timeline-photo">
+          <img src="assets/IMG_1398.jpeg" alt="André à Kagurazaka" style="object-position: center 40%;" />
+        </div>
+      </div>
+    </div>
+
+    <!-- IZU KOGEN (1399) -->
+    <div class="timeline-item fade-in">
+      <p class="timeline-era">2023 — présent</p>
+      <p class="timeline-place">伊豆高原</p>
+      <div class="timeline-item-inner">
+        <div>
+          <p class="body-text">
+            <span lang="ja">2023年末、伊豆高原へ。Bon' Apのシェフとして、新たな章をはじめる。パリから始まり、世界を巡り、東京で磨き上げた料理は今、この土地の空気と食材の中に息づいている。</span>
+            <span lang="en">In late 2023, Izu Kogen. A new chapter begins at Bon' Ap. The cuisine that started in Paris, traveled the world, and was refined across Tokyo now breathes in the air and ingredients of this place.</span>
+          </p>
+        </div>
+        <div class="timeline-photo large">
+          <img src="assets/IMG_1399.jpeg" alt="André à Bon' Ap" style="object-position: center 10%;" />
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- PHILOSOPHY -->
+  <section class="philosophy-section fade-in">
+    <p class="philosophy-label">· La Philosophie ·</p>
+    <h2 class="philosophy-heading">
+      <span lang="ja">アンドレの思い</span>
+      <span lang="en">André's Philosophy</span>
+    </h2>
+    <div class="philosophy-block">
+      <!-- ▼ここにアンドレの言葉を入れる▼ -->
+      <div class="philosophy-placeholder">
+        <p>— 準備中 —</p>
+      </div>
+      <!-- ▲プレースホルダー。文章が決まったら以下のように差し替え▲
+      <p class="philosophy-text" lang="ja">
+        （アンドレの言葉・日本語）
+      </p>
+      <p class="philosophy-text" lang="en">
+        （André's words in English）
+      </p>
+      -->
+    </div>
+  </section>
+
+  <!-- BACK TO TOP -->
+  <section class="back-section fade-in">
+    <a href="index.html" class="back-btn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M19 12H5M12 5l-7 7 7 7"/>
+      </svg>
+      <span lang="ja">Bon' Ap トップへ戻る</span>
+      <span lang="en">Back to Bon' Ap</span>
+    </a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p class="footer-logo">Bon' Ap</p>
+    <p class="footer-sub">TAKE-AWAY · IZU KOGEN · SHIZUOKA</p>
+    <div class="footer-links">
+      <a href="https://www.instagram.com/bon_bonap/" target="_blank" rel="noopener">Instagram</a>
+      <span class="footer-sep">·</span>
+      <a href="tel:07022192694">
+        <span lang="ja">電話</span><span lang="en">Call</span>
+      </a>
+      <span class="footer-sep">·</span>
+      <a href="index.html#access">
+        <span lang="ja">アクセス</span><span lang="en">Access</span>
+      </a>
+      <span class="footer-sep">·</span>
+      <a href="sitemap.html">
+        <span lang="ja">サイトマップ</span><span lang="en">Sitemap</span>
+      </a>
+    </div>
+    <p class="footer-copy">© 2026 BON'AP · SINCE DEC 2023 · ALL RIGHTS RESERVED</p>
+  </footer>
+
+</div><!-- /site-wrapper -->
+
+<script>
+  // ── LANGUAGE TOGGLE ──
+  function toggleLang() {
+    const btn = document.getElementById('langToggle');
+    if (document.body.classList.toggle('en')) {
+      btn.textContent = 'JA';
+    } else {
+      btn.textContent = 'EN';
+    }
+  }
+
+  // URLパラメータで英語起動
+  if (new URLSearchParams(window.location.search).get('lang') === 'en') {
+    document.body.classList.add('en');
+    document.getElementById('langToggle').textContent = 'JA';
+  }
+
+  // ── SCROLL FADE IN ──
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
       .topbar { padding: 16px 60px; }
       .lang-bar { padding: 12px 60px; }
       .footer { padding: 56px 60px 48px; }
