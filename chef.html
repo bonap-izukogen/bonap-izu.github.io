@@ -505,6 +505,15 @@
     .footer-links a { color: rgba(245,239,228,0.75); text-decoration: none; }
     .footer-links a:hover { color: var(--ivory); }
     .footer-sep { opacity: 0.3; }
+    /* SP: フッターリンクを小さめ横並び */
+    @media (max-width: 767px) {
+      .footer-links {
+        flex-wrap: wrap;
+        gap: 8px 14px;
+        font-size: 10px;
+        letter-spacing: 1px;
+      }
+    }
     .footer-copy {
       margin-top: 36px;
       font-family: ui-monospace, monospace;
