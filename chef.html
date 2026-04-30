@@ -1,6 +1,3 @@
-Chef · HTML
-コピー
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -8,7 +5,7 @@ Chef · HTML
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>André — le Chef | Bon' Ap 伊豆高原</title>
   <meta name="description" content="パリで生まれ、世界を渡り、伊豆高原に辿り着いたシェフ、アンドレの軌跡。" />
- 
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-HKZ4VN4VW4"></script>
   <script>
@@ -17,11 +14,11 @@ Chef · HTML
     gtag('js', new Date());
     gtag('config', 'G-HKZ4VN4VW4');
   </script>
- 
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Shippori+Mincho:wght@400;500&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet" />
- 
+
   <style>
     :root {
       --ivory:      #F5EFE4;
@@ -33,22 +30,22 @@ Chef · HTML
       --sage:       #7A8C72;
       --hairline:   rgba(43,38,34,0.15);
     }
- 
+
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
- 
+
     body {
       background: var(--ivory);
       color: var(--ink);
       font-family: 'Noto Sans JP', sans-serif;
       -webkit-font-smoothing: antialiased;
     }
- 
+
     .site-wrapper {
       max-width: 480px;
       margin: 0 auto;
     }
- 
+
     @media (min-width: 768px) {
       body { background: var(--cream); }
       .site-wrapper {
@@ -61,7 +58,7 @@ Chef · HTML
       .lang-bar { padding: 12px 60px; }
       .footer { padding: 56px 60px 48px; }
     }
- 
+
     /* ── LANG TOGGLE ── */
     .lang-bar {
       display: flex;
@@ -81,7 +78,7 @@ Chef · HTML
       transition: background 0.2s, color 0.2s;
     }
     .lang-btn:hover { background: var(--ink); color: var(--ivory); }
- 
+
     /* ── NAV ── */
     .topbar {
       display: flex;
@@ -114,7 +111,7 @@ Chef · HTML
       text-decoration: none;
     }
     .tel-btn svg { flex-shrink: 0; }
- 
+
     /* ── SHARED UTIL ── */
     .section-label {
       font-family: 'Cormorant Garamond', serif;
@@ -155,7 +152,7 @@ Chef · HTML
     }
     .divider-line { flex: 1; height: 0.5px; background: var(--hairline); max-width: 60px; }
     .divider-diamond { width: 5px; height: 5px; background: var(--terracotta); transform: rotate(45deg); }
- 
+
     .fade-in {
       opacity: 0;
       transform: translateY(16px);
@@ -165,12 +162,12 @@ Chef · HTML
       opacity: 1;
       transform: none;
     }
- 
+
     /* ── ENGLISH HIDDEN BY DEFAULT ── */
     [lang="en"] { display: none; }
     body.en [lang="ja"] { display: none; }
     body.en [lang="en"] { display: revert; }
- 
+
     /* ══════════════════════════════
        OPENING HERO
     ══════════════════════════════ */
@@ -219,13 +216,13 @@ Chef · HTML
       text-align: left;
       padding-left: 22px;
     }
- 
+
     @media (min-width: 768px) {
       .chef-hero { padding: 80px 60px 72px; }
       .chef-hero-name { font-size: 96px; }
       .chef-hero-quote { font-size: 28px; }
     }
- 
+
     /* ══════════════════════════════
        TIMELINE
     ══════════════════════════════ */
@@ -237,7 +234,7 @@ Chef · HTML
       padding: 0 28px 40px;
       text-align: center;
     }
- 
+
     .timeline-item {
       padding: 0 0 56px;
       border-left: 0.5px solid var(--hairline);
@@ -294,27 +291,28 @@ Chef · HTML
       width: 200px;
       height: 200px;
     }
- 
-    /* モバイル：写真＋テキストを横並び */
+
+    /* モバイル：写真が上・テキストが下の縦並び */
     .timeline-item-inner {
       display: flex;
+      flex-direction: column;
       gap: 20px;
-      align-items: center;
+      align-items: flex-start;
     }
     .timeline-item-inner.text-only {
       display: block;
     }
- 
+
     @media (min-width: 768px) {
       .timeline-header { padding: 0 60px 48px; }
- 
+
       .timeline-item {
         margin-left: 60px;
         padding-left: 48px;
         padding-right: 60px;
         max-width: 860px;
       }
- 
+
       .timeline-photo {
         width: 220px;
         height: 220px;
@@ -323,7 +321,7 @@ Chef · HTML
         width: 280px;
         height: 280px;
       }
- 
+
       .timeline-item-inner {
         display: flex;
         gap: 48px;
@@ -344,7 +342,7 @@ Chef · HTML
       }
       .timeline-place { font-size: 40px; }
     }
- 
+
     /* ══════════════════════════════
        PHILOSOPHY セクション
     ══════════════════════════════ */
@@ -396,12 +394,12 @@ Chef · HTML
       letter-spacing: 2px;
       line-height: 2;
     }
- 
+
     @media (min-width: 768px) {
       .philosophy-section { padding: 80px 60px 72px; }
       .philosophy-heading { font-size: 24px; }
     }
- 
+
     /* ══════════════════════════════
        BACK TO TOP ボタン
     ══════════════════════════════ */
@@ -425,7 +423,7 @@ Chef · HTML
       transition: background 0.2s, color 0.2s;
     }
     .back-btn:hover { background: var(--ink); color: var(--ivory); }
- 
+
     /* ── FOOTER ── */
     .footer {
       background: var(--ink);
@@ -468,15 +466,15 @@ Chef · HTML
     }
   </style>
 </head>
- 
+
 <body>
 <div class="site-wrapper">
- 
+
   <!-- LANG TOGGLE -->
   <div class="lang-bar">
     <button class="lang-btn" id="langToggle" onclick="toggleLang()">EN</button>
   </div>
- 
+
   <!-- NAV -->
   <nav class="topbar">
     <a href="index.html" class="logo">Bon' Ap</a>
@@ -488,7 +486,7 @@ Chef · HTML
       <span lang="en">CALL US</span>
     </a>
   </nav>
- 
+
   <!-- OPENING HERO -->
   <section class="chef-hero fade-in">
     <p class="label-sm">· le Chef ·</p>
@@ -510,7 +508,7 @@ Chef · HTML
       <span lang="en">Cooking must be honest.</span>
     </p>
   </section>
- 
+
   <!-- TIMELINE -->
   <section class="timeline-section">
     <div class="timeline-header fade-in">
@@ -520,7 +518,7 @@ Chef · HTML
         <span lang="en">The Journey of a Chef</span>
       </h2>
     </div>
- 
+
     <!-- PARIS -->
     <div class="timeline-item fade-in">
       <p class="timeline-era">1980s</p>
@@ -534,7 +532,7 @@ Chef · HTML
         </div>
       </div>
     </div>
- 
+
     <!-- LE MONDE (1395 + 1396) -->
     <div class="timeline-item fade-in">
       <p class="timeline-era">1990s — 2000s</p>
@@ -547,11 +545,11 @@ Chef · HTML
           </p>
         </div>
         <div class="timeline-photo">
-          <img src="assets/IMG_1395.png" alt="André — Le Monde" style="object-position: center 85%;" />
+          <img src="assets/IMG_1395.png" alt="André — Le Monde" style="object-position: center 95%;" />
         </div>
       </div>
     </div>
- 
+
     <!-- LE MONDE 2 (1396) -->
     <div class="timeline-item fade-in">
       <p class="timeline-era">— en cuisine</p>
@@ -566,7 +564,7 @@ Chef · HTML
         </p>
       </div>
     </div>
- 
+
     <!-- TOKYO 1 (1397) -->
     <div class="timeline-item fade-in">
       <p class="timeline-era">c. 2005 — Tokyo</p>
@@ -583,7 +581,7 @@ Chef · HTML
         </div>
       </div>
     </div>
- 
+
     <!-- TOKYO 3 (1398) -->
     <div class="timeline-item fade-in">
       <p class="timeline-era">Tokyo — 神楽坂</p>
@@ -596,11 +594,11 @@ Chef · HTML
           </p>
         </div>
         <div class="timeline-photo">
-          <img src="assets/IMG_1398.jpeg" alt="André à Kagurazaka" style="object-position: center 40%;" />
+          <img src="assets/IMG_1398.jpeg" alt="André à Kagurazaka" style="object-position: center 40%; transform: scale(1.2); transform-origin: center;" />
         </div>
       </div>
     </div>
- 
+
     <!-- IZU KOGEN (1399) -->
     <div class="timeline-item fade-in">
       <p class="timeline-era">2023 — présent</p>
@@ -617,9 +615,9 @@ Chef · HTML
         </div>
       </div>
     </div>
- 
+
   </section>
- 
+
   <!-- PHILOSOPHY -->
   <section class="philosophy-section fade-in">
     <p class="philosophy-label">· La Philosophie ·</p>
@@ -642,7 +640,7 @@ Chef · HTML
       -->
     </div>
   </section>
- 
+
   <!-- BACK TO TOP -->
   <section class="back-section fade-in">
     <a href="index.html" class="back-btn">
@@ -653,7 +651,7 @@ Chef · HTML
       <span lang="en">Back to Bon' Ap</span>
     </a>
   </section>
- 
+
   <!-- FOOTER -->
   <footer class="footer">
     <p class="footer-logo">Bon' Ap</p>
@@ -675,9 +673,9 @@ Chef · HTML
     </div>
     <p class="footer-copy">© 2026 BON'AP · SINCE DEC 2023 · ALL RIGHTS RESERVED</p>
   </footer>
- 
+
 </div><!-- /site-wrapper -->
- 
+
 <script>
   // ── LANGUAGE TOGGLE ──
   function toggleLang() {
@@ -688,13 +686,13 @@ Chef · HTML
       btn.textContent = 'EN';
     }
   }
- 
+
   // URLパラメータで英語起動
   if (new URLSearchParams(window.location.search).get('lang') === 'en') {
     document.body.classList.add('en');
     document.getElementById('langToggle').textContent = 'JA';
   }
- 
+
   // ── SCROLL FADE IN ──
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
@@ -704,9 +702,9 @@ Chef · HTML
       }
     });
   }, { threshold: 0.1 });
- 
+
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
- 
+
 </body>
 </html>
