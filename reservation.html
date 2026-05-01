@@ -342,8 +342,8 @@
     </p>
 
     <p class="form-notice" style="margin-top:-20px;">
-      <span lang="ja">このフォームへの送信はリクエストです。<br />担当者からのお電話、またはご予約を確約するメールをもって、予約確定となります。</span>
-      <span lang="en">Submitting this form is a reservation request only.<br />Your reservation is confirmed upon receipt of a phone call or confirmation email from our team.</span>
+      <span lang="ja">このフォームへの送信はリクエストです。担当者からのご連絡をもって確定となります。</span>
+      <span lang="en">Submitting this form is a reservation request only. Your reservation is confirmed upon contact from our team.</span>
     </p>
 
     <form action="https://formspree.io/f/mnjlkzew" method="POST">
@@ -376,12 +376,12 @@
 
       <div class="form-row-2col">
         <label>
-          <span class="form-label" lang="ja">ご希望受け取り日 <span class="required">*</span></span>
+          <span class="form-label" lang="ja">ご希望受取日 <span class="required">*</span></span>
           <span class="form-label" lang="en">Pick-up Date <span class="required">*</span></span>
           <input type="date" name="date" required />
         </label>
         <label>
-          <span class="form-label" lang="ja">ご希望受け取り時間 <span class="required">*</span></span>
+          <span class="form-label" lang="ja">ご希望受取時間 <span class="required">*</span></span>
           <span class="form-label" lang="en">Pick-up Time <span class="required">*</span></span>
           <select name="time" required id="timeSelect">
             <option value="">-- 選択 --</option>
@@ -435,9 +435,9 @@
 
       <p class="form-footer-note">
         <span lang="ja">ご予約受付後、担当者よりご連絡いたします。営業時間外にいただいたご予約は翌営業日以降にご連絡します。<br /><br />
-        キャンセルポリシーについては<a href="tokushoho.html" id="cancelLink" style="color:var(--terracotta);text-underline-offset:3px;">特定商取引法に基づく表記</a>をご確認ください。</span>
+        キャンセルポリシーについては<a href="tokushoho.html#cancel" id="cancelLink" style="color:var(--terracotta);text-underline-offset:3px;">特定商取引法に基づく表記</a>をご確認ください。</span>
         <span lang="en">After your reservation is received, our team will be in touch. Reservations submitted outside business hours will be followed up from the next business day.<br /><br />
-        Please review our <a href="tokushoho.html" id="cancelLinkEn" style="color:var(--terracotta);text-underline-offset:3px;">cancellation policy</a> before submitting.</span>
+        Please review our <a href="tokushoho.html#cancel" id="cancelLinkEn" style="color:var(--terracotta);text-underline-offset:3px;">cancellation policy</a> before submitting.</span>
       </p>
 
       <div class="agreement-section">
@@ -465,8 +465,8 @@
         <div class="agreement-item">
           <input type="checkbox" id="agree3" required />
           <label for="agree3">
-            <span lang="ja">ご予約の前に<a href="tokushoho.html" id="agreeCancel">キャンセルポリシー</a>をご確認ください。</span>
-            <span lang="en">Please review our <a href="tokushoho.html" id="agreeCancelEn">cancellation policy</a> before reserving.</span>
+            <span lang="ja">ご予約の前に<a href="tokushoho.html#cancel" id="agreeCancel">キャンセルポリシー</a>をご確認ください。</span>
+            <span lang="en">Please review our <a href="tokushoho.html#cancel" id="agreeCancelEn">cancellation policy</a> before reserving.</span>
           </label>
         </div>
 
@@ -506,10 +506,10 @@
     const s = isEn ? '?lang=en' : '';
     document.getElementById('backBtn').href = 'https://bonap-izukogen.com/' + s;
     document.getElementById('logoLink').href = 'https://bonap-izukogen.com/' + s;
-    document.getElementById('cancelLink').href = 'tokushoho.html' + s;
-    document.getElementById('cancelLinkEn').href = 'tokushoho.html' + s;
-    document.getElementById('agreeCancel').href = 'tokushoho.html' + s;
-    document.getElementById('agreeCancelEn').href = 'tokushoho.html' + s;
+    document.getElementById('cancelLink').href = 'tokushoho.html#cancel' + s;
+    document.getElementById('cancelLinkEn').href = 'tokushoho.html#cancel' + s;
+    document.getElementById('agreeCancel').href = 'tokushoho.html#cancel' + s;
+    document.getElementById('agreeCancelEn').href = 'tokushoho.html#cancel' + s;
   }
 
   // URLパラメータで言語を自動切替
@@ -521,8 +521,8 @@
       setLang(true);
       document.getElementById('backBtn').href = 'https://bonap-izukogen.com/?lang=en';
       document.getElementById('logoLink').href = 'https://bonap-izukogen.com/?lang=en';
-      document.getElementById('cancelLink').href = 'tokushoho.html?lang=en';
-      document.getElementById('cancelLinkEn').href = 'tokushoho.html?lang=en';
+      document.getElementById('cancelLink').href = 'tokushoho.html?lang=en#cancel';
+      document.getElementById('cancelLinkEn').href = 'tokushoho.html?lang=en#cancel';
       document.getElementById('agreeCancel').href = 'tokushoho.html?lang=en';
       document.getElementById('agreeCancelEn').href = 'tokushoho.html?lang=en';
     }
