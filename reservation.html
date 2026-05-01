@@ -156,11 +156,15 @@
       grid-template-columns: 1fr 1fr;
       gap: 16px;
       margin-bottom: 24px;
+      align-items: end;
     }
     .form-row-2col label {
       display: flex;
       flex-direction: column;
       gap: 8px;
+    }
+    input[type="date"] {
+      min-height: 44px;
     }
     .form-label {
       font-family: 'Shippori Mincho', serif;
@@ -319,7 +323,7 @@
   </div>
 
   <nav class="topbar">
-    <a href="https://bonap-izukogen.com/" class="logo">Bon' Ap</a>
+    <a href="https://bonap-izukogen.com/" class="logo" id="logoLink">Bon' Ap</a>
     <a href="https://bonap-izukogen.com/" class="back-btn" id="backBtn">
       ← <span lang="ja">トップへ戻る</span><span lang="en">Back</span>
     </a>
@@ -501,6 +505,7 @@
     setLang(isEn);
     const s = isEn ? '?lang=en' : '';
     document.getElementById('backBtn').href = 'https://bonap-izukogen.com/' + s;
+    document.getElementById('logoLink').href = 'https://bonap-izukogen.com/' + s;
     document.getElementById('cancelLink').href = 'tokushoho.html' + s;
     document.getElementById('cancelLinkEn').href = 'tokushoho.html' + s;
     document.getElementById('agreeCancel').href = 'tokushoho.html' + s;
@@ -515,6 +520,7 @@
       document.getElementById('langToggle').textContent = 'JA';
       setLang(true);
       document.getElementById('backBtn').href = 'https://bonap-izukogen.com/?lang=en';
+      document.getElementById('logoLink').href = 'https://bonap-izukogen.com/?lang=en';
       document.getElementById('cancelLink').href = 'tokushoho.html?lang=en';
       document.getElementById('cancelLinkEn').href = 'tokushoho.html?lang=en';
       document.getElementById('agreeCancel').href = 'tokushoho.html?lang=en';
