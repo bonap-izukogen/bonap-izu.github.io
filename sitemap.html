@@ -232,7 +232,7 @@
 
   <nav class="topbar">
     <a href="https://bonap-izukogen.com/" class="logo">Bon' Ap</a>
-    <a href="https://bonap-izukogen.com/" class="back-btn">
+    <a href="https://bonap-izukogen.com/" class="back-btn" id="backBtn">
       ← <span lang="ja">トップへ戻る</span><span lang="en">Back</span>
     </a>
   </nav>
@@ -337,6 +337,7 @@
 <script>
   function updateLinks(isEn) {
     const s = isEn ? '?lang=en' : '';
+    document.getElementById('backBtn').href = 'https://bonap-izukogen.com/' + s;
     document.getElementById('homeLink').href = 'https://bonap-izukogen.com/' + s;
     document.getElementById('reservationLink').href = 'reservation.html' + s;
     document.getElementById('chefLink').href = 'chef.html' + s;
