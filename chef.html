@@ -389,6 +389,40 @@
       .timeline-place { font-size: 40px; }
     }
 
+    /* ── READ MORE (timeline) ── */
+    .timeline-readmore-row {
+      padding: 0 28px 40px;
+      text-align: center;
+    }
+    .timeline-readmore-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: none;
+      border: 0.5px solid var(--ink);
+      color: var(--ink);
+      padding: 10px 24px;
+      font-family: 'Shippori Mincho', serif;
+      font-size: 12px;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .timeline-readmore-btn:hover { background: var(--ink); color: var(--ivory); }
+    .timeline-readmore-btn.open svg { transform: rotate(180deg); }
+
+    /* ══════════════════════════════
+       INGREDIENTS セクション
+    ══════════════════════════════ */
+    .ingredients-section {
+      background: var(--cream);
+      padding: 60px 28px 56px;
+      text-align: center;
+    }
+    @media (min-width: 768px) {
+      .ingredients-section { padding: 80px 60px 72px; }
+    }
+
     /* ══════════════════════════════
        PHILOSOPHY セクション
     ══════════════════════════════ */
@@ -560,12 +594,9 @@
       <span lang="en">Chef · Bon' Ap · Izu Kogen</span>
     </p>
     <blockquote class="chef-hero-quote">
-      « la cuisine, c'est honnête. »
+      <span lang="ja">食を愛し楽しむ心を忘れない。</span>
+      <span lang="en">Never lose the love and joy of good food.</span>
     </blockquote>
-    <p class="chef-hero-quote-jp">
-      <span lang="ja">料理は、誠実であるべきだ。</span>
-      <span lang="en">Cooking must be honest.</span>
-    </p>
   </section>
 
   <!-- TIMELINE -->
@@ -599,8 +630,8 @@
       <div class="timeline-item-inner">
         <div>
           <p class="body-text">
-            <span lang="ja">フランスにとどまらず、イタリア、シチリア、ボラボラ島、ニューカレドニア、オーストラリアへ。それぞれの土地の食材、文化、気候がアンドレの料理を深め、広げていった。</span>
-            <span lang="en">From France, André moved outward — Italy, Sicily, Bora Bora, New Caledonia, Australia. Each land, its ingredients, culture, and climate, deepened and widened his cuisine.</span>
+            <span lang="ja">フランスにとどまらず、イタリア、ボラボラ島、イギリス、オーストラリア、ニューカレドニアへ。それぞれの土地の食材、文化、気候がアンドレの料理を深め、広げていった。</span>
+            <span lang="en">From France, André moved outward — Italy, Bora Bora, the UK, Australia, New Caledonia. Each land, its ingredients, culture, and climate, deepened and widened his cuisine.</span>
           </p>
         </div>
         <div class="timeline-photo">
@@ -624,6 +655,21 @@
       </div>
     </div>
 
+    <!-- READ MORE トグル -->
+    <div class="timeline-readmore-row fade-in">
+      <button class="timeline-readmore-btn" id="timelineReadMoreBtn" onclick="toggleTimelineMore()">
+        <span id="timelineReadMoreLabel">
+          <span lang="ja">続きを読む</span>
+          <span lang="en">Read More</span>
+        </span>
+        <svg id="timelineReadMoreIcon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s;">
+          <path d="M6 9l6 6 6-6"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="timeline-more" id="timelineMore" style="display:none;">
+
     <!-- TOKYO 1 (1397) -->
     <div class="timeline-item fade-in">
       <p class="timeline-era">c. 2005 — Tokyo</p>
@@ -631,8 +677,8 @@
       <div class="timeline-item-inner">
         <div>
           <p class="body-text">
-            <span lang="ja">東京へ。神楽坂、そして銀座で14年間、第一線のキッチンに立ち続けた。「俺のフレンチ」の立ち上げにも尽力し、東京のフレンチシーンに足跡を刻んだ。</span>
-            <span lang="en">Tokyo. For 14 years, André stood at the forefront of the city's dining scene — in Kagurazaka, then Ginza. He played a key role in launching "Oreno French," leaving his mark on Tokyo's French culinary world.</span>
+            <span lang="ja">東京へ。神楽坂の「メゾン・ド・ラ・ブルゴーニュ」、同じく神楽坂の「フレンチダイニング」、そして銀座の「俺のフレンチ」で、14年間にわたり第一線のキッチンに立ち続けた。</span>
+            <span lang="en">Tokyo. For 14 years, André stood at the forefront of the city's dining scene — at "Maison de la Bourgogne" and "French Dining," both in Kagurazaka, and later "Oreno French" in Ginza.</span>
           </p>
         </div>
         <div class="timeline-photo">
@@ -658,6 +704,8 @@
       </div>
     </div>
 
+    </div><!-- /timeline-more -->
+
     <!-- IZU KOGEN (1399) -->
     <div class="timeline-item fade-in">
       <p class="timeline-era">2023 — présent</p>
@@ -665,8 +713,8 @@
       <div class="timeline-item-inner">
         <div>
           <p class="body-text">
-            <span lang="ja">2023年末、伊豆高原へ。Bon' Apのシェフとして、新たな章をはじめる。パリから始まり、世界を巡り、東京で磨き上げた料理は今、この土地の空気と食材の中に息づいている。</span>
-            <span lang="en">In late 2023, Izu Kogen. A new chapter begins at Bon' Ap. The cuisine that started in Paris, traveled the world, and was refined across Tokyo now breathes in the air and ingredients of this place.</span>
+            <span lang="ja">2023年、静岡県伊東市・伊豆高原へ移住。「もっと気軽にフレンチを楽しんでほしい」という思いから、Bon' Apをオープンした。嘘のない誠実な食材選びと、本場の確かな技術で、おうちや旅先のテーブルを特別なレストランへと変える。パリから始まり、世界を巡り、東京で磨き上げた料理は今、この土地の空気と食材の中に息づいている。</span>
+            <span lang="en">In 2023, André moved to Izu Kogen in Ito, Shizuoka. Wanting people to enjoy French cuisine more casually, he opened Bon' Ap — bringing honest, sincere ingredient selection and authentic technique to turn any table, at home or on a trip, into something special. The cuisine that began in Paris, traveled the world, and was refined in Tokyo now breathes in the air and ingredients of this place.</span>
           </p>
         </div>
         <div class="timeline-photo large">
@@ -675,6 +723,19 @@
       </div>
     </div>
 
+  </section>
+
+  <!-- INGREDIENTS -->
+  <section class="ingredients-section fade-in">
+    <p class="section-label" style="text-align:center">· Les Produits ·</p>
+    <h2 class="section-heading" style="text-align:center">
+      <span lang="ja">食材へのこだわり</span>
+      <span lang="en">Our Commitment to Ingredients</span>
+    </h2>
+    <p class="body-text" style="max-width:600px;margin:0 auto;text-align:left;">
+      <span lang="ja">生産者に直接会い、仕入れる圧倒的な鮮度とハイクオリティ。伊豆半島の農家さんを中心に、良いものがあれば北海道まで足を運びます。無農薬や薬・ワクチンに頼らず育てられた、安心できる食材をできる限り使用しています。</span>
+      <span lang="en">André meets producers face to face, sourcing ingredients of outstanding freshness and quality. Centered on farmers across the Izu Peninsula, he will travel as far as Hokkaido when something exceptional calls for it. Wherever possible, he uses ingredients raised without pesticides, drugs, or vaccines — food you can trust.</span>
+    </p>
   </section>
 
   <!-- PHILOSOPHY -->
@@ -781,6 +842,23 @@
     document.getElementById('privacyLink').href = 'privacy.html' + s;
     document.getElementById('tokushohoLink').href = 'tokushoho.html' + s;
   }
+  // ── 軌跡セクション READ MORE ──
+  function toggleTimelineMore() {
+    const box = document.getElementById('timelineMore');
+    const btn = document.getElementById('timelineReadMoreBtn');
+    const label = document.getElementById('timelineReadMoreLabel');
+    const isHidden = box.style.display === 'none';
+    box.style.display = isHidden ? 'block' : 'none';
+    btn.classList.toggle('open', isHidden);
+    if (isHidden) {
+      // 非表示の間はスクロール検知が働かないため、開いたタイミングで確実に表示する
+      box.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+    }
+    label.innerHTML = isHidden
+      ? '<span lang="ja">閉じる</span><span lang="en">Show Less</span>'
+      : '<span lang="ja">続きを読む</span><span lang="en">Read More</span>';
+  }
+
   function toggleLang() {
     const isEn = document.body.classList.toggle('en');
     document.getElementById('langToggle').textContent = isEn ? 'JA' : 'EN';
