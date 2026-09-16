@@ -441,17 +441,8 @@
     .timeline-bg-photo-b {
       width: 46%;
       height: 300px;
-      -webkit-mask-image:
-        radial-gradient(circle 36px at top left, transparent 0, black 36px),
-        radial-gradient(circle 36px at top right, transparent 0, black 36px),
-        radial-gradient(circle 36px at bottom left, transparent 0, black 36px),
-        radial-gradient(circle 36px at bottom right, transparent 0, black 36px);
-      mask-image:
-        radial-gradient(circle 36px at top left, transparent 0, black 36px),
-        radial-gradient(circle 36px at top right, transparent 0, black 36px),
-        radial-gradient(circle 36px at bottom left, transparent 0, black 36px),
-        radial-gradient(circle 36px at bottom right, transparent 0, black 36px);
-      mask-composite: add, intersect, intersect, intersect;
+      -webkit-mask-image: radial-gradient(ellipse, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 100%);
+      mask-image: radial-gradient(ellipse, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 100%);
     }
     @media (max-width: 767px) {
       .timeline-bg-photo-a {
