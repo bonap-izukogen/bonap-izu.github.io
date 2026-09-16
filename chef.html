@@ -367,6 +367,13 @@
         width: 280px;
         height: 280px;
       }
+      .timeline-photo-pair {
+        gap: 20px;
+      }
+      .timeline-photo-pair .timeline-photo {
+        width: 170px;
+        height: 170px;
+      }
 
       .timeline-item-inner {
         display: flex;
@@ -389,27 +396,16 @@
       .timeline-place { font-size: 40px; }
     }
 
-    /* ── READ MORE (timeline) ── */
-    .timeline-readmore-row {
-      padding: 0 28px 40px;
-      text-align: center;
+    /* ── 写真2枚 横並び ── */
+    .timeline-photo-pair {
+      display: flex;
+      gap: 12px;
+      flex-shrink: 0;
     }
-    .timeline-readmore-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: none;
-      border: 0.5px solid var(--ink);
-      color: var(--ink);
-      padding: 10px 24px;
-      font-family: 'Shippori Mincho', serif;
-      font-size: 12px;
-      letter-spacing: 2px;
-      cursor: pointer;
-      transition: background 0.2s, color 0.2s;
+    .timeline-photo-pair .timeline-photo {
+      width: 120px;
+      height: 120px;
     }
-    .timeline-readmore-btn:hover { background: var(--ink); color: var(--ivory); }
-    .timeline-readmore-btn.open svg { transform: rotate(180deg); }
 
     /* ══════════════════════════════
        INGREDIENTS セクション
@@ -634,43 +630,18 @@
             <span lang="en">From France, André moved outward — Italy, Bora Bora, the UK, Australia, New Caledonia. Each land, its ingredients, culture, and climate, deepened and widened his cuisine.</span>
           </p>
         </div>
-        <div class="timeline-photo">
-          <img src="assets/IMG_1395.png" alt="André — Le Monde" style="object-position: center 75%;" />
+        <div class="timeline-photo-pair">
+          <div class="timeline-photo">
+            <img src="assets/IMG_1395.png" alt="André — Le Monde" style="object-position: center 75%;" />
+          </div>
+          <div class="timeline-photo">
+            <img src="assets/IMG_1396.jpeg" alt="André en cuisine" style="object-position: center 50%;" />
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- LE MONDE 2 (1396) -->
-    <div class="timeline-item fade-in">
-      <p class="timeline-era">— en cuisine</p>
-      <p class="timeline-place">現場にて</p>
-      <div class="timeline-item-inner">
-        <div class="timeline-photo">
-          <img src="assets/IMG_1396.jpeg" alt="André en cuisine" style="object-position: center 50%;" />
-        </div>
-        <p class="body-text">
-          <span lang="ja">どの土地でも、アンドレはキッチンにいた。</span>
-          <span lang="en">Wherever he went, André was in the kitchen.</span>
-        </p>
-      </div>
-    </div>
-
-    <!-- READ MORE トグル -->
-    <div class="timeline-readmore-row fade-in">
-      <button class="timeline-readmore-btn" id="timelineReadMoreBtn" onclick="toggleTimelineMore()">
-        <span id="timelineReadMoreLabel">
-          <span lang="ja">続きを読む</span>
-          <span lang="en">Read More</span>
-        </span>
-        <svg id="timelineReadMoreIcon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transition: transform 0.2s;">
-          <path d="M6 9l6 6 6-6"/>
-        </svg>
-      </button>
-    </div>
-
-    <div class="timeline-more" id="timelineMore" style="display:none;">
-
-    <!-- TOKYO 1 (1397) -->
+    <!-- TOKYO (1397 + 1398) -->
     <div class="timeline-item fade-in">
       <p class="timeline-era">c. 2005 — Tokyo</p>
       <p class="timeline-place">神楽坂・銀座</p>
@@ -681,30 +652,16 @@
             <span lang="en">Tokyo. For 14 years, André stood at the forefront of the city's dining scene — at "Maison de la Bourgogne" and "French Dining," both in Kagurazaka, and later "Oreno French" in Ginza.</span>
           </p>
         </div>
-        <div class="timeline-photo">
-          <img src="assets/IMG_1397.png" alt="André — portrait officiel" style="object-position: center 25%;" />
+        <div class="timeline-photo-pair">
+          <div class="timeline-photo">
+            <img src="assets/IMG_1397.png" alt="André — portrait officiel" style="object-position: center 25%;" />
+          </div>
+          <div class="timeline-photo">
+            <img src="assets/IMG_1398.jpeg" alt="André à Kagurazaka" style="object-position: center 40%; transform: scale(1.2); transform-origin: center;" />
+          </div>
         </div>
       </div>
     </div>
-
-    <!-- TOKYO 3 (1398) -->
-    <div class="timeline-item fade-in">
-      <p class="timeline-era">Tokyo — 神楽坂</p>
-      <p class="timeline-place">神楽坂の店</p>
-      <div class="timeline-item-inner">
-        <div>
-          <p class="body-text">
-            <span lang="ja">小さな店の静かな夜。カウンター越しに、今日の一皿が生まれる。</span>
-            <span lang="en">A quiet evening in a small restaurant. Across the counter, tonight's dish takes shape.</span>
-          </p>
-        </div>
-        <div class="timeline-photo">
-          <img src="assets/IMG_1398.jpeg" alt="André à Kagurazaka" style="object-position: center 40%; transform: scale(1.2); transform-origin: center;" />
-        </div>
-      </div>
-    </div>
-
-    </div><!-- /timeline-more -->
 
     <!-- IZU KOGEN (1399) -->
     <div class="timeline-item fade-in">
@@ -841,22 +798,6 @@
     document.getElementById('sitemapLink').href = 'sitemap.html' + s;
     document.getElementById('privacyLink').href = 'privacy.html' + s;
     document.getElementById('tokushohoLink').href = 'tokushoho.html' + s;
-  }
-  // ── 軌跡セクション READ MORE ──
-  function toggleTimelineMore() {
-    const box = document.getElementById('timelineMore');
-    const btn = document.getElementById('timelineReadMoreBtn');
-    const label = document.getElementById('timelineReadMoreLabel');
-    const isHidden = box.style.display === 'none';
-    box.style.display = isHidden ? 'block' : 'none';
-    btn.classList.toggle('open', isHidden);
-    if (isHidden) {
-      // 非表示の間はスクロール検知が働かないため、開いたタイミングで確実に表示する
-      box.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
-    }
-    label.innerHTML = isHidden
-      ? '<span lang="ja">閉じる</span><span lang="en">Show Less</span>'
-      : '<span lang="ja">続きを読む</span><span lang="en">Read More</span>';
   }
 
   function toggleLang() {
