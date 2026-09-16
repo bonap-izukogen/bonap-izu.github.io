@@ -367,23 +367,25 @@
         width: 280px;
         height: 280px;
       }
-      .timeline-bg-photo-a {
-        width: 44%;
+      .timeline-bg-photo-a,
+      .timeline-bg-photo-b {
+        width: 42%;
         height: 400px;
+      }
+      .timeline-bg-photo-a {
+        left: 8px;
         top: 180px;
       }
       .timeline-bg-photo-b {
-        width: 40%;
-        height: 320px;
         top: 220px;
       }
       .timeline-item-tall .timeline-bg-photo-a { height: 440px; }
-      .timeline-item-tall .timeline-bg-photo-b { height: 360px; }
+      .timeline-item-tall .timeline-bg-photo-b { height: 440px; }
       .timeline-item-bgphoto {
-        min-height: 600px;
+        min-height: 620px;
       }
       .timeline-item-bgphoto.timeline-item-tall {
-        min-height: 640px;
+        min-height: 660px;
       }
 
       .timeline-item-inner {
@@ -410,10 +412,10 @@
     /* ── 2枚の写真を対角に薄く配置 ── */
     .timeline-item-bgphoto {
       position: relative;
-      min-height: 470px;
+      min-height: 500px;
     }
     .timeline-item-bgphoto.timeline-item-tall {
-      min-height: 510px;
+      min-height: 540px;
     }
     .timeline-item-bgphoto > .timeline-era,
     .timeline-item-bgphoto > .timeline-place,
@@ -433,24 +435,32 @@
       object-fit: cover;
       display: block;
     }
+    .timeline-bg-photo-a,
+    .timeline-bg-photo-b {
+      width: 52%;
+      height: 300px;
+      -webkit-mask-image:
+        radial-gradient(circle 36px at top left, transparent 0, black 36px),
+        radial-gradient(circle 36px at top right, transparent 0, black 36px),
+        radial-gradient(circle 36px at bottom left, transparent 0, black 36px),
+        radial-gradient(circle 36px at bottom right, transparent 0, black 36px);
+      mask-image:
+        radial-gradient(circle 36px at top left, transparent 0, black 36px),
+        radial-gradient(circle 36px at top right, transparent 0, black 36px),
+        radial-gradient(circle 36px at bottom left, transparent 0, black 36px),
+        radial-gradient(circle 36px at bottom right, transparent 0, black 36px);
+      mask-composite: add, intersect, intersect, intersect;
+    }
     .timeline-bg-photo-a {
       left: -28px;
       top: 150px;
-      width: 56%;
-      height: 300px;
-      -webkit-mask-image: linear-gradient(135deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.6) 45%, rgba(0,0,0,0) 85%);
-      mask-image: linear-gradient(135deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.6) 45%, rgba(0,0,0,0) 85%);
     }
     .timeline-bg-photo-b {
       right: -28px;
       top: 190px;
-      width: 50%;
-      height: 240px;
-      -webkit-mask-image: linear-gradient(225deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.6) 45%, rgba(0,0,0,0) 85%);
-      mask-image: linear-gradient(225deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.6) 45%, rgba(0,0,0,0) 85%);
     }
     .timeline-item-tall .timeline-bg-photo-a { height: 340px; }
-    .timeline-item-tall .timeline-bg-photo-b { height: 280px; }
+    .timeline-item-tall .timeline-bg-photo-b { height: 340px; }
 
     /* ══════════════════════════════
        INGREDIENTS セクション
