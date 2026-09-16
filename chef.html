@@ -377,6 +377,7 @@
         top: 180px;
       }
       .timeline-bg-photo-b {
+        right: -28px;
         top: 220px;
       }
       .timeline-item-tall .timeline-bg-photo-a { height: 440px; }
@@ -451,13 +452,15 @@
         radial-gradient(circle 36px at bottom right, transparent 0, black 36px);
       mask-composite: add, intersect, intersect, intersect;
     }
-    .timeline-bg-photo-a {
-      left: -28px;
-      top: 150px;
-    }
-    .timeline-bg-photo-b {
-      right: -28px;
-      top: 190px;
+    @media (max-width: 767px) {
+      .timeline-bg-photo-a {
+        left: -28px;
+        top: 150px;
+      }
+      .timeline-bg-photo-b {
+        right: -28px;
+        top: 190px;
+      }
     }
     .timeline-item-tall .timeline-bg-photo-a { height: 340px; }
     .timeline-item-tall .timeline-bg-photo-b { height: 340px; }
