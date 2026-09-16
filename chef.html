@@ -367,19 +367,9 @@
         width: 280px;
         height: 280px;
       }
-      .timeline-photo-pair {
-        width: 300px;
-        height: 250px;
-      }
-      .timeline-photo-pair .timeline-photo:nth-child(1) {
-        width: 215px;
-        height: 215px;
-      }
-      .timeline-photo-pair .timeline-photo:nth-child(2) {
-        width: 150px;
-        height: 150px;
-        top: 15px;
-        border-width: 6px;
+      .timeline-photo-square {
+        width: 190px;
+        height: 190px;
       }
 
       .timeline-item-inner {
@@ -403,40 +393,49 @@
       .timeline-place { font-size: 40px; }
     }
 
-    /* ── 写真2枚 大小オーバーラップ ── */
-    .timeline-photo-pair {
+    /* ── 背景に薄く敷く写真 ── */
+    .timeline-item-bgphoto {
       position: relative;
-      width: 210px;
-      height: 175px;
-      flex-shrink: 0;
     }
-    .timeline-photo-pair .timeline-photo:nth-child(1) {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 150px;
-      height: 150px;
+    .timeline-item-bgphoto > .timeline-era,
+    .timeline-item-bgphoto > .timeline-place,
+    .timeline-item-bgphoto > .timeline-item-inner {
+      position: relative;
       z-index: 1;
     }
-    .timeline-photo-pair .timeline-photo:nth-child(2) {
+    .timeline-bg-photo {
       position: absolute;
-      right: 0;
-      top: 10px;
-      width: 105px;
-      height: 105px;
-      border: 4px solid var(--ivory);
-      z-index: 2;
+      inset: -20px -28px auto -28px;
+      height: 260px;
+      overflow: hidden;
+      z-index: 0;
+      opacity: 0.16;
+      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 65%, rgba(0,0,0,0) 100%);
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 65%, rgba(0,0,0,0) 100%);
+    }
+    .timeline-bg-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
-    /* ── 奥の写真を背景に溶け込ませ、手前はくっきり ── */
-    .timeline-photo-pair .timeline-photo:nth-child(1) {
-      opacity: 0.4;
-      -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 45%, rgba(0,0,0,0) 100%);
-      mask-image: radial-gradient(circle, rgba(0,0,0,1) 45%, rgba(0,0,0,0) 100%);
-      border: none;
+    /* ── 独立した四角写真 ── */
+    .timeline-photo-square {
+      width: 140px;
+      height: 140px;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid var(--hairline);
+      background: var(--cream);
+      flex-shrink: 0;
+      box-shadow: 0 4px 14px rgba(43,38,34,0.14);
     }
-    .timeline-photo-pair .timeline-photo:nth-child(2) {
-      box-shadow: 0 4px 14px rgba(43,38,34,0.18);
+    .timeline-photo-square img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     /* ══════════════════════════════
@@ -652,7 +651,10 @@
     </div>
 
     <!-- LE MONDE (1395 + 1396) -->
-    <div class="timeline-item fade-in">
+    <div class="timeline-item timeline-item-bgphoto fade-in">
+      <div class="timeline-bg-photo">
+        <img src="assets/IMG_1395.png" alt="" style="object-position: center 75%;" />
+      </div>
       <p class="timeline-era">1990s — 2000s</p>
       <p class="timeline-place">Le Monde</p>
       <div class="timeline-item-inner">
@@ -662,19 +664,17 @@
             <span lang="en">From France, André moved outward — Italy, Bora Bora, the UK, Australia, New Caledonia. Each land, its ingredients, culture, and climate, deepened and widened his cuisine.</span>
           </p>
         </div>
-        <div class="timeline-photo-pair">
-          <div class="timeline-photo">
-            <img src="assets/IMG_1395.png" alt="André — Le Monde" style="object-position: center 75%;" />
-          </div>
-          <div class="timeline-photo">
-            <img src="assets/IMG_1396.jpeg" alt="André en cuisine" style="object-position: center 50%;" />
-          </div>
+        <div class="timeline-photo-square">
+          <img src="assets/IMG_1396.jpeg" alt="André en cuisine" style="object-position: center 50%;" />
         </div>
       </div>
     </div>
 
     <!-- TOKYO (1397 + 1398) -->
-    <div class="timeline-item fade-in">
+    <div class="timeline-item timeline-item-bgphoto fade-in">
+      <div class="timeline-bg-photo">
+        <img src="assets/IMG_1397.png" alt="" style="object-position: center 25%;" />
+      </div>
       <p class="timeline-era">c. 2005 — Tokyo</p>
       <p class="timeline-place">神楽坂・銀座</p>
       <div class="timeline-item-inner">
@@ -684,13 +684,8 @@
             <span lang="en">Tokyo. For 14 years, André stood at the forefront of the city's dining scene — at "Maison de la Bourgogne" and "French Dining," both in Kagurazaka, and later "Oreno French" in Ginza.</span>
           </p>
         </div>
-        <div class="timeline-photo-pair">
-          <div class="timeline-photo">
-            <img src="assets/IMG_1397.png" alt="André — portrait officiel" style="object-position: center 25%;" />
-          </div>
-          <div class="timeline-photo">
-            <img src="assets/IMG_1398.jpeg" alt="André à Kagurazaka" style="object-position: center 40%; transform: scale(1.2); transform-origin: center;" />
-          </div>
+        <div class="timeline-photo-square">
+          <img src="assets/IMG_1398.jpeg" alt="André à Kagurazaka" style="object-position: center 40%;" />
         </div>
       </div>
     </div>
