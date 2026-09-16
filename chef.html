@@ -367,9 +367,17 @@
         width: 280px;
         height: 280px;
       }
+      .timeline-photo-cluster {
+        width: 46%;
+        height: 340px;
+      }
+      .timeline-photo-cluster.timeline-photo-cluster-tall {
+        height: 400px;
+      }
       .timeline-photo-square {
         width: 190px;
         height: 190px;
+        right: 16px;
       }
 
       .timeline-item-inner {
@@ -393,7 +401,7 @@
       .timeline-place { font-size: 40px; }
     }
 
-    /* ── 背景に薄く敷く写真 ── */
+    /* ── 背景に薄く敷く写真＋手前の四角写真をひとつの塊に ── */
     .timeline-item-bgphoto {
       position: relative;
     }
@@ -403,15 +411,22 @@
       position: relative;
       z-index: 1;
     }
-    .timeline-bg-photo {
+    .timeline-photo-cluster {
       position: absolute;
       left: -28px;
       top: -20px;
       width: 58%;
-      height: 260px;
-      overflow: hidden;
+      height: 280px;
       z-index: 0;
-      opacity: 0.16;
+    }
+    .timeline-photo-cluster.timeline-photo-cluster-tall {
+      height: 320px;
+    }
+    .timeline-bg-photo {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      opacity: 0.3;
       -webkit-mask-image: linear-gradient(135deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.6) 45%, rgba(0,0,0,0) 85%);
       mask-image: linear-gradient(135deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.6) 45%, rgba(0,0,0,0) 85%);
     }
@@ -422,16 +437,19 @@
       display: block;
     }
 
-    /* ── 独立した四角写真 ── */
+    /* ── 独立した四角写真（背景の右下角に重ねる） ── */
     .timeline-photo-square {
+      position: absolute;
+      right: 10px;
+      bottom: 0;
       width: 140px;
       height: 140px;
       border-radius: 6px;
       overflow: hidden;
       border: 1px solid var(--hairline);
       background: var(--cream);
-      flex-shrink: 0;
-      box-shadow: 0 4px 14px rgba(43,38,34,0.14);
+      box-shadow: 0 4px 14px rgba(43,38,34,0.2);
+      z-index: 1;
     }
     .timeline-photo-square img {
       width: 100%;
@@ -654,41 +672,41 @@
 
     <!-- LE MONDE (1395 + 1396) -->
     <div class="timeline-item timeline-item-bgphoto fade-in">
-      <div class="timeline-bg-photo">
-        <img src="assets/IMG_1395.png" alt="" style="object-position: center 75%;" />
-      </div>
-      <p class="timeline-era">1990s — 2000s</p>
-      <p class="timeline-place">Le Monde</p>
-      <div class="timeline-item-inner">
-        <div>
-          <p class="body-text">
-            <span lang="ja">フランスにとどまらず、イタリア、ボラボラ島、イギリス、オーストラリア、ニューカレドニアへ。それぞれの土地の食材、文化、気候がアンドレの料理を深め、広げていった。</span>
-            <span lang="en">From France, André moved outward — Italy, Bora Bora, the UK, Australia, New Caledonia. Each land, its ingredients, culture, and climate, deepened and widened his cuisine.</span>
-          </p>
+      <div class="timeline-photo-cluster">
+        <div class="timeline-bg-photo">
+          <img src="assets/IMG_1395.png" alt="" style="object-position: center 25%;" />
         </div>
         <div class="timeline-photo-square">
           <img src="assets/IMG_1396.jpeg" alt="André en cuisine" style="object-position: center 50%;" />
         </div>
       </div>
+      <p class="timeline-era">1990s — 2000s</p>
+      <p class="timeline-place">Le Monde</p>
+      <div class="timeline-item-inner">
+        <p class="body-text">
+          <span lang="ja">フランスにとどまらず、イタリア、ボラボラ島、イギリス、オーストラリア、ニューカレドニアへ。それぞれの土地の食材、文化、気候がアンドレの料理を深め、広げていった。</span>
+          <span lang="en">From France, André moved outward — Italy, Bora Bora, the UK, Australia, New Caledonia. Each land, its ingredients, culture, and climate, deepened and widened his cuisine.</span>
+        </p>
+      </div>
     </div>
 
     <!-- TOKYO (1397 + 1398) -->
     <div class="timeline-item timeline-item-bgphoto fade-in">
-      <div class="timeline-bg-photo">
-        <img src="assets/IMG_1398.jpeg" alt="" style="object-position: center 40%;" />
-      </div>
-      <p class="timeline-era">c. 2005 — Tokyo</p>
-      <p class="timeline-place">神楽坂・銀座</p>
-      <div class="timeline-item-inner">
-        <div>
-          <p class="body-text">
-            <span lang="ja">東京へ。神楽坂の「メゾン・ド・ラ・ブルゴーニュ」、同じく神楽坂の「フレンチダイニング」、そして銀座の「俺のフレンチ」で、14年間にわたり第一線のキッチンに立ち続けた。</span>
-            <span lang="en">Tokyo. For 14 years, André stood at the forefront of the city's dining scene — at "Maison de la Bourgogne" and "French Dining," both in Kagurazaka, and later "Oreno French" in Ginza.</span>
-          </p>
+      <div class="timeline-photo-cluster timeline-photo-cluster-tall">
+        <div class="timeline-bg-photo">
+          <img src="assets/IMG_1398.jpeg" alt="" style="object-position: center 40%;" />
         </div>
         <div class="timeline-photo-square">
           <img src="assets/IMG_1397.png" alt="André — portrait officiel" style="object-position: center 25%;" />
         </div>
+      </div>
+      <p class="timeline-era">c. 2005 — Tokyo</p>
+      <p class="timeline-place">神楽坂・銀座</p>
+      <div class="timeline-item-inner">
+        <p class="body-text">
+          <span lang="ja">東京へ。神楽坂の「メゾン・ド・ラ・ブルゴーニュ」、同じく神楽坂の「フレンチダイニング」、そして銀座の「俺のフレンチ」で、14年間にわたり第一線のキッチンに立ち続けた。</span>
+          <span lang="en">Tokyo. For 14 years, André stood at the forefront of the city's dining scene — at "Maison de la Bourgogne" and "French Dining," both in Kagurazaka, and later "Oreno French" in Ginza.</span>
+        </p>
       </div>
     </div>
 
