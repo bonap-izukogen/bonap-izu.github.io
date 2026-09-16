@@ -395,13 +395,6 @@
         grid-template-columns: 1fr;
         max-width: 600px;
       }
-      .timeline-item-inner.wrap-layout {
-        display: block;
-        max-width: 860px;
-      }
-      .timeline-item-inner.wrap-layout .timeline-photo-pair {
-        margin: -80px 0 24px 32px;
-      }
       .timeline-photo {
         margin-bottom: 0;
         aspect-ratio: 3 / 4;
@@ -435,18 +428,15 @@
       z-index: 2;
     }
 
-    /* ── 大小オーバーラップ写真を見出し右横に回り込ませる ── */
-    .timeline-item-inner.wrap-layout {
-      display: block;
+    /* ── 奥の写真を背景に溶け込ませ、手前はくっきり ── */
+    .timeline-photo-pair .timeline-photo:nth-child(1) {
+      opacity: 0.4;
+      -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 45%, rgba(0,0,0,0) 100%);
+      mask-image: radial-gradient(circle, rgba(0,0,0,1) 45%, rgba(0,0,0,0) 100%);
+      border: none;
     }
-    .timeline-item-inner.wrap-layout::after {
-      content: '';
-      display: table;
-      clear: both;
-    }
-    .timeline-item-inner.wrap-layout .timeline-photo-pair {
-      float: right;
-      margin: -60px 0 16px 20px;
+    .timeline-photo-pair .timeline-photo:nth-child(2) {
+      box-shadow: 0 4px 14px rgba(43,38,34,0.18);
     }
 
     /* ══════════════════════════════
@@ -665,7 +655,13 @@
     <div class="timeline-item fade-in">
       <p class="timeline-era">1990s — 2000s</p>
       <p class="timeline-place">Le Monde</p>
-      <div class="timeline-item-inner wrap-layout">
+      <div class="timeline-item-inner">
+        <div>
+          <p class="body-text">
+            <span lang="ja">フランスにとどまらず、イタリア、ボラボラ島、イギリス、オーストラリア、ニューカレドニアへ。それぞれの土地の食材、文化、気候がアンドレの料理を深め、広げていった。</span>
+            <span lang="en">From France, André moved outward — Italy, Bora Bora, the UK, Australia, New Caledonia. Each land, its ingredients, culture, and climate, deepened and widened his cuisine.</span>
+          </p>
+        </div>
         <div class="timeline-photo-pair">
           <div class="timeline-photo">
             <img src="assets/IMG_1395.png" alt="André — Le Monde" style="object-position: center 75%;" />
@@ -674,10 +670,6 @@
             <img src="assets/IMG_1396.jpeg" alt="André en cuisine" style="object-position: center 50%;" />
           </div>
         </div>
-        <p class="body-text">
-          <span lang="ja">フランスにとどまらず、イタリア、ボラボラ島、イギリス、オーストラリア、ニューカレドニアへ。それぞれの土地の食材、文化、気候がアンドレの料理を深め、広げていった。</span>
-          <span lang="en">From France, André moved outward — Italy, Bora Bora, the UK, Australia, New Caledonia. Each land, its ingredients, culture, and climate, deepened and widened his cuisine.</span>
-        </p>
       </div>
     </div>
 
@@ -685,7 +677,13 @@
     <div class="timeline-item fade-in">
       <p class="timeline-era">c. 2005 — Tokyo</p>
       <p class="timeline-place">神楽坂・銀座</p>
-      <div class="timeline-item-inner wrap-layout">
+      <div class="timeline-item-inner">
+        <div>
+          <p class="body-text">
+            <span lang="ja">東京へ。神楽坂の「メゾン・ド・ラ・ブルゴーニュ」、同じく神楽坂の「フレンチダイニング」、そして銀座の「俺のフレンチ」で、14年間にわたり第一線のキッチンに立ち続けた。</span>
+            <span lang="en">Tokyo. For 14 years, André stood at the forefront of the city's dining scene — at "Maison de la Bourgogne" and "French Dining," both in Kagurazaka, and later "Oreno French" in Ginza.</span>
+          </p>
+        </div>
         <div class="timeline-photo-pair">
           <div class="timeline-photo">
             <img src="assets/IMG_1397.png" alt="André — portrait officiel" style="object-position: center 25%;" />
@@ -694,10 +692,6 @@
             <img src="assets/IMG_1398.jpeg" alt="André à Kagurazaka" style="object-position: center 40%; transform: scale(1.2); transform-origin: center;" />
           </div>
         </div>
-        <p class="body-text">
-          <span lang="ja">東京へ。神楽坂の「メゾン・ド・ラ・ブルゴーニュ」、同じく神楽坂の「フレンチダイニング」、そして銀座の「俺のフレンチ」で、14年間にわたり第一線のキッチンに立ち続けた。</span>
-          <span lang="en">Tokyo. For 14 years, André stood at the forefront of the city's dining scene — at "Maison de la Bourgogne" and "French Dining," both in Kagurazaka, and later "Oreno French" in Ginza.</span>
-        </p>
       </div>
     </div>
 
