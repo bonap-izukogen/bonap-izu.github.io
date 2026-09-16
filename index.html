@@ -1058,16 +1058,20 @@
       <span lang="en">Chef · Bon' Ap</span>
     </p>
     <blockquote class="chef-quote">
-      « la cuisine, c'est honnête. »
+      <span lang="ja">食を愛し楽しむ心を忘れない。</span>
+      <span lang="en">Never lose the love and joy of good food.</span>
     </blockquote>
-    <p class="chef-quote-jp">
-      <span lang="ja">料理は、誠実であるべきだ。</span>
-      <span lang="en">Cooking must be honest.</span>
-    </p>
     <p class="body-text">
       <span lang="ja">パリ生まれ。14歳でキッチンに立ち、世界を渡り、伊豆高原に辿り着いたシェフ。</span>
       <span lang="en">Born in Paris. Entered the kitchen at 14, traveled the world, and arrived in Izu Kogen.</span>
     </p>
+    <a href="chef.html" id="chefPageBtn" style="display:inline-flex;align-items:center;gap:10px;margin-top:28px;text-decoration:none;color:var(--terracotta);font-family:'Shippori Mincho',serif;font-size:13px;letter-spacing:2px;">
+      <span lang="ja">シェフの軌跡を見る</span>
+      <span lang="en">The Chef's Journey</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M5 12h14M12 5l7 7-7 7"/>
+      </svg>
+    </a>
     </div>
   </section>
 
@@ -1407,6 +1411,7 @@
     function updateLinks(isEn) {
       const s = isEn ? '?lang=en' : '';
       document.getElementById('reservationBtn').href = 'reservation.html' + s;
+      document.getElementById('chefPageBtn').href = 'chef.html' + s;
       document.getElementById('sitemapLink').href = 'sitemap.html' + s;
       document.getElementById('privacyLink').href = 'privacy.html' + s;
       document.getElementById('tokushohoLink').href = 'tokushoho.html' + s;
