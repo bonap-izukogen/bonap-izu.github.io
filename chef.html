@@ -369,15 +369,21 @@
       }
       .timeline-photo-cluster {
         width: 46%;
-        height: 340px;
+        height: 320px;
       }
       .timeline-photo-cluster.timeline-photo-cluster-tall {
-        height: 400px;
+        height: 380px;
       }
       .timeline-photo-square {
-        width: 190px;
-        height: 190px;
+        width: 280px;
+        height: 280px;
         right: 16px;
+      }
+      .timeline-item-bgphoto {
+        min-height: 360px;
+      }
+      .timeline-item-bgphoto.timeline-item-tall {
+        min-height: 420px;
       }
 
       .timeline-item-inner {
@@ -404,6 +410,10 @@
     /* ── 背景に薄く敷く写真＋手前の四角写真をひとつの塊に ── */
     .timeline-item-bgphoto {
       position: relative;
+      min-height: 280px;
+    }
+    .timeline-item-bgphoto.timeline-item-tall {
+      min-height: 340px;
     }
     .timeline-item-bgphoto > .timeline-era,
     .timeline-item-bgphoto > .timeline-place,
@@ -416,11 +426,11 @@
       left: -28px;
       top: -20px;
       width: 58%;
-      height: 280px;
+      height: 240px;
       z-index: 0;
     }
     .timeline-photo-cluster.timeline-photo-cluster-tall {
-      height: 320px;
+      height: 300px;
     }
     .timeline-bg-photo {
       position: absolute;
@@ -437,13 +447,13 @@
       display: block;
     }
 
-    /* ── 独立した四角写真（背景の右下角に重ねる） ── */
+    /* ── 独立した四角写真（背景の右下角に重ねる、伊豆高原の写真と同等サイズ） ── */
     .timeline-photo-square {
       position: absolute;
       right: 10px;
       bottom: 0;
-      width: 140px;
-      height: 140px;
+      width: 200px;
+      height: 200px;
       border-radius: 6px;
       overflow: hidden;
       border: 1px solid var(--hairline);
@@ -691,7 +701,7 @@
     </div>
 
     <!-- TOKYO (1397 + 1398) -->
-    <div class="timeline-item timeline-item-bgphoto fade-in">
+    <div class="timeline-item timeline-item-bgphoto timeline-item-tall fade-in">
       <div class="timeline-photo-cluster timeline-photo-cluster-tall">
         <div class="timeline-bg-photo">
           <img src="assets/IMG_1398.jpeg" alt="" style="object-position: center 40%;" />
