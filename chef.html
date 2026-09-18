@@ -436,6 +436,14 @@
       object-fit: cover;
       display: block;
     }
+    .bar-crop {
+      transform: scale(1.7);
+    }
+    @media (min-width: 768px) {
+      .bar-crop {
+        transform: scale(1.4);
+      }
+    }
     .timeline-bg-photo-a,
     .timeline-bg-photo-b {
       width: 46%;
@@ -671,7 +679,7 @@
     <!-- LE MONDE (1395 + 1396) -->
     <div class="timeline-item timeline-item-bgphoto fade-in">
       <div class="timeline-bg-photo timeline-bg-photo-a">
-        <img src="assets/IMG_1396.jpeg" alt="" style="object-position: center 50%; transform: scale(1.7);" />
+        <img src="assets/IMG_1396.jpeg" alt="" class="bar-crop" style="object-position: center 50%;" />
       </div>
       <div class="timeline-bg-photo timeline-bg-photo-b">
         <img src="assets/IMG_1395.png" alt="" style="object-position: center 25%;" />
@@ -689,7 +697,7 @@
     <!-- TOKYO (1397 + 1398) -->
     <div class="timeline-item timeline-item-bgphoto timeline-item-tall fade-in">
       <div class="timeline-bg-photo timeline-bg-photo-a">
-        <img src="assets/IMG_1398.jpeg" alt="" style="object-position: center 40%; transform: scale(1.7);" />
+        <img src="assets/IMG_1398.jpeg" alt="" class="bar-crop" style="object-position: center 40%;" />
       </div>
       <div class="timeline-bg-photo timeline-bg-photo-b">
         <img src="assets/IMG_1397.png" alt="" style="object-position: center 25%;" />
