@@ -40,7 +40,7 @@
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 
     body {
       background: var(--ivory);
@@ -55,91 +55,10 @@
       margin: 0 auto;
     }
 
-    /* ── PC LAYOUT ── */
+    /* ── PC：既存パーツ（予約・アクセス・ナビ・フッター）── */
     @media (min-width: 768px) {
-      body {
-        background: var(--cream);
-      }
-
-      .site-wrapper {
-        max-width: 1100px;
-        margin: 0 auto;
-        background: var(--ivory);
-        box-shadow: 0 0 60px rgba(43,38,34,0.08);
-      }
-
-      /* PC: 2カラムグリッド */
-      .pc-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 0;
-      }
-      .pc-grid-3 {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        gap: 0;
-      }
-
-      /* Hero: 左テキスト、右ロゴ */
-      .hero {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
-        min-height: 520px;
-        padding-bottom: 0;
-      }
-      .hero-left {
-        padding: 60px 40px 60px 60px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      }
-      .hero-title-block {
-        padding: 0;
-        text-align: center;
-      }
-      .hero-title-block .label-sm { display: block; margin-bottom: 16px; }
-      .hero-title-block .divider { justify-content: center; margin: 0 0 20px; }
-      h1.hero-heading { font-size: 26px; }
-      .cta-btn {
-        width: auto;
-        margin: 24px 0 0 0;
-        display: inline-block;
-        padding: 16px 40px;
-      }
-      .hours-note { text-align: left; margin-top: 12px; padding-left: 0; }
-      .hero-logo {
-        padding: 40px 60px 40px 20px;
-      }
-
-      /* Concept: 左テキスト広め */
-      .concept { padding: 80px 60px; }
-      .concept .section-heading { font-size: 28px; white-space: nowrap; }
-      .concept .section-heading br { display: none; }
-      .concept-text-ja {
-        display: block;
-      }
-      .concept-text-ja::after {
-        content: none;
-      }
-      /* PC用テキスト改行を疑似的に再現 */
-      @media (min-width: 768px) {
-        .concept-text-ja {
-          white-space: pre-line;
-        }
-      }
-
-      /* Menu: 2カラム */
-      .menu-section { padding-top: 80px; }
-      .menu-header { padding: 0 60px 40px; }
-      .menu-cards-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-      }
-      .menu-card { padding: 28px 40px 36px; }
-      .menu-footer { padding: 32px 60px 64px; }
-
+      body { background: var(--cream); }
+      .site-wrapper { max-width: 1100px; margin: 0 auto; background: var(--ivory); box-shadow: 0 0 60px rgba(43,38,34,0.08); }
       /* Order flow */
       .order-flow { padding: 80px 60px 72px; }
       .course-info { max-width: 780px; }
@@ -185,26 +104,6 @@
       }
       .line-btn { max-width: 400px; margin: 40px auto 0; display: block; }
       .tel-note { margin-top: 16px; }
-
-      /* Chef: 左写真、右テキスト */
-      .chef-section {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        padding: 0;
-        align-items: start;
-      }
-      .chef-photo {
-        aspect-ratio: 3 / 4;
-        margin-bottom: 0;
-        height: 100%;
-      }
-      .chef-text {
-        padding: 60px 60px 60px 48px;
-      }
-
-      /* Instagram */
-      .instagram-section { padding: 80px 60px; }
-
       /* Access: 左（写真+地図）、右（情報） */
       .access-section { padding: 0; }
       .access-layout {
@@ -233,7 +132,6 @@
       .access-right { padding: 60px 60px 0 48px; }
       .access-table { padding: 0 0 48px 0; }
       .call-big { margin: 24px 0 0 0; }
-
       /* Nav */
       .topbar { padding: 16px 60px; }
       .lang-bar { padding: 12px 60px; }
@@ -241,7 +139,6 @@
       /* Footer */
       .footer { padding: 56px 60px 48px; }
     }
-    
 
     /* ── LANG TOGGLE ── */
     .lang-bar {
@@ -295,221 +192,6 @@
       text-decoration: none;
     }
     .tel-btn svg { flex-shrink: 0; }
-
-    /* ── HERO ── */
-    .hero {
-      background: var(--ivory);
-      padding-bottom: 32px;
-    }
-    .hero-logo {
-      padding: 0 16px;
-    }
-    .hero-logo img {
-      width: 100%;
-      display: block;
-    }
-    .hero-title-block {
-      padding: 12px 28px 20px;
-      text-align: center;
-    }
-    .label-sm {
-      font-family: ui-monospace, monospace;
-      font-size: 10px;
-      letter-spacing: 3px;
-      color: var(--terracotta);
-      text-transform: uppercase;
-    }
-    .divider {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      justify-content: center;
-      margin: 22px 0 20px;
-    }
-    .divider-line { flex: 1; height: 0.5px; background: var(--hairline); max-width: 60px; }
-    .divider-diamond { width: 5px; height: 5px; background: var(--terracotta); transform: rotate(45deg); }
-
-    h1.hero-heading {
-      font-family: 'Shippori Mincho', serif;
-      font-size: 20px;
-      line-height: 1.9;
-      font-weight: 500;
-      color: var(--ink);
-      letter-spacing: 1px;
-    }
-    .hero-sub {
-      font-size: 15px;
-      margin-top: 14px;
-      line-height: 1.8;
-      letter-spacing: 0.5px;
-    }
-    .cta-btn {
-      display: block;
-      width: calc(100% - 56px);
-      margin: 20px 28px 0;
-      background: var(--terracotta);
-      color: var(--ivory);
-      border: none;
-      padding: 16px 0;
-      font-family: 'Shippori Mincho', serif;
-      font-size: 14px;
-      letter-spacing: 4px;
-      cursor: pointer;
-      text-align: center;
-      text-decoration: none;
-    }
-    .hours-note {
-      text-align: center;
-      margin-top: 14px;
-      font-family: ui-monospace, monospace;
-      font-size: 10px;
-      color: var(--ink-soft);
-      letter-spacing: 2px;
-    }
-
-    /* ── CONCEPT ── */
-    .concept {
-      background: var(--cream);
-      padding: 60px 28px 56px;
-    }
-    .section-label {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 14px;
-      font-style: italic;
-      color: var(--ink-soft);
-      letter-spacing: 2px;
-      margin-bottom: 10px;
-    }
-    .section-heading {
-      font-family: 'Shippori Mincho', serif;
-      font-size: 22px;
-      line-height: 1.8;
-      color: var(--ink);
-      font-weight: 500;
-      letter-spacing: 1px;
-      margin-bottom: 28px;
-    }
-    .body-text {
-      font-size: 15px;
-      line-height: 2.1;
-      color: var(--ink-soft);
-      letter-spacing: 0.5px;
-    }
-    .chef-link {
-      margin-top: 36px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      text-decoration: none;
-      color: inherit;
-      cursor: pointer;
-    }
-    .chef-avatar {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 0.5px solid var(--hairline);
-      flex-shrink: 0;
-      background: var(--cream);
-    }
-    .chef-avatar img { width: 100%; height: 100%; object-fit: cover; }
-    .chef-avatar-placeholder {
-      width: 100%;
-      height: 100%;
-      background: repeating-linear-gradient(45deg, #D7B39E 0 6px, #C9A18A 6px 12px);
-    }
-
-    /* ── MENU ── */
-    .menu-section {
-      background: var(--ivory);
-      padding-top: 56px;
-    }
-    .menu-header {
-      padding: 0 28px 30px;
-      text-align: center;
-    }
-    .menu-title-fr {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 42px;
-      line-height: 1.1;
-      color: var(--ink);
-      font-weight: 400;
-      font-style: italic;
-    }
-    .menu-title-jp {
-      font-family: 'Shippori Mincho', serif;
-      font-size: 13px;
-      color: var(--ink-soft);
-      margin-top: 10px;
-      letter-spacing: 2px;
-    }
-    .menu-card {
-      background: var(--ivory);
-      border-top: 0.5px solid var(--hairline);
-      padding: 24px 28px 28px;
-    }
-    .menu-card-meta {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      margin-bottom: 14px;
-    }
-    .menu-no {
-      font-family: ui-monospace, monospace;
-      font-size: 10px;
-      color: var(--terracotta);
-      letter-spacing: 2px;
-    }
-    .menu-price {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 18px;
-      font-style: italic;
-      color: var(--ink-soft);
-    }
-    .menu-img {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      overflow: hidden;
-      background: var(--cream);
-      border: 0.5px solid var(--hairline);
-      margin-bottom: 14px;
-    }
-    .menu-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .menu-name-fr {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 24px;
-      font-style: italic;
-      font-weight: 500;
-      color: var(--ink);
-      margin-bottom: 4px;
-    }
-    .menu-name-jp {
-      font-family: 'Shippori Mincho', serif;
-      font-size: 15px;
-      color: var(--ink);
-      margin-bottom: 10px;
-      letter-spacing: 1px;
-    }
-    .menu-desc {
-      font-size: 12px;
-      line-height: 1.9;
-      color: var(--ink-soft);
-      letter-spacing: 0.3px;
-    }
-    .menu-footer {
-      padding: 24px 28px 48px;
-      border-top: 0.5px solid var(--hairline);
-      text-align: center;
-    }
-    .menu-footer p {
-      font-family: 'Shippori Mincho', serif;
-      font-size: 13px;
-      color: var(--ink-soft);
-      line-height: 2;
-    }
-    .menu-footer a { color: var(--terracotta); text-underline-offset: 3px; }
-
     /* ── ORDER FLOW ── */
     .order-flow {
       background: var(--forest);
@@ -580,91 +262,6 @@
       color: rgba(245,239,228,0.55);
       letter-spacing: 2px;
     }
-
-    /* ── CHEF ── */
-    .chef-section {
-      background: var(--cream);
-      padding: 60px 28px 56px;
-    }
-    .chef-photo {
-      width: 100%;
-      aspect-ratio: 3 / 4;
-      overflow: hidden;
-      background: var(--ivory);
-      border: 0.5px solid var(--hairline);
-      margin-bottom: 32px;
-    }
-    .chef-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .chef-photo-placeholder {
-      width: 100%;
-      height: 100%;
-      background: repeating-linear-gradient(135deg, #E8DFD0 0 10px, #DDD2BD 10px 20px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .chef-name-fr {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 36px;
-      font-style: italic;
-      color: var(--ink);
-      margin-bottom: 6px;
-    }
-    .chef-name-jp {
-      font-family: 'Shippori Mincho', serif;
-      font-size: 13px;
-      color: var(--ink-soft);
-      letter-spacing: 3px;
-      margin-bottom: 28px;
-    }
-    .chef-quote {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 26px;
-      font-style: italic;
-      line-height: 1.5;
-      color: var(--ink);
-      border-left: 2px solid var(--terracotta);
-      padding-left: 16px;
-      margin-bottom: 20px;
-    }
-    .chef-quote-jp {
-      font-family: 'Shippori Mincho', serif;
-      font-size: 13px;
-      color: var(--ink-soft);
-      line-height: 2;
-      letter-spacing: 1px;
-      margin-bottom: 28px;
-    }
-
-    /* ── INSTAGRAM ── */
-    .instagram-section {
-      background: var(--ivory);
-      padding: 60px 28px 56px;
-      text-align: center;
-    }
-    .insta-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--ink);
-      color: var(--ivory);
-      text-decoration: none;
-      padding: 16px 32px;
-      font-family: ui-monospace, monospace;
-      font-size: 12px;
-      letter-spacing: 3px;
-      margin-top: 28px;
-      transition: background 0.2s;
-    }
-    .insta-link:hover { background: var(--terracotta); }
-    .insta-note {
-      font-size: 12px;
-      color: var(--ink-soft);
-      margin-top: 16px;
-      line-height: 1.8;
-      letter-spacing: 0.3px;
-    }
-
     /* ── ACCESS ── */
     .access-section {
       background: var(--ivory);
@@ -729,7 +326,6 @@
       font-size: 15px;
       letter-spacing: 3px;
     }
-
     /* ── FOOTER PC ONLY LINKS ── */
     .footer-pc-only { display: none; }
     @media (min-width: 768px) {
@@ -826,7 +422,6 @@
         letter-spacing: 1px;
       }
     }
-
     /* ── COURSE INFO ── */
     .course-info {
       margin: 32px auto 40px;
@@ -879,110 +474,328 @@
       font-weight: 500;
     }
 
-    /* ── RESERVATION FORM ── */
-    .reservation-form {
-      margin-top: 40px;
-      background: rgba(245,239,228,0.08);
-      border: 0.5px solid rgba(245,239,228,0.2);
-      padding: 28px 24px 32px;
-    }
-    .form-notice {
-      font-size: 12px;
+    /* ══════════════════════════════
+       共通（見出し・本文・手描きの波線）
+    ══════════════════════════════ */
+    .section-heading {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 22px;
       line-height: 1.8;
-      color: rgba(245,239,228,0.65);
-      border-left: 2px solid var(--terracotta);
-      padding-left: 12px;
+      color: var(--ink);
+      font-weight: 500;
+      letter-spacing: 2px;
       margin-bottom: 28px;
+    }
+    .body-text {
+      font-size: 15px;
+      line-height: 2.2;
+      color: var(--ink-soft);
+      letter-spacing: 0.5px;
+    }
+    /* 構成案の「～～～」を手描き風の波線に */
+    .wave {
+      display: block;
+      width: 96px;
+      height: 12px;
+      color: var(--terracotta);
+      margin: 0 auto;
+    }
+    .wave path {
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.2;
+      stroke-linecap: round;
+    }
+
+    /* ══════════════════════════════
+       HERO：ロゴ ＋ For All Food Lovers ＋ コンセプト
+    ══════════════════════════════ */
+    .hero {
+      background: var(--ivory);
+      padding: 40px 24px 88px;
+      text-align: center;
+    }
+    .hero-logo {
+      width: 168px;
+      margin: 0 auto 36px;
+    }
+    .hero-logo img { width: 100%; display: block; }
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 400;
+      /* 1行に収まるよう、画面幅から文字サイズを計算（文字列の幅 ≒ 文字サイズ×8.2） */
+      font-size: calc((min(100vw, 480px) - 48px) / 8.6);
+      line-height: 1;
+      letter-spacing: -0.5px;
+      white-space: nowrap;
+      color: var(--ink);
+    }
+    .hero-title .line { display: inline-block; }
+    .hero .wave { margin: 36px auto 40px; }
+    .hero-poem {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 15px;
+      line-height: 2.5;
+      letter-spacing: 1.5px;
+      color: var(--ink);
+    }
+    .hero-poem p + p { margin-top: 1.4em; }
+    .hero-poem [lang="en"] {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 19px;
+      line-height: 1.9;
       letter-spacing: 0.3px;
     }
-    .form-row {
-      margin-bottom: 20px;
+    .hero-sign {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 20px;
+      color: var(--terracotta);
+      margin-top: 32px;
     }
-    .form-row label {
+
+    /* ページを開いた時の一度だけの演出（ヒーローのみ） */
+    .hero-logo, .hero-title .line, .hero-poem, .hero-sign {
+      opacity: 0;
+      animation: heroIn 1.4s cubic-bezier(.2,.7,.2,1) forwards;
+    }
+    .hero-title .line { transform: translateY(18px); }
+    .hero-logo                    { animation-delay: .1s; }
+    .hero-title .line:nth-child(1){ animation-delay: .35s; }
+    .hero-title .line:nth-child(2){ animation-delay: .55s; }
+    .hero-poem                    { animation-delay: 1.5s; }
+    .hero-sign                    { animation-delay: 1.9s; }
+    @keyframes heroIn { to { opacity: 1; transform: none; } }
+    .hero .wave path {
+      stroke-dasharray: 120;
+      stroke-dashoffset: 120;
+      animation: waveDraw 1.6s ease-out 1.1s forwards;
+    }
+    @keyframes waveDraw { to { stroke-dashoffset: 0; } }
+
+    /* ══════════════════════════════
+       食材へのこだわり（縦書きの見出し）
+    ══════════════════════════════ */
+    .produce {
+      background: var(--cream);
+      padding: 72px 24px;
+    }
+    .produce-inner {
       display: flex;
-      flex-direction: column;
-      gap: 7px;
+      gap: 28px;
+      max-width: 640px;
+      margin: 0 auto;
+      align-items: flex-start;
     }
-    .form-row-2col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin-bottom: 20px;
+    /* 縦書き風：1文字ずつ縦に積む（端末による縦書き表示の差を避けるため writing-mode は使わない） */
+    .produce-heading {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--ink);
+      flex-shrink: 0;
+      padding-left: 20px;
+      border-left: 0.5px solid var(--terracotta);
     }
-    .form-row-2col label {
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
+    .v-stack span {
+      display: block;
+      text-align: center;
+      line-height: 1.55;
     }
-    .form-label {
+    body.en .produce-inner { display: block; }
+    body.en .produce-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 32px;
+      padding: 0;
+      border: none;
+      margin-bottom: 24px;
+    }
+    .produce .body-text { color: var(--ink); }
+
+    /* ══════════════════════════════
+       シェフについて
+    ══════════════════════════════ */
+    .chef-section {
+      background: var(--ivory);
+      padding: 72px 24px;
+    }
+    .chef-section > .section-heading { text-align: center; }
+    .chef-photo {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      background: var(--cream);
+      margin-bottom: 36px;
+    }
+    .chef-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      transform: scale(1.06);
+      transition: transform 2.8s cubic-bezier(.2,.7,.2,1);
+    }
+    .chef-section.visible .chef-photo img { transform: none; }
+    .chef-text { text-align: center; }
+    .chef-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 64px;
+      line-height: 1;
+      color: var(--ink);
+    }
+    .chef-name-jp {
       font-family: 'Shippori Mincho', serif;
       font-size: 12px;
-      color: rgba(245,239,228,0.85);
+      letter-spacing: 6px;
+      color: var(--ink-soft);
+      margin-top: 12px;
+    }
+    .chef-text .wave { margin: 28px auto; }
+    .chef-quote {
+      font-family: 'Shippori Mincho', serif;
+      /* スマホで2行に折り返さないよう、画面幅に合わせて最大16pxまで */
+      font-size: min(16px, calc((min(100vw, 480px) - 48px) / 16));
+      white-space: nowrap;
+      line-height: 2;
       letter-spacing: 1px;
+      color: var(--ink);
+      margin-bottom: 16px;
     }
-    .required { color: var(--terracotta); }
-    .reservation-form input,
-    .reservation-form select,
-    .reservation-form textarea {
-      background: rgba(245,239,228,0.08);
-      border: 0.5px solid rgba(245,239,228,0.3);
-      color: var(--ivory);
-      font-family: 'Noto Sans JP', sans-serif;
-      font-size: 13px;
-      padding: 10px 12px;
-      width: 100%;
-      outline: none;
-      transition: border-color 0.2s;
-      -webkit-appearance: none;
+    .chef-quote [lang="en"] {
+      white-space: normal;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 24px;
+      letter-spacing: 0;
     }
-    .reservation-form input::placeholder,
-    .reservation-form textarea::placeholder {
-      color: rgba(245,239,228,0.3);
-    }
-    .reservation-form input:focus,
-    .reservation-form select:focus,
-    .reservation-form textarea:focus {
-      border-color: rgba(245,239,228,0.7);
-    }
-    .reservation-form select option {
-      background: var(--forest);
-      color: var(--ivory);
-    }
-    .form-footer-note {
-      font-size: 12px;
-      color: rgba(245,239,228,0.55);
-      line-height: 1.8;
-      margin-bottom: 20px;
-      letter-spacing: 0.3px;
-    }
-    .form-submit {
-      display: block;
-      width: 100%;
-      background: var(--terracotta);
-      color: var(--ivory);
-      border: none;
-      padding: 16px 0;
+    .chef-link {
+      display: inline-block;
+      margin-top: 32px;
       font-family: 'Shippori Mincho', serif;
       font-size: 14px;
-      letter-spacing: 4px;
-      cursor: pointer;
-      transition: background 0.2s;
+      letter-spacing: 3px;
+      color: var(--terracotta);
+      text-decoration: none;
+      padding-bottom: 6px;
+      border-bottom: 0.5px solid var(--terracotta);
+      transition: color .2s, border-color .2s;
     }
-    .form-submit:hover { background: #8B4520; }
+    .chef-link:hover { color: var(--ink); border-color: var(--ink); }
+    .chef-link [lang="en"] { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 18px; letter-spacing: .5px; }
 
-    /* PC用フォーム */
-    @media (min-width: 768px) {
-      .reservation-form { padding: 40px 48px 48px; margin-top: 48px; }
-      .form-notice { font-size: 12px; }
+    /* ══════════════════════════════
+       Bon' Apの楽しみ方
+    ══════════════════════════════ */
+    .enjoy {
+      background: var(--cream);
+      padding: 80px 24px;
+      text-align: center;
     }
+    .enjoy .body-text {
+      max-width: 34em;
+      margin: 0 auto;
+      color: var(--ink);
+      text-align: left;
+    }
+
+    /* ══════════════════════════════
+       INSTAGRAM
+    ══════════════════════════════ */
+    .instagram-section {
+      background: var(--ivory);
+      padding: 72px 24px 80px;
+      text-align: center;
+    }
+    .insta-handle {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 34px;
+      color: var(--ink);
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 14px;
+    }
+    .insta-feed { margin: 36px auto 0; max-width: 900px; }
+    .insta-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 32px;
+      padding: 14px 30px;
+      border: 0.5px solid var(--ink);
+      color: var(--ink);
+      text-decoration: none;
+      font-family: 'Shippori Mincho', serif;
+      font-size: 13px;
+      letter-spacing: 3px;
+      transition: background .2s, color .2s;
+    }
+    .insta-link:hover { background: var(--ink); color: var(--ivory); }
+
+    /* スクロールで表示：ゆっくり浮かび上がるだけ（動きは控えめ） */
     .fade-in {
       opacity: 0;
-      transform: translateY(16px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+      transition: opacity 1.2s ease;
     }
-    .fade-in.visible {
-      opacity: 1;
-      transform: none;
+    .fade-in.visible { opacity: 1; }
+
+    /* 動きを減らす設定の端末では演出を止める */
+    @media (prefers-reduced-motion: reduce) {
+      .hero-logo, .hero-title .line, .hero-poem, .hero-sign {
+        animation: none; opacity: 1; transform: none;
+      }
+      .hero .wave path { animation: none; stroke-dashoffset: 0; }
+      .fade-in { opacity: 1; transition: none; }
+      .chef-photo img { transform: none; transition: none; }
+    }
+
+    /* キーボード操作時のフォーカス表示 */
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--terracotta);
+      outline-offset: 3px;
+    }
+
+    /* ══════════════════════════════
+       PC（768px以上）：上半分の新レイアウト
+    ══════════════════════════════ */
+    @media (min-width: 768px) {
+      .hero { padding: 56px 60px 120px; }
+      .hero-logo { width: 220px; margin-bottom: 48px; }
+      .hero-title { font-size: min(104px, calc((min(100vw, 1100px) - 120px) / 8.6)); }
+      .hero .wave { margin: 48px auto 52px; }
+      .hero-poem { font-size: 17px; }
+
+      .produce { padding: 112px 60px; }
+      .produce-inner { gap: 56px; max-width: 720px; }
+      .produce-heading { font-size: 26px; }
+      .produce .body-text { font-size: 16px; padding-top: 6px; }
+
+      .chef-section {
+        display: grid;
+        grid-template-columns: 5fr 6fr;
+        grid-template-rows: auto 1fr;
+        column-gap: 72px;
+        padding: 112px 80px;
+        align-items: center;
+      }
+      .chef-section > .section-heading {
+        grid-column: 1 / -1;
+        margin-bottom: 56px;
+      }
+      .chef-photo { margin-bottom: 0; }
+      .chef-name { font-size: 88px; }
+      .chef-quote { font-size: 18px; letter-spacing: 2px; }
+
+      .enjoy { padding: 120px 60px; }
+      .enjoy .body-text { font-size: 16px; }
+
+      .instagram-section { padding: 112px 60px 120px; }
     }
 
     /* ── ENGLISH HIDDEN BY DEFAULT ── */
@@ -1012,195 +825,118 @@
     </a>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero fade-in">
-    <div class="hero-left">
-      <div class="hero-title-block">
-        <p class="label-sm">— Izu Kogen · French Italian Deli —</p>
-        <div class="divider">
-          <div class="divider-line"></div>
-          <div class="divider-diamond"></div>
-          <div class="divider-line"></div>
-        </div>
-        <h1 class="hero-heading">
-          <span lang="ja">ここでしか出会えない<br />極上のフレンチイタリアン</span>
-          <span lang="en">Exceptional French-Italian<br />cuisine, only here.</span>
-        </h1>
-        <p class="hero-sub">
-          <span lang="ja">伊豆高原 テイクアウト専門店<br />地元の厳選食材をめしあがれ</span>
-          <span lang="en">Take-away specialist in Izu Kogen<br />Crafted from locally sourced ingredients</span>
-        </p>
-      </div>
-      <p class="hours-note">
-        <span lang="ja">OPEN · 水〜日 · 11:00—19:00（日曜は〜15:00）</span>
-        <span lang="en">OPEN · WED—SUN · 11:00—19:00 (SUN until 15:00)</span>
-      </p>
-    </div>
+  <!-- HERO：ロゴ ＋ For All Food Lovers ＋ コンセプト -->
+  <section class="hero" aria-labelledby="heroTitle">
     <div class="hero-logo">
       <img src="assets/bonap-logo.png" alt="Bon' Ap ボナップ" />
     </div>
+    <h1 class="hero-title" id="heroTitle">
+      <span class="line">For All</span> <span class="line">Food Lovers</span>
+    </h1>
+    <svg class="wave" viewBox="0 0 96 12" aria-hidden="true"><path d="M2 6 C 10 1, 18 1, 26 6 S 42 11, 50 6 S 66 1, 74 6 S 88 10, 94 5"/></svg>
+    <div class="hero-poem">
+      <div lang="ja">
+        <p>フランス人シェフが届ける<br />テイクアウトの枠を超えた<br />本格フレンチの持ち帰り</p>
+        <p>おうちでも、旅先でも、<br />そしていつでも食べられる。<br />それは、今までとは違う新しい体験。</p>
+        <p>もっと手軽にもっと自由に<br />お気に召すまま召し上がれ。</p>
+      </div>
+      <div lang="en">
+        <p>Delivered by a French chef —<br />beyond ordinary takeout,<br />real French cuisine to take home.</p>
+        <p>At home, on a trip,<br />or anytime at all.<br />A new kind of experience, unlike anything before.</p>
+        <p>More casual, more free —<br />eat exactly as you please.</p>
+      </div>
+    </div>
+    <p class="hero-sign">(Bon' Ap)</p>
   </section>
 
-  <!-- CHEF -->
-  <section class="chef-section fade-in" id="chef">
-    <div class="chef-photo">
-      <img src="assets/IMG_1399.jpeg" alt="Chef André" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;" />
+  <!-- 食材へのこだわり（シェフのページから移動） -->
+  <section class="produce fade-in" aria-labelledby="produceTitle">
+    <div class="produce-inner">
+      <h2 class="produce-heading" id="produceTitle">
+        <span lang="ja" class="v-stack" aria-label="食材へのこだわり"><span>食</span><span>材</span><span>へ</span><span>の</span><span>こ</span><span>だ</span><span>わ</span><span>り</span></span>
+        <span lang="en">Our Commitment to Ingredients</span>
+      </h2>
+      <p class="body-text">
+        <span lang="ja">生産者に直接会い、仕入れる圧倒的な鮮度とハイクオリティ。伊豆半島の農家さんを中心に、良いものがあれば北海道まで足を運びます。無農薬や薬・ワクチンに頼らず育てられた、安心できる食材をできる限り使用しています。</span>
+        <span lang="en">André meets producers face to face, sourcing ingredients of outstanding freshness and quality. Centered on farmers across the Izu Peninsula, he will travel as far as Hokkaido when something exceptional calls for it. Wherever possible, he uses ingredients raised without pesticides, drugs, or vaccines — food you can trust.</span>
+      </p>
     </div>
-    <div class="chef-text">
-    <p class="section-label">· 01 · le Chef</p>
-    <h2 class="section-heading">
+  </section>
+
+  <!-- シェフについて -->
+  <section class="chef-section fade-in" id="chef" aria-labelledby="chefTitle">
+    <h2 class="section-heading" id="chefTitle">
       <span lang="ja">シェフについて</span>
       <span lang="en">About the Chef</span>
     </h2>
-    <p class="chef-name-fr">André</p>
-    <p class="chef-name-jp">
-      <span lang="ja">アンドレ<br />Chef · Bon' Ap</span>
-      <span lang="en">Chef · Bon' Ap</span>
-    </p>
-    <blockquote class="chef-quote">
-      <span lang="ja">食を愛し楽しむ心を忘れない。</span>
-      <span lang="en">Never lose the love and joy of good food.</span>
-    </blockquote>
-    <p class="body-text">
-      <span lang="ja">パリ生まれ。14歳でキッチンに立ち、世界を渡り、伊豆高原に辿り着いたシェフ。</span>
-      <span lang="en">Born in Paris. Entered the kitchen at 14, traveled the world, and arrived in Izu Kogen.</span>
-    </p>
-    <a href="chef.html" id="chefPageBtn" style="display:inline-flex;align-items:center;gap:10px;margin-top:28px;text-decoration:none;color:var(--terracotta);font-family:'Shippori Mincho',serif;font-size:13px;letter-spacing:2px;">
-      <span lang="ja">シェフの軌跡を見る</span>
-      <span lang="en">The Chef's Journey</span>
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-        <path d="M5 12h14M12 5l7 7-7 7"/>
-      </svg>
-    </a>
+    <div class="chef-photo">
+      <img src="assets/IMG_1399.jpeg" alt="シェフ アンドレ" />
+    </div>
+    <div class="chef-text">
+      <p class="chef-name">André</p>
+      <p class="chef-name-jp" lang="ja">アンドレ</p>
+      <svg class="wave" viewBox="0 0 96 12" aria-hidden="true"><path d="M2 6 C 10 1, 18 1, 26 6 S 42 11, 50 6 S 66 1, 74 6 S 88 10, 94 5"/></svg>
+      <p class="chef-quote">
+        <span lang="ja">食を愛し楽しむ心を忘れない。</span>
+        <span lang="en">Never lose the love and joy of good food.</span>
+      </p>
+      <p class="body-text">
+        <span lang="ja">パリ生まれ。14歳でキッチンに立ち、世界を渡り、伊豆高原に辿り着いたシェフ。</span>
+        <span lang="en">Born in Paris. Entered the kitchen at 14, traveled the world, and arrived in Izu Kogen.</span>
+      </p>
+      <a href="chef.html" id="chefPageBtn" class="chef-link">
+        <span lang="ja">シェフの軌跡を見る</span>
+        <span lang="en">The Chef's Journey</span>
+      </a>
     </div>
   </section>
 
-  <!-- CONCEPT -->
-  <section class="concept fade-in">
-    <p class="section-label" style="text-align:center">· 02 · Notre Concept</p>
-    <div style="text-align:center;margin:24px 0 8px;">
-      <img src="assets/izucomeizugo.png" alt="Take Izu home." style="max-width:650px;width:92%;display:inline-block;" />
-    </div>
-    <p class="body-text" style="text-align:center;padding:0 20px;">
-      <span lang="ja" class="concept-text-ja">フランス人シェフが届ける&#10;テイクアウトの枠を超えた、本格フレンチの持ち帰り。&#10;&#10;おうちでも、旅先でも、&#10;そしていつでも食べられる。&#10;それは、今までとは違う新しい体験。&#10;&#10;もっと手軽にもっと自由に&#10;お気に召すまま召し上がれ。&#10;(Bon' Ap)</span>
-      <span lang="en">Delivered by a French chef —<br />real French cuisine to take home, beyond ordinary takeout.<br /><br />At home, on a trip,<br />or anytime at all.<br />A new kind of experience, unlike anything before.<br /><br />More casual, more free —<br />eat exactly as you please.<br />(Bon' Ap)</span>
-    </p>
-  </section>
-
-  <!-- INSTAGRAM -->
-  <section class="instagram-section fade-in">
-    <p class="section-label" style="text-align:center">· 03 · Instagram</p>
-    <h2 class="section-heading" style="text-align:center">
-      <span lang="ja">Instagram</span>
-      <span lang="en">Follow Us</span>
+  <!-- Bon' Apの楽しみ方 -->
+  <section class="enjoy fade-in" aria-labelledby="enjoyTitle">
+    <h2 class="section-heading" id="enjoyTitle">
+      <span lang="ja">Bon' Apの楽しみ方</span>
+      <span lang="en">How to Enjoy Bon' Ap</span>
     </h2>
-    <p class="body-text" style="text-align:center">
+    <p class="body-text">
+      <span lang="ja">ボナップのメニューは、その日の仕入れとシェフのインスピレーションで日々変わります。ここでしか出会えない、オリジナルレシピの数々がショーケースに並びます。明日にはもう、二度と味わえないかもしれない──そんな一期一会の出逢いをお楽しみください。</span>
+      <span lang="en">Bon' Ap's menu changes daily, shaped by the day's ingredients and the chef's inspiration. Original recipes found nowhere else fill the showcase. By tomorrow, today's dish may be gone for good — savor each one-of-a-kind encounter while it lasts.</span>
+    </p>
+  </section>
+
+  <!-- INSTAGRAM（最新投稿） -->
+  <section class="instagram-section fade-in" aria-labelledby="instaTitle">
+    <h2 class="section-heading" id="instaTitle" style="margin-bottom:8px;">Instagram</h2>
+    <a class="insta-handle" href="https://www.instagram.com/bon_bonap/" target="_blank" rel="noopener">@bon_bonap</a>
+    <p class="body-text">
       <span lang="ja">その日のメニューや旬の食材情報をInstagramで発信しています。</span>
       <span lang="en">Daily menus and seasonal ingredient stories are shared on Instagram.</span>
     </p>
+
+    <div class="insta-feed">
+      <!-- ▼ Behold の最新投稿ウィジェット（フィードIDが決まったら有効化します）▼
+      <behold-widget feed-id="ここにフィードID"></behold-widget>
+      <script>
+        (() => {
+          const d=document,s=d.createElement("script");s.type="module";
+          s.src="https://w.behold.so/widget.js";d.head.append(s);
+        })();
+      </script>
+      ▲ ここまで ▲ -->
+    </div>
+
+    <!-- ウィジェットが表示されない時（無料枠の上限など）でも、必ずここからインスタへ行ける -->
     <a class="insta-link" href="https://www.instagram.com/bon_bonap/" target="_blank" rel="noopener">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
         <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
         <circle cx="12" cy="12" r="4"/>
         <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
       </svg>
-      @BON_BONAP
+      <span lang="ja">Instagramを見る</span>
+      <span lang="en">See us on Instagram</span>
     </a>
-    <p class="insta-note">
-      <span lang="ja">フォローして、今日のメニューをチェック</span>
-      <span lang="en">Follow us to see today's offerings</span>
-    </p>
   </section>
-
-  <!-- MENU -->
-  <section class="menu-section" id="menu">
-    <div class="menu-header fade-in">
-      <p class="section-label">· 04 · Le Menu</p>
-      <p class="menu-title-fr">spécialité</p>
-      <h2 class="section-heading" style="text-align:center;margin-top:14px;margin-bottom:0;">
-        <span lang="ja">Bon' Apの楽しみ方</span>
-        <span lang="en">How to Enjoy Bon' Ap</span>
-      </h2>
-      <p class="body-text" style="max-width:560px;margin:16px auto 0;text-align:center;">
-        <span lang="ja">ボナップのメニューは、その日の仕入れとシェフのインスピレーションで日々変わります。ここでしか出会えない、オリジナルレシピの数々がショーケースに並びます。明日にはもう、二度と味わえないかもしれない──そんな一期一会の出逢いをお楽しみください。</span>
-        <span lang="en">Bon' Ap's menu changes daily, shaped by the day's ingredients and the chef's inspiration. Original recipes found nowhere else fill the showcase. By tomorrow, today's dish may be gone for good — savor each one-of-a-kind encounter while it lasts.</span>
-      </p>
-    </div>
-
-    <div class="menu-cards-grid">
-    <div class="menu-card fade-in">
-      <div class="menu-card-meta">
-        <span class="menu-no">N° 01</span>
-      </div>
-      <div class="menu-img">
-        <img src="assets/menu-pate.png" alt="Pâté de Campagne" />
-      </div>
-      <p class="menu-name-fr">Pâté de Campagne</p>
-      <p class="menu-name-jp">パテ・ド・カンパーニュ</p>
-      <p class="menu-desc">
-        <span lang="ja">季節の食材との出会いをお楽しみください。</span>
-        <span lang="en">A seasonal country pâté — ingredients shift with what the land offers.</span>
-      </p>
-    </div>
-
-    <div class="menu-card fade-in">
-      <div class="menu-card-meta">
-        <span class="menu-no">N° 02</span>
-      </div>
-      <div class="menu-img">
-        <img src="assets/menu-chicken.png" alt="Poulet Rôti" />
-      </div>
-      <p class="menu-name-fr">Poulet Rôti</p>
-      <p class="menu-name-jp">ローストチキン</p>
-      <p class="menu-desc">
-        <span lang="ja">富士山御殿地鶏を使用した贅沢な一品。</span>
-        <span lang="en">Roasted Fujisan Gotenba chicken — a rich, indulgent classic.</span>
-      </p>
-    </div>
-
-    <div class="menu-card fade-in">
-      <div class="menu-card-meta">
-        <span class="menu-no">N° 03</span>
-      </div>
-      <div class="menu-img">
-        <img src="assets/quiche-bacon.jpeg" alt="Quiche Bacon" />
-      </div>
-      <p class="menu-name-fr">Quiche</p>
-      <p class="menu-name-jp">キッシュ</p>
-      <p class="menu-desc">
-        <span lang="ja">地卵と季節の野菜を重ね、バターの香りと共に焼き上げた定番。</span>
-        <span lang="en">Local eggs and seasonal vegetables, layered and baked with the scent of battery.</span>
-      </p>
-    </div>
-
-    <div class="menu-card fade-in">
-      <div class="menu-card-meta">
-        <span class="menu-no">N° 04</span>
-      </div>
-      <div class="menu-img">
-        <img src="assets/menu-moelleux.png" alt="Moelleux au Chocolat" />
-      </div>
-      <p class="menu-name-fr">Moelleux au Chocolat</p>
-      <p class="menu-name-jp">モエルショコラ</p>
-      <p class="menu-desc">
-        <span lang="ja">フランス産カカオ70％BIOチョコレート使用。</span>
-        <span lang="en">Made with 70% BIO cacao from France. Rich, deep, and unmistakably French.</span>
-      </p>
-    </div>
-
-    </div><!-- /menu-cards-grid -->
-
-    <div class="menu-footer fade-in">
-      <p>
-        <span lang="ja">その日の仕入れで品数は変わります。<br />メニューの全容は店頭または<a href="https://www.instagram.com/bon_bonap/" target="_blank" rel="noopener">Instagram</a>にて。</span>
-        <span lang="en">Menu varies with the day's sourcing.<br />See full offerings in-store or on <a href="https://www.instagram.com/bon_bonap/" target="_blank" rel="noopener">Instagram</a>.</span>
-      </p>
-    </div>
-  </section>
-
   <!-- ORDER FLOW -->
   <section class="order-flow fade-in" id="order">
-    <p class="section-label" style="text-align:center;color:rgba(245,239,228,0.65)">· 05 · Commande</p>
     <h2 class="order-heading">
       <span lang="ja">コース料理のご予約</span>
       <span lang="en">Course Meal Reservations</span>
@@ -1304,7 +1040,6 @@
       <!-- 右：店舗情報 -->
       <div class="access-right">
         <div class="access-inner">
-          <p class="section-label">· 06 · Accès</p>
           <h2 class="section-heading">
             <span lang="ja">店舗のご案内</span>
             <span lang="en">Visit Us</span>
@@ -1433,6 +1168,13 @@
     }, { threshold: 0.1 });
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // ── URLパラメータで英語起動（他ページから英語のまま戻った時）──
+    if (new URLSearchParams(window.location.search).get('lang') === 'en') {
+      document.body.classList.add('en');
+      document.getElementById('langToggle').textContent = 'JA';
+      updateLinks(true);
+    }
   </script>
 
 </body>
