@@ -464,74 +464,7 @@
     .timeline-item-tall .timeline-bg-photo-a { height: 340px; }
     .timeline-item-tall .timeline-bg-photo-b { height: 340px; }
 
-    /* ══════════════════════════════
-       INGREDIENTS セクション
-    ══════════════════════════════ */
-    .ingredients-section {
-      background: var(--cream);
-      padding: 60px 28px 56px;
-      text-align: center;
-    }
-    @media (min-width: 768px) {
-      .ingredients-section { padding: 80px 60px 72px; }
-    }
 
-    /* ══════════════════════════════
-       PHILOSOPHY セクション
-    ══════════════════════════════ */
-    .philosophy-section {
-      background: var(--forest);
-      color: var(--ivory);
-      padding: 64px 28px 60px;
-    }
-    .philosophy-label {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 12px;
-      font-style: italic;
-      color: rgba(245,239,228,0.55);
-      letter-spacing: 2px;
-      margin-bottom: 10px;
-      text-align: center;
-    }
-    .philosophy-heading {
-      font-family: 'Shippori Mincho', serif;
-      font-size: 20px;
-      line-height: 1.9;
-      color: var(--ivory);
-      font-weight: 500;
-      letter-spacing: 1px;
-      margin-bottom: 36px;
-      text-align: center;
-    }
-    .philosophy-block {
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    .philosophy-text {
-      font-family: 'Shippori Mincho', serif;
-      font-size: 15px;
-      line-height: 2.4;
-      color: rgba(245,239,228,0.88);
-      letter-spacing: 0.5px;
-      margin-bottom: 24px;
-    }
-    .philosophy-placeholder {
-      border: 0.5px dashed rgba(245,239,228,0.2);
-      padding: 32px 24px;
-      text-align: center;
-    }
-    .philosophy-placeholder p {
-      font-family: ui-monospace, monospace;
-      font-size: 10px;
-      color: rgba(245,239,228,0.3);
-      letter-spacing: 2px;
-      line-height: 2;
-    }
-
-    @media (min-width: 768px) {
-      .philosophy-section { padding: 80px 60px 72px; }
-      .philosophy-heading { font-size: 24px; }
-    }
 
     /* ══════════════════════════════
        BACK TO TOP ボタン
@@ -731,45 +664,11 @@
 
   </section>
 
-  <!-- INGREDIENTS -->
-  <section class="ingredients-section fade-in">
-    <p class="section-label" style="text-align:center">· Les Produits ·</p>
-    <h2 class="section-heading" style="text-align:center">
-      <span lang="ja">食材へのこだわり</span>
-      <span lang="en">Our Commitment to Ingredients</span>
-    </h2>
-    <p class="body-text" style="max-width:600px;margin:0 auto;text-align:left;">
-      <span lang="ja">生産者に直接会い、仕入れる圧倒的な鮮度とハイクオリティ。伊豆半島の農家さんを中心に、良いものがあれば北海道まで足を運びます。無農薬や薬・ワクチンに頼らず育てられた、安心できる食材をできる限り使用しています。</span>
-      <span lang="en">André meets producers face to face, sourcing ingredients of outstanding freshness and quality. Centered on farmers across the Izu Peninsula, he will travel as far as Hokkaido when something exceptional calls for it. Wherever possible, he uses ingredients raised without pesticides, drugs, or vaccines — food you can trust.</span>
-    </p>
-  </section>
 
-  <!-- PHILOSOPHY -->
-  <section class="philosophy-section fade-in">
-    <p class="philosophy-label">· La Philosophie ·</p>
-    <h2 class="philosophy-heading">
-      <span lang="ja">アンドレの思い</span>
-      <span lang="en">André's Philosophy</span>
-    </h2>
-    <div class="philosophy-block">
-      <!-- ▼ここにアンドレの言葉を入れる▼ -->
-      <div class="philosophy-placeholder">
-        <p>— 準備中 —</p>
-      </div>
-      <!-- ▲プレースホルダー。文章が決まったら以下のように差し替え▲
-      <p class="philosophy-text" lang="ja">
-        （アンドレの言葉・日本語）
-      </p>
-      <p class="philosophy-text" lang="en">
-        （André's words in English）
-      </p>
-      -->
-    </div>
-  </section>
 
   <!-- BACK TO TOP -->
   <section class="back-section fade-in">
-    <a href="index.html" class="back-btn">
+    <a href="index.html" class="back-btn" id="backBtn">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
         <path d="M19 12H5M12 5l-7 7 7 7"/>
       </svg>
