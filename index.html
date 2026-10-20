@@ -575,6 +575,28 @@
     @keyframes waveDraw { to { stroke-dashoffset: 0; } }
 
     /* ══════════════════════════════
+       伊豆の風景（画面幅いっぱいの帯）
+    ══════════════════════════════ */
+    .band-photo {
+      margin: 0;
+      aspect-ratio: 3 / 2;          /* スマホは少し縦に広く切り取る */
+      overflow: hidden;
+      background: var(--cream);
+    }
+    .band-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 45% center;
+      display: block;
+      /* 鮮やかすぎる色をサイトの色調になじませる */
+      filter: saturate(0.72) sepia(0.12) brightness(1.02);
+    }
+    @media (min-width: 768px) {
+      .band-photo { aspect-ratio: 1100 / 436; }
+    }
+
+    /* ══════════════════════════════
        食材へのこだわり（縦書きの見出し）
     ══════════════════════════════ */
     .produce {
@@ -862,6 +884,13 @@
     </div>
     <p class="hero-sign">(Bon' Ap)</p>
   </section>
+
+  <!-- 伊豆の風景（ヒーローと食材の間の「間」）
+       仮置き：Canva Pro素材。規約により加工なしは480,000px以内 → 1100×436px（479,600px）で書き出し済み。
+       本番写真に差し替える時は assets/photo-izu-coast.jpg を上書きする -->
+  <figure class="band-photo" aria-hidden="true">
+    <img src="assets/photo-izu-coast.jpg" alt="" width="1100" height="436" loading="lazy" decoding="async" />
+  </figure>
 
   <!-- 食材へのこだわり（シェフのページから移動） -->
   <section class="produce fade-in" aria-labelledby="produceTitle">
