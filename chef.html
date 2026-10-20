@@ -34,7 +34,7 @@
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 
     body {
       background: var(--ivory);
@@ -219,7 +219,7 @@
     }
     .chef-hero-name {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 64px;
+      font-size: 48px;
       font-style: italic;
       font-weight: 400;
       color: var(--ink);
@@ -235,16 +235,25 @@
       margin-bottom: 32px;
     }
     .chef-hero-quote {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 24px;
-      font-style: italic;
-      line-height: 1.6;
+      /* TOPのシェフ紹介と同じ書体。スマホで折り返さないよう画面幅に合わせて最大16px */
+      font-family: 'Shippori Mincho', serif;
+      font-size: min(16px, calc((min(100vw, 480px) - 78px) / 16));
+      letter-spacing: 1px;
+      white-space: nowrap;
+      line-height: 2;
       color: var(--ink);
       border-left: 2px solid var(--terracotta);
       padding-left: 20px;
       text-align: left;
       max-width: 480px;
       margin: 0 auto 12px;
+    }
+    .chef-hero-quote [lang="en"] {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 22px;
+      letter-spacing: 0;
+      white-space: normal;
     }
     .chef-hero-quote-jp {
       font-family: 'Shippori Mincho', serif;
@@ -260,8 +269,8 @@
 
     @media (min-width: 768px) {
       .chef-hero { padding: 80px 60px 72px; }
-      .chef-hero-name { font-size: 96px; }
-      .chef-hero-quote { font-size: 28px; }
+      .chef-hero-name { font-size: 72px; }
+      .chef-hero-quote { font-size: 18px; letter-spacing: 2px; }
     }
 
     /* ══════════════════════════════
@@ -270,6 +279,7 @@
     .timeline-section {
       background: var(--ivory);
       padding: 60px 0 48px;
+      overflow: hidden; /* 背景写真のはみ出しで横スクロールが出るのを防ぐ */
     }
     .timeline-header {
       padding: 0 28px 40px;
