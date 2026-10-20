@@ -324,8 +324,8 @@
   </div>
 
   <nav class="topbar">
-    <a href="https://bonap-izukogen.com/" class="logo" id="logoLink">Bon' Ap</a>
-    <a href="https://bonap-izukogen.com/" class="back-btn" id="backBtn">
+    <a href="index.html" class="logo" id="logoLink">Bon' Ap</a>
+    <a href="index.html" class="back-btn" id="backBtn">
       ← <span lang="ja">トップへ戻る</span><span lang="en">Back</span>
     </a>
   </nav>
@@ -513,8 +513,8 @@
     btn.textContent = isEn ? 'JA' : 'EN';
     setLang(isEn);
     const s = isEn ? '?lang=en' : '';
-    document.getElementById('backBtn').href = 'https://bonap-izukogen.com/' + s;
-    document.getElementById('logoLink').href = 'https://bonap-izukogen.com/' + s;
+    document.getElementById('backBtn').href = 'index.html' + s;
+    document.getElementById('logoLink').href = 'index.html' + s;
     document.getElementById('cancelLink').href = 'tokushoho.html#cancel' + s;
     document.getElementById('cancelLinkEn').href = 'tokushoho.html#cancel' + s;
     document.getElementById('agreeCancel').href = 'tokushoho.html#cancel' + s;
@@ -528,8 +528,8 @@
       document.body.classList.add('en');
       document.getElementById('langToggle').textContent = 'JA';
       setLang(true);
-      document.getElementById('backBtn').href = 'https://bonap-izukogen.com/?lang=en';
-      document.getElementById('logoLink').href = 'https://bonap-izukogen.com/?lang=en';
+      document.getElementById('backBtn').href = 'index.html?lang=en';
+      document.getElementById('logoLink').href = 'index.html?lang=en';
       document.getElementById('cancelLink').href = 'tokushoho.html?lang=en#cancel';
       document.getElementById('cancelLinkEn').href = 'tokushoho.html?lang=en#cancel';
       document.getElementById('agreeCancel').href = 'tokushoho.html?lang=en';
