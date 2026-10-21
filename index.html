@@ -956,16 +956,17 @@
       <span lang="en">Daily menus and seasonal ingredient stories are shared on Instagram.</span>
     </p>
 
+    <!-- Instagram最新投稿（Behold無料プラン：最大6件・1日1回更新・月1,200表示まで）
+         表示が空になった時の確認先：①Beholdの月間表示数の上限 ②インスタのパスワード・公開設定の変更（再接続が必要） -->
     <div class="insta-feed">
-      <!-- ▼ Behold の最新投稿ウィジェット（フィードIDが決まったら有効化します）▼
-      <behold-widget feed-id="ここにフィードID"></behold-widget>
+      <behold-widget feed-id="Mf1kXj6lx1daANHu6Kl7"></behold-widget>
       <script>
         (() => {
+          if(window.__bhldScript)return;window.__bhldScript=true;
           const d=document,s=d.createElement("script");s.type="module";
-          s.src="https://w.behold.so/widget.js";d.head.append(s);
+          s.src="https://w.behold.so/widget.js";setTimeout(()=>{d.head.append(s);},0);
         })();
       </script>
-      ▲ ここまで ▲ -->
     </div>
 
     <!-- ウィジェットが表示されない時（無料枠の上限など）でも、必ずここからインスタへ行ける -->
